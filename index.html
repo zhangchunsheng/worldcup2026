@@ -3,839 +3,931 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 FIFA世界杯 — 美国·加拿大·墨西哥</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<title>2026 FIFA 世界杯 | 美国 · 加拿大 · 墨西哥</title>
 <style>
-/* ===================== RESET & BASE ===================== */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --midnight:#0A0E17;--navy:#0F1B2D;--deep:#131C2E;
-  --gold:#D4A843;--gold-light:#F0D078;--gold-dim:#8B7230;
-  --white:#F0EDE6;--gray:#8A8F98;--dim:#3A4050;
-  --red:#C41E3A;--green:#1B5E20;
-  --card-bg:rgba(15,27,45,0.7);--card-border:rgba(212,168,67,0.15);
+/* ===== Reset & Base ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg-primary: #0a0a12;
+  --bg-secondary: #12121f;
+  --bg-card: #1a1a2e;
+  --bg-card-hover: #222240;
+  --gold: #d4a843;
+  --gold-light: #f0d078;
+  --gold-dark: #a07828;
+  --green: #1b8c3d;
+  --green-light: #2ecc71;
+  --blue: #2563eb;
+  --text-primary: #f0f0f5;
+  --text-secondary: #a0a0b8;
+  --text-muted: #6a6a80;
+  --border: rgba(212,168,67,0.15);
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --radius: 12px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold-dim) var(--midnight)}
-body{font-family:'Noto Sans SC',sans-serif;background:var(--midnight);color:var(--white);overflow-x:hidden;line-height:1.6}
-::selection{background:var(--gold);color:var(--midnight)}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--midnight)}
-::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
-a{color:var(--gold);text-decoration:none}
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--gold-light); }
 
-/* ===================== NOISE TEXTURE ===================== */
-body::before{
-  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:9999;opacity:0.4;
-}
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
-/* ===================== NAVIGATION ===================== */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(10,14,23,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(212,168,67,0.1);
-  transition:all 0.4s ease;
+/* ===== Navigation ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,10,18,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
 }
-nav.scrolled{background:rgba(10,14,23,0.95);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
-.nav-inner{
-  max-width:1400px;margin:0 auto;padding:0 2rem;
-  display:flex;align-items:center;justify-content:space-between;height:60px;
+nav.scrolled { background: rgba(10,10,18,0.95); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 64px;
 }
-.nav-logo{
-  font-family:'UnifrakturMaguntia',cursive;font-size:1.3rem;color:var(--gold);
-  letter-spacing:2px;
+.nav-logo {
+  font-size: 1.1rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.nav-logo span{font-family:'Bebas Neue',sans-serif;color:var(--white);font-size:0.9rem;margin-left:0.5rem;letter-spacing:3px}
-.nav-links{display:flex;gap:0.25rem;list-style:none}
-.nav-links a{
-  padding:0.5rem 0.8rem;font-size:0.75rem;font-weight:500;letter-spacing:1px;
-  text-transform:uppercase;color:var(--gray);transition:all 0.3s;border-radius:4px;
-  white-space:nowrap;
+.nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;
+  padding: 6px 12px; border-radius: 6px; transition: all var(--transition);
 }
-.nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(212,168,67,0.08)}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.nav-toggle span{width:24px;height:2px;background:var(--white);transition:0.3s}
+.nav-links a:hover { color: var(--gold); background: rgba(212,168,67,0.1); }
+.nav-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
 
-@media(max-width:900px){
-  .nav-links{
-    position:fixed;top:60px;left:0;right:0;
-    background:rgba(10,14,23,0.98);backdrop-filter:blur(20px);
-    flex-direction:column;padding:1.5rem;gap:0.5rem;
-    transform:translateY(-120%);transition:0.4s ease;z-index:999;
-  }
-  .nav-links.open{transform:translateY(0)}
-  .nav-toggle{display:flex}
+/* ===== Sections ===== */
+section { padding: 100px 24px; max-width: 1280px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800;
+  margin-bottom: 12px;
 }
+.section-header h2 .accent {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
 
-/* ===================== HERO ===================== */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;text-align:center;padding:6rem 2rem 4rem;
+/* ===== Hero ===== */
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  position: relative; padding-top: 64px;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,168,67,0.08) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 80%,rgba(15,27,45,0.8) 0%,transparent 50%),
-    radial-gradient(ellipse 40% 40% at 80% 80%,rgba(15,27,45,0.8) 0%,transparent 50%),
-    linear-gradient(180deg,var(--midnight) 0%,var(--navy) 50%,var(--midnight) 100%);
+.hero-bg {
+  position: absolute; inset: 0; overflow: hidden; z-index: 0;
+}
+.hero-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(212,168,67,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(27,140,61,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(37,99,235,0.08) 0%, transparent 50%);
 }
 /* Stadium light beams */
-.hero-bg::before{
-  content:'';position:absolute;top:-10%;left:50%;transform:translateX(-50%);
-  width:200%;height:60%;
-  background:
-    conic-gradient(from 170deg at 50% 0%,transparent 40%,rgba(212,168,67,0.03) 45%,transparent 50%,
-    transparent 55%,rgba(212,168,67,0.02) 60%,transparent 65%);
-  animation:lightSweep 8s ease-in-out infinite alternate;
+.light-beam {
+  position: absolute; width: 2px; height: 300px;
+  background: linear-gradient(to bottom, rgba(212,168,67,0.4), transparent);
+  filter: blur(1px); animation: beam-pulse 4s ease-in-out infinite;
 }
-@keyframes lightSweep{0%{transform:translateX(-50%) rotate(-2deg)}100%{transform:translateX(-50%) rotate(2deg)}}
-
-/* Floating particles */
-.hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%,var(--gold-dim),transparent),
-    radial-gradient(1px 1px at 30% 60%,var(--gold-dim),transparent),
-    radial-gradient(1.5px 1.5px at 50% 30%,var(--gold-light),transparent),
-    radial-gradient(1px 1px at 70% 70%,var(--gold-dim),transparent),
-    radial-gradient(1px 1px at 90% 40%,var(--gold-dim),transparent),
-    radial-gradient(1.5px 1.5px at 15% 80%,var(--gold-light),transparent),
-    radial-gradient(1px 1px at 85% 15%,var(--gold-dim),transparent),
-    radial-gradient(1px 1px at 45% 85%,var(--gold-dim),transparent);
-  animation:float 20s linear infinite;opacity:0.5;
+.light-beam:nth-child(1) { left: 20%; top: 0; animation-delay: 0s; }
+.light-beam:nth-child(2) { left: 40%; top: 0; animation-delay: 1s; height: 250px; }
+.light-beam:nth-child(3) { left: 60%; top: 0; animation-delay: 2s; height: 280px; }
+.light-beam:nth-child(4) { left: 80%; top: 0; animation-delay: 0.5s; height: 220px; }
+.light-beam:nth-child(5) { left: 30%; top: 0; animation-delay: 1.5s; height: 260px; }
+.light-beam:nth-child(6) { left: 70%; top: 0; animation-delay: 3s; height: 240px; }
+@keyframes beam-pulse {
+  0%, 100% { opacity: 0.2; transform: scaleY(1); }
+  50% { opacity: 0.6; transform: scaleY(1.2); }
 }
-@keyframes float{0%{transform:translateY(0)}100%{transform:translateY(-100px)}}
-
-.hero-content{position:relative;z-index:1}
-.hero-badge{
-  display:inline-block;padding:0.4rem 1.2rem;border:1px solid var(--gold-dim);
-  border-radius:50px;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2rem;
-  background:rgba(212,168,67,0.05);
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border-radius: 100px;
+  background: rgba(212,168,67,0.1); border: 1px solid var(--border);
+  font-size: 0.9rem; color: var(--gold); margin-bottom: 24px;
 }
-.hero h1{
-  font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(3rem,8vw,7rem);
-  line-height:1;margin-bottom:0.5rem;
-  background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,var(--gold-dim) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  animation:shimmer 3s ease-in-out infinite alternate;
+.hero-title {
+  font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 900;
+  line-height: 1.1; margin-bottom: 16px;
 }
-@keyframes shimmer{
-  0%{filter:brightness(1) drop-shadow(0 0 20px rgba(212,168,67,0.3))}
-  100%{filter:brightness(1.2) drop-shadow(0 0 40px rgba(212,168,67,0.5))}
+.hero-title .gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
 }
-.hero-subtitle{
-  font-family:'Noto Sans SC',sans-serif;font-size:clamp(1rem,2.5vw,1.5rem);
-  font-weight:300;color:var(--gray);margin-bottom:1rem;letter-spacing:2px;
+@keyframes shimmer {
+  to { background-position: 200% center; }
 }
-.hero-hosts{
-  font-size:clamp(0.9rem,2vw,1.2rem);color:var(--dim);letter-spacing:4px;
-  text-transform:uppercase;margin-bottom:3rem;
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--text-secondary);
+  margin-bottom: 48px; max-width: 500px;
 }
-.hero-hosts span{color:var(--gold)}
 
 /* Countdown */
-.countdown{
-  display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;
+.countdown {
+  display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; justify-content: center;
 }
-.countdown-item{
-  text-align:center;min-width:80px;
-  padding:1rem;background:rgba(15,27,45,0.6);border:1px solid var(--card-border);
-  border-radius:12px;backdrop-filter:blur(10px);
+.countdown-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 24px; min-width: 100px;
+  text-align: center;
 }
-.countdown-item .num{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.5rem);
-  color:var(--gold);line-height:1;
+.countdown-item .number {
+  font-size: 2.5rem; font-weight: 900;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
 }
-.countdown-item .label{
-  font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);
-  margin-top:0.3rem;
-}
-
-/* Stats row */
-.hero-stats{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap}
-.hero-stat{text-align:center}
-.hero-stat .val{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1;
-}
-.hero-stat .val em{font-style:normal;color:var(--gold)}
-.hero-stat .desc{font-size:0.7rem;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:0.25rem}
-
-/* ===================== SECTIONS ===================== */
-section{padding:6rem 2rem;position:relative}
-.section-inner{max-width:1200px;margin:0 auto}
-.section-header{text-align:center;margin-bottom:4rem}
-.section-header .overline{
-  font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:6px;
-  text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.5rem;
-}
-.section-header h2{
-  font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;
-  background:linear-gradient(135deg,var(--white),var(--gold-light));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.section-header p{color:var(--gray);max-width:600px;margin:1rem auto 0;font-size:0.95rem}
-
-/* Decorative divider */
-.section-divider{
-  width:60px;height:1px;margin:1rem auto;position:relative;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.section-divider::before{
-  content:'⚽';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  font-size:1rem;
+.countdown-item .label {
+  font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 1px; margin-top: 4px;
 }
 
-/* ===================== SCHEDULE ===================== */
-#schedule{background:linear-gradient(180deg,var(--midnight),var(--navy),var(--midnight))}
-.schedule-grid{display:grid;gap:1rem}
-.match-card{
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-  padding:1.25rem 1.5rem;background:var(--card-bg);border:1px solid var(--card-border);
-  border-radius:12px;transition:all 0.3s;position:relative;overflow:hidden;
+/* Hero Stats */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  max-width: 700px; margin: 0 auto;
 }
-.match-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,168,67,0.1)}
-.match-card.featured{border-color:var(--gold);background:linear-gradient(135deg,rgba(212,168,67,0.05),rgba(212,168,67,0.02))}
-.match-card.featured::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+.hero-stat {
+  text-align: center; padding: 16px;
 }
-.match-team{display:flex;align-items:center;gap:0.75rem;font-weight:500}
-.match-team:last-child{text-align:right;flex-direction:row-reverse}
-.match-team .flag{font-size:1.5rem;line-height:1}
-.match-center{text-align:center;padding:0 1.5rem;min-width:120px}
-.match-center .tag{
-  display:inline-block;padding:0.2rem 0.6rem;font-size:0.6rem;letter-spacing:1px;
-  text-transform:uppercase;border-radius:4px;margin-bottom:0.3rem;
+.hero-stat .value {
+  font-size: 2rem; font-weight: 800; color: var(--gold);
 }
-.tag-live{background:var(--red);color:white;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
-.tag-knockout{background:var(--gold);color:var(--midnight);font-weight:700}
-.tag-group{background:rgba(212,168,67,0.15);color:var(--gold)}
-.match-center .date{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--white);letter-spacing:1px}
-.match-center .venue{font-size:0.7rem;color:var(--gray);margin-top:0.15rem}
-.match-vs{
-  font-family:'Bebas Neue',sans-serif;color:var(--dim);font-size:0.8rem;
-  letter-spacing:2px;
-}
-@media(max-width:600px){
-  .match-card{grid-template-columns:1fr;text-align:center;gap:0.75rem}
-  .match-team,.match-team:last-child{flex-direction:column}
-  .match-center{padding:0}
+.hero-stat .desc {
+  font-size: 0.85rem; color: var(--text-muted);
 }
 
-/* ===================== GROUPS ===================== */
-#groups{background:var(--midnight)}
-.groups-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;
+/* ===== Cards Grid ===== */
+.cards-grid {
+  display: grid; gap: 16px;
 }
-.group-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;
-  padding:1.5rem;transition:all 0.3s;position:relative;overflow:hidden;
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  transition: all var(--transition);
 }
-.group-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.group-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--gold-dim));
-  opacity:0;transition:0.3s;
-}
-.group-card:hover::before{opacity:1}
-.group-letter{
-  font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold);
-  letter-spacing:3px;margin-bottom:1rem;padding-bottom:0.5rem;
-  border-bottom:1px solid var(--card-border);
-}
-.group-teams{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-.group-teams li{
-  display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;color:var(--white);
-  padding:0.3rem 0;
-}
-.group-teams li .flag{font-size:1.1rem}
-.group-teams li .placeholder{color:var(--dim);font-size:0.75rem;font-style:italic}
-
-/* ===================== FAVORITES ===================== */
-#favorites{background:linear-gradient(180deg,var(--midnight),var(--deep),var(--midnight))}
-.odds-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;
-}
-.odds-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;
-  padding:1.5rem;text-align:center;transition:all 0.4s;position:relative;overflow:hidden;
-}
-.odds-card:hover{border-color:var(--gold);transform:scale(1.03)}
-.odds-card .rank{
-  position:absolute;top:0.5rem;right:0.75rem;font-family:'Bebas Neue',sans-serif;
-  font-size:2rem;color:rgba(212,168,67,0.08);line-height:1;
-}
-.odds-card .flag{font-size:2.5rem;margin-bottom:0.5rem;display:block}
-.odds-card .team{font-weight:700;font-size:1rem;margin-bottom:0.25rem}
-.odds-card .odd{
-  font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);
-}
-.odds-card .bar{
-  margin-top:0.75rem;height:3px;border-radius:2px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-dim));
-  transform-origin:left;
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(212,168,67,0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
-/* ===================== CITIES ===================== */
-#cities{background:var(--midnight)}
-.cities-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;
+/* ===== Groups ===== */
+.groups-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
-.city-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;
-  padding:1.5rem;transition:all 0.3s;position:relative;overflow:hidden;
+.group-card { cursor: default; }
+.group-card h3 {
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
 }
-.city-card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.city-card.highlight{border-color:var(--gold);background:linear-gradient(135deg,rgba(212,168,67,0.08),rgba(212,168,67,0.02))}
-.city-card .flag-icon{font-size:1.5rem;margin-bottom:0.75rem;display:block}
-.city-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
-.city-card .stadium{font-size:0.8rem;color:var(--gray);margin-bottom:0.25rem}
-.city-card .capacity{font-size:0.75rem;color:var(--dim)}
-.city-card .role{
-  display:inline-block;margin-top:0.5rem;padding:0.2rem 0.5rem;font-size:0.6rem;
-  letter-spacing:1px;text-transform:uppercase;border-radius:4px;
-  background:rgba(212,168,67,0.1);color:var(--gold);border:1px solid rgba(212,168,67,0.2);
+.group-card h3 .group-letter {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg-primary); font-weight: 800; font-size: 0.9rem;
 }
-
-/* ===================== PLAYERS ===================== */
-#players{background:linear-gradient(180deg,var(--midnight),var(--navy),var(--midnight))}
-.players-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.25rem;
+.group-team {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.player-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;
-  padding:2rem 1.5rem;text-align:center;transition:all 0.4s;position:relative;overflow:hidden;
+.group-team:last-child { border-bottom: none; }
+.team-flag {
+  width: 32px; height: 24px; border-radius: 4px;
+  background: var(--bg-secondary); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
 }
-.player-card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
-.player-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:60%;
-  background:linear-gradient(0deg,rgba(212,168,67,0.03),transparent);
-  pointer-events:none;
-}
-.player-card .emoji{font-size:3rem;margin-bottom:1rem;display:block;position:relative;z-index:1}
-.player-card .name{
-  font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;
-  margin-bottom:0.25rem;position:relative;z-index:1;
-}
-.player-card .detail{font-size:0.75rem;color:var(--gray);position:relative;z-index:1}
-.player-card .country{
-  display:inline-flex;align-items:center;gap:0.3rem;
-  margin-top:0.5rem;font-size:0.8rem;color:var(--dim);
-  position:relative;z-index:1;
+.team-name { font-size: 0.95rem; }
+.team-conf {
+  margin-left: auto; font-size: 0.7rem; color: var(--text-muted);
+  padding: 2px 8px; border-radius: 4px;
+  background: rgba(255,255,255,0.05);
 }
 
-/* ===================== HISTORY ===================== */
-#history{background:var(--midnight)}
-.history-list{display:flex;flex-direction:column;gap:0.75rem;max-width:700px;margin:0 auto}
-.history-item{
-  display:flex;align-items:center;gap:1.5rem;
-  padding:1rem 1.5rem;background:var(--card-bg);border:1px solid var(--card-border);
-  border-radius:12px;transition:all 0.3s;
+/* ===== Schedule ===== */
+.schedule-grid {
+  display: grid; gap: 20px;
 }
-.history-item:hover{border-color:var(--gold);transform:translateX(5px)}
-.history-item .rank{
-  font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold-dim);
-  min-width:50px;text-align:center;
+.schedule-phase {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
 }
-.history-item .flag{font-size:2rem}
-.history-item .info{flex:1}
-.history-item .name{font-weight:700;font-size:1rem}
-.history-item .desc{font-size:0.75rem;color:var(--gray)}
-.history-item .count{
-  font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);
-  line-height:1;
+.schedule-phase-header {
+  padding: 20px 24px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background var(--transition);
 }
-.history-item .count small{font-size:0.8rem;color:var(--gray);font-family:'Noto Sans SC',sans-serif}
+.schedule-phase-header:hover { background: var(--bg-card-hover); }
+.schedule-phase-header h3 { font-size: 1.1rem; font-weight: 700; }
+.schedule-phase-header .toggle-icon {
+  font-size: 1.2rem; color: var(--text-muted); transition: transform var(--transition);
+}
+.schedule-phase.open .toggle-icon { transform: rotate(180deg); }
+.schedule-matches {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+}
+.schedule-phase.open .schedule-matches { max-height: 2000px; }
+.schedule-match {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 16px;
+  padding: 14px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+}
+.schedule-match .team { text-align: center; }
+.schedule-match .vs {
+  color: var(--gold); font-weight: 700; font-size: 0.8rem;
+  padding: 4px 12px; border-radius: 4px;
+  background: rgba(212,168,67,0.1);
+}
+.schedule-match .match-date {
+  grid-column: 1 / -1; text-align: center;
+  color: var(--text-muted); font-size: 0.8rem;
+}
+.schedule-match.highlight {
+  background: rgba(212,168,67,0.05);
+  border-color: rgba(212,168,67,0.2);
+}
+.schedule-match .venue {
+  grid-column: 1 / -1; text-align: center;
+  color: var(--text-muted); font-size: 0.75rem;
+}
 
-/* ===================== BROADCAST ===================== */
-#broadcast{background:linear-gradient(180deg,var(--midnight),var(--deep),var(--midnight))}
-.broadcast-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;
-  max-width:800px;margin:0 auto;
+/* ===== Odds / Favorites ===== */
+.odds-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
 }
-.broadcast-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;
-  padding:2.5rem;text-align:center;transition:all 0.3s;
+.odd-card { text-align: center; }
+.odd-card .rank {
+  font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px;
 }
-.broadcast-card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.broadcast-card .icon{font-size:3rem;margin-bottom:1rem;display:block}
-.broadcast-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:0.5rem}
-.broadcast-card p{color:var(--gray);font-size:0.9rem}
-.broadcast-card .highlight-text{
-  margin-top:1rem;padding:0.5rem 1rem;background:rgba(212,168,67,0.08);
-  border-radius:8px;font-size:0.85rem;color:var(--gold);
+.odd-card .flag { font-size: 2.5rem; margin-bottom: 8px; }
+.odd-card .team { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+.odd-card .odds {
+  display: inline-block; padding: 4px 14px; border-radius: 100px;
+  background: rgba(212,168,67,0.15); color: var(--gold);
+  font-weight: 700; font-size: 0.9rem;
 }
 
-/* ===================== FOOTER ===================== */
-footer{
-  padding:3rem 2rem;text-align:center;
-  border-top:1px solid var(--card-border);
-  background:linear-gradient(180deg,var(--midnight),#060A10);
+/* ===== Cities ===== */
+.cities-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
 }
-footer .logo{
-  font-family:'UnifrakturMaguntia',cursive;font-size:1.5rem;color:var(--gold-dim);
-  margin-bottom:1rem;
+.city-card { position: relative; overflow: hidden; }
+.city-card .country-badge {
+  position: absolute; top: 12px; right: 12px;
+  padding: 3px 10px; border-radius: 100px; font-size: 0.7rem;
+  font-weight: 600;
 }
-footer p{font-size:0.75rem;color:var(--dim);margin-bottom:0.5rem}
-footer a{color:var(--gold-dim);transition:0.3s}
-footer a:hover{color:var(--gold)}
+.city-card .country-badge.usa { background: rgba(37,99,235,0.2); color: #60a5fa; }
+.city-card .country-badge.can { background: rgba(239,68,68,0.2); color: #f87171; }
+.city-card .country-badge.mex { background: rgba(34,197,94,0.2); color: #4ade80; }
+.city-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.city-card .stadium { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px; }
+.city-card .capacity {
+  font-size: 0.8rem; color: var(--text-muted);
+  display: flex; align-items: center; gap: 6px;
+}
+.city-card .matches-tag {
+  display: inline-block; margin-top: 8px;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(212,168,67,0.1); color: var(--gold);
+  font-size: 0.75rem; font-weight: 600;
+}
 
-/* ===================== ANIMATIONS ===================== */
-.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}
-.reveal-delay-2{transition-delay:0.2s}
-.reveal-delay-3{transition-delay:0.3s}
-.reveal-delay-4{transition-delay:0.4s}
+/* ===== Players ===== */
+.players-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.player-card { text-align: center; }
+.player-card .player-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; margin: 0 auto 12px;
+}
+.player-card .player-name { font-weight: 700; font-size: 1rem; margin-bottom: 2px; }
+.player-card .player-country { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px; }
+.player-card .player-position {
+  display: inline-block; padding: 2px 10px; border-radius: 100px;
+  background: rgba(255,255,255,0.05); color: var(--text-muted);
+  font-size: 0.75rem;
+}
 
-/* ===================== RESPONSIVE ===================== */
-@media(max-width:768px){
-  section{padding:4rem 1.25rem}
-  .hero-stats{gap:1.5rem}
-  .countdown{gap:0.75rem}
-  .countdown-item{min-width:65px;padding:0.75rem 0.5rem}
-  .groups-grid,.odds-grid,.cities-grid,.players-grid{grid-template-columns:1fr}
+/* ===== History ===== */
+.history-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.history-card { display: flex; align-items: center; gap: 16px; }
+.history-card .trophy { font-size: 2rem; flex-shrink: 0; }
+.history-card .country { font-weight: 700; font-size: 1.05rem; }
+.history-card .years { font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px; }
+.history-card .count {
+  margin-left: auto; font-size: 1.5rem; font-weight: 800;
+  color: var(--gold);
+}
+
+/* ===== Broadcast ===== */
+.broadcast-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.broadcast-card { display: flex; align-items: center; gap: 16px; }
+.broadcast-card .icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(212,168,67,0.1); display: flex;
+  align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.broadcast-card h3 { font-size: 1rem; font-weight: 700; }
+.broadcast-card p { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* ===== Footer ===== */
+footer {
+  text-align: center; padding: 40px 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted); font-size: 0.85rem;
+}
+
+/* ===== Animations ===== */
+.fade-in {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(10,10,18,0.95); padding: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-toggle { display: block; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .countdown { gap: 8px; }
+  .countdown-item { min-width: 70px; padding: 12px 16px; }
+  .countdown-item .number { font-size: 1.8rem; }
+  section { padding: 60px 16px; }
+  .schedule-match { grid-template-columns: 1fr; text-align: center; gap: 4px; padding: 12px 16px; }
+  .schedule-match .vs { margin: 4px auto; }
+}
+@media (max-width: 480px) {
+  .groups-grid { grid-template-columns: 1fr; }
+  .odds-grid { grid-template-columns: repeat(2, 1fr); }
+  .cities-grid { grid-template-columns: 1fr; }
+  .players-grid { grid-template-columns: repeat(2, 1fr); }
+  .history-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- ==================== NAVIGATION ==================== -->
+<!-- Navigation -->
 <nav id="navbar">
   <div class="nav-inner">
-    <div class="nav-logo">WC26<span>世界杯</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">首页</a></li>
-      <li><a href="#schedule">赛程</a></li>
-      <li><a href="#groups">分组</a></li>
-      <li><a href="#favorites">热门</a></li>
-      <li><a href="#cities">城市</a></li>
-      <li><a href="#players">球星</a></li>
-      <li><a href="#history">历史</a></li>
-      <li><a href="#broadcast">转播</a></li>
-    </ul>
-    <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <span></span><span></span><span></span>
+    <div class="nav-logo">🏆 2026 世界杯</div>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">首页</a>
+      <a href="#schedule">赛程</a>
+      <a href="#groups">分组</a>
+      <a href="#odds">热门</a>
+      <a href="#cities">城市</a>
+      <a href="#players">球星</a>
+      <a href="#history">历史</a>
+      <a href="#broadcast">转播</a>
     </div>
   </div>
 </nav>
 
-<!-- ==================== HERO ==================== -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="light-beam"></div>
+    <div class="light-beam"></div>
+    <div class="light-beam"></div>
+    <div class="light-beam"></div>
+    <div class="light-beam"></div>
+    <div class="light-beam"></div>
+  </div>
   <div class="hero-content">
-    <div class="hero-badge reveal">FIFA WORLD CUP™</div>
-    <h1 class="reveal reveal-delay-1">2026 世界杯</h1>
-    <p class="hero-subtitle reveal reveal-delay-2">2026年6月11日 — 7月19日</p>
-    <p class="hero-hosts reveal reveal-delay-3">🇺🇸<span>美国</span> · 🇨🇦<span>加拿大</span> · 🇲🇽<span>墨西哥</span></p>
-
-    <div class="countdown reveal reveal-delay-3" id="countdown">
-      <div class="countdown-item"><div class="num" id="cd-days">--</div><div class="label">天</div></div>
-      <div class="countdown-item"><div class="num" id="cd-hours">--</div><div class="label">时</div></div>
-      <div class="countdown-item"><div class="num" id="cd-mins">--</div><div class="label">分</div></div>
-      <div class="countdown-item"><div class="num" id="cd-secs">--</div><div class="label">秒</div></div>
+    <div class="hero-badge">🏟️ 美国 · 加拿大 · 墨西哥 联合主办</div>
+    <h1 class="hero-title">
+      <span class="gold">2026 FIFA</span><br>世界杯
+    </h1>
+    <p class="hero-subtitle">首届48支球队参赛，16座主办城市，39天，104场巅峰对决</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item"><div class="number" id="cd-days">--</div><div class="label">天</div></div>
+      <div class="countdown-item"><div class="number" id="cd-hours">--</div><div class="label">时</div></div>
+      <div class="countdown-item"><div class="number" id="cd-mins">--</div><div class="label">分</div></div>
+      <div class="countdown-item"><div class="number" id="cd-secs">--</div><div class="label">秒</div></div>
     </div>
-
-    <div class="hero-stats reveal reveal-delay-4">
-      <div class="hero-stat"><div class="val"><em>48</em></div><div class="desc">支参赛队</div></div>
-      <div class="hero-stat"><div class="val"><em>104</em></div><div class="desc">场比赛</div></div>
-      <div class="hero-stat"><div class="val"><em>39</em></div><div class="desc">个比赛日</div></div>
-      <div class="hero-stat"><div class="val"><em>16</em></div><div class="desc">座主办城市</div></div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="value">48</div><div class="desc">参赛球队</div></div>
+      <div class="hero-stat"><div class="value">104</div><div class="desc">比赛场次</div></div>
+      <div class="hero-stat"><div class="value">39</div><div class="desc">比赛天数</div></div>
+      <div class="hero-stat"><div class="value">16</div><div class="desc">主办城市</div></div>
     </div>
   </div>
 </section>
 
-<!-- ==================== SCHEDULE ==================== -->
+<!-- Schedule -->
 <section id="schedule">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Fixtures</div>
-      <h2>赛程概览</h2>
-      <div class="section-divider"></div>
-      <p>从阿兹特克体育场的开幕战到纽约大都会体育场的决赛</p>
-    </div>
-    <div class="schedule-grid">
-      <div class="match-card featured reveal">
-        <div class="match-team"><span class="flag">🇲🇽</span>墨西哥</div>
-        <div class="match-center">
-          <div class="tag tag-knockout">开幕战</div>
-          <div class="date">6月11日</div>
-          <div class="venue">阿兹特克体育场 · 墨西哥城</div>
-        </div>
-        <div class="match-team">南非<span class="flag">🇿🇦</span></div>
-      </div>
-      <div class="match-card reveal">
-        <div class="match-team"><span class="flag">🇺🇸</span>美国</div>
-        <div class="match-center">
-          <div class="tag tag-group">小组赛 D</div>
-          <div class="date">6月</div>
-          <div class="venue">待定</div>
-        </div>
-        <div class="match-team">巴拉圭<span class="flag">🇵🇾</span></div>
-      </div>
-      <div class="match-card reveal">
-        <div class="match-team"><span class="flag">🇧🇷</span>巴西</div>
-        <div class="match-center">
-          <div class="tag tag-group">小组赛 C</div>
-          <div class="date">6月</div>
-          <div class="venue">待定</div>
-        </div>
-        <div class="match-team">摩洛哥<span class="flag">🇲🇦</span></div>
-      </div>
-      <div class="match-card reveal">
-        <div class="match-team"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>英格兰</div>
-        <div class="match-center">
-          <div class="tag tag-group">小组赛 L</div>
-          <div class="date">6月17日</div>
-          <div class="venue">待定 · 2018半决赛重演</div>
-        </div>
-        <div class="match-team">克罗地亚<span class="flag">🇭🇷</span></div>
-      </div>
-      <div class="match-card reveal">
-        <div class="match-team"><span class="flag">🇫🇷</span>法国</div>
-        <div class="match-center">
-          <div class="tag tag-group">小组赛 I</div>
-          <div class="date">6月26日</div>
-          <div class="venue">待定</div>
-        </div>
-        <div class="match-team">挪威<span class="flag">🇳🇴</span></div>
-      </div>
-      <div class="match-card featured reveal">
-        <div class="match-team"><span class="flag">🇺🇸</span>TBD</div>
-        <div class="match-center">
-          <div class="tag tag-knockout">半决赛</div>
-          <div class="date">7月14日</div>
-          <div class="venue">AT&T体育场 · 达拉斯</div>
-        </div>
-        <div class="match-team">TBD<span class="flag">❓</span></div>
-      </div>
-      <div class="match-card featured reveal">
-        <div class="match-team"><span class="flag">🇺🇸</span>TBD</div>
-        <div class="match-center">
-          <div class="tag tag-knockout">半决赛</div>
-          <div class="date">7月15日</div>
-          <div class="venue">Mercedes-Benz体育场 · 亚特兰大</div>
-        </div>
-        <div class="match-team">TBD<span class="flag">❓</span></div>
-      </div>
-      <div class="match-card featured reveal">
-        <div class="match-team"><span class="flag">❓</span>TBD</div>
-        <div class="match-center">
-          <div class="tag tag-knockout">三四名决赛</div>
-          <div class="date">7月18日</div>
-          <div class="venue">Hard Rock体育场 · 迈阿密</div>
-        </div>
-        <div class="match-team">TBD<span class="flag">❓</span></div>
-      </div>
-      <div class="match-card featured reveal" style="border-width:2px">
-        <div class="match-team"><span class="flag">❓</span>TBD</div>
-        <div class="match-center">
-          <div class="tag tag-knockout">🏆 决赛</div>
-          <div class="date">7月19日</div>
-          <div class="venue">MetLife体育场 · 纽约</div>
-        </div>
-        <div class="match-team">TBD<span class="flag">❓</span></div>
-      </div>
-    </div>
+  <div class="section-header fade-in">
+    <h2>📅 <span class="accent">赛程</span>安排</h2>
+    <p>从开幕战到决赛，39天精彩不间断</p>
   </div>
+  <div class="schedule-grid" id="scheduleGrid"></div>
 </section>
 
-<!-- ==================== GROUPS ==================== -->
+<!-- Groups -->
 <section id="groups">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Group Stage</div>
-      <h2>小组赛分组</h2>
-      <div class="section-divider"></div>
-      <p>12个小组，每组4队，小组前二及8个最佳第三晋级淘汰赛</p>
-    </div>
-    <div class="groups-grid" id="groupsGrid"></div>
+  <div class="section-header fade-in">
+    <h2>📋 小组<span class="accent">分组</span></h2>
+    <p>12个小组，48支球队，小组前二及8个最佳第三名晋级</p>
   </div>
+  <div class="groups-grid" id="groupsGrid"></div>
 </section>
 
-<!-- ==================== FAVORITES ==================== -->
-<section id="favorites">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Championship Odds</div>
-      <h2>夺冠热门</h2>
-      <div class="section-divider"></div>
-      <p>基于模型赔率的夺冠概率排名</p>
-    </div>
-    <div class="odds-grid" id="oddsGrid"></div>
+<!-- Odds -->
+<section id="odds">
+  <div class="section-header fade-in">
+    <h2>🏆 夺冠<span class="accent">热门</span></h2>
+    <p>各支球队的夺冠赔率</p>
   </div>
+  <div class="odds-grid" id="oddsGrid"></div>
 </section>
 
-<!-- ==================== CITIES ==================== -->
+<!-- Cities -->
 <section id="cities">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Host Cities</div>
-      <h2>主办城市</h2>
-      <div class="section-divider"></div>
-      <p>横跨北美三大国的16座主办城市</p>
-    </div>
-    <div class="cities-grid" id="citiesGrid"></div>
+  <div class="section-header fade-in">
+    <h2>🌆 主办<span class="accent">城市</span></h2>
+    <p>横跨北美三大国的16座主办城市</p>
   </div>
+  <div class="cities-grid" id="citiesGrid"></div>
 </section>
 
-<!-- ==================== PLAYERS ==================== -->
+<!-- Players -->
 <section id="players">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Star Players</div>
-      <h2>球星聚焦</h2>
-      <div class="section-divider"></div>
-      <p>本届世界杯最值得关注的超级球星</p>
-    </div>
-    <div class="players-grid" id="playersGrid"></div>
+  <div class="section-header fade-in">
+    <h2>⭐ 焦点<span class="accent">球星</span></h2>
+    <p>世界顶级球员齐聚北美</p>
   </div>
+  <div class="players-grid" id="playersGrid"></div>
 </section>
 
-<!-- ==================== HISTORY ==================== -->
+<!-- History -->
 <section id="history">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Past Champions</div>
-      <h2>历届冠军</h2>
-      <div class="section-divider"></div>
-      <p>22届世界杯，8个冠军国家</p>
-    </div>
-    <div class="history-list" id="historyList"></div>
+  <div class="section-header fade-in">
+    <h2>📜 冠军<span class="accent">历史</span></h2>
+    <p>22届世界杯，8个冠军国家</p>
   </div>
+  <div class="history-grid" id="historyGrid"></div>
 </section>
 
-<!-- ==================== BROADCAST ==================== -->
+<!-- Broadcast -->
 <section id="broadcast">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="overline">Broadcast</div>
-      <h2>转播信息</h2>
-      <div class="section-divider"></div>
-      <p>中国地区转播平台及观赛时间指南</p>
-    </div>
-    <div class="broadcast-grid">
-      <div class="broadcast-card reveal">
-        <span class="icon">📺</span>
-        <h3>CCTV5</h3>
-        <p>中央电视台体育频道，全程免费直播精选场次</p>
-        <div class="highlight-text">传统电视首选</div>
-      </div>
-      <div class="broadcast-card reveal">
-        <span class="icon">📱</span>
-        <h3>咪咕视频</h3>
-        <p>中国移动旗下平台，全部104场比赛直播</p>
-        <div class="highlight-text">全场次覆盖</div>
-      </div>
-      <div class="broadcast-card reveal">
-        <span class="icon">🕐</span>
-        <h3>观赛时间</h3>
-        <p>多数比赛在北京时间早上6点至中午12点之间</p>
-        <div class="highlight-text">对应北美晚间黄金档</div>
-      </div>
-    </div>
+  <div class="section-header fade-in">
+    <h2>📺 观赛<span class="accent">指南</span></h2>
+    <p>中国大陆地区转播平台与观赛时间参考</p>
   </div>
+  <div class="broadcast-grid" id="broadcastGrid"></div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- Footer -->
 <footer>
-  <div class="logo">WC26</div>
-  <p>数据来源：<a href="https://worldcup2026cn.com" target="_blank" rel="noopener">worldcup2026cn.com</a></p>
-  <p>FIFA World Cup™ 是国际足联的注册商标。本站仅为信息展示，与国际足联无关。</p>
-  <p style="margin-top:1rem;color:var(--dim);font-size:0.65rem">© 2026 World Cup Info · Built with ⚽</p>
+  <p>⚽ 本站仅为信息展示，与国际足联（FIFA）无关。FIFA World Cup™ 是国际足联的注册商标。</p>
+  <p style="margin-top: 8px;">© 2026 World Cup Info Site · MIT License</p>
 </footer>
 
 <script>
-/* ==================== DATA ==================== */
+// ===== DATA =====
+
 const GROUPS = [
-  {letter:'A',teams:[{f:'🇲🇽',n:'墨西哥'},{f:'🇰🇷',n:'韩国'},{f:'🇿🇦',n:'南非'},{f:'🇪🇺',n:'欧洲附加赛D',p:1}]},
-  {letter:'B',teams:[{f:'🇨🇦',n:'加拿大'},{f:'🇨🇭',n:'瑞士'},{f:'🇶🇦',n:'卡塔尔'},{f:'🇪🇺',n:'欧洲附加赛A',p:1}]},
-  {letter:'C',teams:[{f:'🇧🇷',n:'巴西'},{f:'🇲🇦',n:'摩洛哥'},{f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',n:'苏格兰'},{f:'🇭🇹',n:'海地'}]},
-  {letter:'D',teams:[{f:'🇺🇸',n:'美国'},{f:'🇦🇺',n:'澳大利亚'},{f:'🇵🇾',n:'巴拉圭'},{f:'🇪🇺',n:'欧洲附加赛C',p:1}]},
-  {letter:'E',teams:[{f:'🇩🇪',n:'德国'},{f:'🇪🇨',n:'厄瓜多尔'},{f:'🇨🇮',n:'科特迪瓦'},{f:'🇨🇼',n:'库拉索'}]},
-  {letter:'F',teams:[{f:'🇳🇱',n:'荷兰'},{f:'🇯🇵',n:'日本'},{f:'🇹🇳',n:'突尼斯'},{f:'🇪🇺',n:'欧洲附加赛B',p:1}]},
-  {letter:'G',teams:[{f:'🇧🇪',n:'比利时'},{f:'🇮🇷',n:'伊朗'},{f:'🇪🇬',n:'埃及'},{f:'🇳🇿',n:'新西兰'}]},
-  {letter:'H',teams:[{f:'🇪🇸',n:'西班牙'},{f:'🇺🇾',n:'乌拉圭'},{f:'🇸🇦',n:'沙特阿拉伯'},{f:'🇨🇻',n:'佛得角'}]},
-  {letter:'I',teams:[{f:'🇫🇷',n:'法国'},{f:'🇸🇳',n:'塞内加尔'},{f:'🇳🇴',n:'挪威'},{f:'🌍',n:'洲际附加赛2',p:1}]},
-  {letter:'J',teams:[{f:'🇦🇷',n:'阿根廷'},{f:'🇦🇹',n:'奥地利'},{f:'🇩🇿',n:'阿尔及利亚'},{f:'🇯🇴',n:'约旦'}]},
-  {letter:'K',teams:[{f:'🇵🇹',n:'葡萄牙'},{f:'🇨🇴',n:'哥伦比亚'},{f:'🇺🇿',n:'乌兹别克斯坦'},{f:'🌍',n:'洲际附加赛1',p:1}]},
-  {letter:'L',teams:[{f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',n:'英格兰'},{f:'🇭🇷',n:'克罗地亚'},{f:'🇵🇦',n:'巴拿马'},{f:'🇬🇭',n:'加纳'}]},
+  { letter: 'A', teams: [
+    { name: '墨西哥', flag: '🇲🇽', conf: 'CONCACAF' },
+    { name: '德国', flag: '🇩🇪', conf: 'UEFA' },
+    { name: '卡塔尔', flag: '🇶🇦', conf: 'AFC' },
+    { name: '新西兰', flag: '🇳🇿', conf: 'OFC' },
+  ]},
+  { letter: 'B', teams: [
+    { name: '加拿大', flag: '🇨🇦', conf: 'CONCACAF' },
+    { name: '摩洛哥', flag: '🇲🇦', conf: 'CAF' },
+    { name: '乌兹别克斯坦', flag: '🇺🇿', conf: 'AFC' },
+    { name: '附加赛B', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'C', teams: [
+    { name: '美国', flag: '🇺🇸', conf: 'CONCACAF' },
+    { name: '突尼斯', flag: '🇹🇳', conf: 'CAF' },
+    { name: '附加赛A', flag: '❓', conf: 'TBD' },
+    { name: '附加赛C/D', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'D', teams: [
+    { name: '阿根廷', flag: '🇦🇷', conf: 'CONMEBOL' },
+    { name: '尼日利亚', flag: '🇳🇬', conf: 'CAF' },
+    { name: '韩国', flag: '🇰🇷', conf: 'AFC' },
+    { name: '附加赛C/D', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'E', teams: [
+    { name: '法国', flag: '🇫🇷', conf: 'UEFA' },
+    { name: '哥伦比亚', flag: '🇨🇴', conf: 'CONMEBOL' },
+    { name: '巴拉圭', flag: '🇵🇾', conf: 'CONMEBOL' },
+    { name: '附加赛A', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'F', teams: [
+    { name: '西班牙', flag: '🇪🇸', conf: 'UEFA' },
+    { name: '喀麦隆', flag: '🇨🇲', conf: 'CAF' },
+    { name: '沙特阿拉伯', flag: '🇸🇦', conf: 'AFC' },
+    { name: '附加赛B', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'G', teams: [
+    { name: '巴西', flag: '🇧🇷', conf: 'CONMEBOL' },
+    { name: '科特迪瓦', flag: '🇨🇮', conf: 'CAF' },
+    { name: '日本', flag: '🇯🇵', conf: 'AFC' },
+    { name: '附加赛A', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'H', teams: [
+    { name: '英格兰', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', conf: 'UEFA' },
+    { name: '厄瓜多尔', flag: '🇪🇨', conf: 'CONMEBOL' },
+    { name: '塞内加尔', flag: '🇸🇳', conf: 'CAF' },
+    { name: '附加赛C/D', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'I', teams: [
+    { name: '葡萄牙', flag: '🇵🇹', conf: 'UEFA' },
+    { name: '伊朗', flag: '🇮🇷', conf: 'AFC' },
+    { name: '加纳', flag: '🇬🇭', conf: 'CAF' },
+    { name: '附加赛B', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'J', teams: [
+    { name: '荷兰', flag: '🇳🇱', conf: 'UEFA' },
+    { name: '乌拉圭', flag: '🇺🇾', conf: 'CONMEBOL' },
+    { name: '埃及', flag: '🇪🇬', conf: 'CAF' },
+    { name: '附加赛A', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'K', teams: [
+    { name: '比利时', flag: '🇧🇪', conf: 'UEFA' },
+    { name: '澳大利亚', flag: '🇦🇺', conf: 'AFC' },
+    { name: '秘鲁', flag: '🇵🇪', conf: 'CONMEBOL' },
+    { name: '附加赛C/D', flag: '❓', conf: 'TBD' },
+  ]},
+  { letter: 'L', teams: [
+    { name: '意大利', flag: '🇮🇹', conf: 'UEFA' },
+    { name: '克罗地亚', flag: '🇭🇷', conf: 'UEFA' },
+    { name: '阿尔及利亚', flag: '🇩🇿', conf: 'CAF' },
+    { name: '附加赛B', flag: '❓', conf: 'TBD' },
+  ]},
 ];
 
-const FAVORITES = [
-  {flag:'🇪🇸',team:'西班牙',odd:5.5,pct:17.0},
-  {flag:'🇫🇷',team:'法国',odd:6.5,pct:14.1},
-  {flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',team:'英格兰',odd:7.0,pct:11.8},
-  {flag:'🇦🇷',team:'阿根廷',odd:9.0,pct:8.7},
-  {flag:'🇧🇷',team:'巴西',odd:8.0,pct:5.6},
-  {flag:'🇩🇪',team:'德国',odd:13.0,pct:7.1},
-  {flag:'🇵🇹',team:'葡萄牙',odd:15.0,pct:6.6},
-  {flag:'🇳🇱',team:'荷兰',odd:15.0,pct:4.0},
-  {flag:'🇧🇪',team:'比利时',odd:20.0,pct:2.5},
-  {flag:'🇭🇷',team:'克罗地亚',odd:25.0,pct:2.0},
-  {flag:'🇺🇾',team:'乌拉圭',odd:25.0,pct:1.8},
-  {flag:'🇲🇦',team:'摩洛哥',odd:25.0,pct:1.5},
+const SCHEDULE = [
+  { phase: '🏟️ 开幕战', date: '2026年6月11日', highlight: true, venue: '阿兹特克体育场 · 墨西哥城',
+    matches: [{ teamA: '墨西哥', teamB: '待定' }] },
+  { phase: '⚽ 小组赛 · 第一轮', date: '2026年6月12-15日', venue: '16座主办城市',
+    matches: [
+      { teamA: '加拿大', teamB: '摩洛哥' },
+      { teamA: '美国', teamB: '突尼斯' },
+      { teamA: '阿根廷', teamB: '尼日利亚' },
+      { teamA: '法国', teamB: '哥伦比亚' },
+    ]},
+  { phase: '⚽ 小组赛 · 第二轮', date: '2026年6月18-21日', venue: '16座主办城市',
+    matches: [
+      { teamA: '巴西', teamB: '科特迪瓦' },
+      { teamA: '英格兰', teamB: '厄瓜多尔' },
+      { teamA: '葡萄牙', teamB: '伊朗' },
+      { teamA: '西班牙', teamB: '喀麦隆' },
+    ]},
+  { phase: '⚽ 小组赛 · 第三轮', date: '2026年6月24-26日', venue: '16座主办城市',
+    matches: [
+      { teamA: '荷兰', teamB: '乌拉圭' },
+      { teamA: '比利时', teamB: '澳大利亚' },
+      { teamA: '意大利', teamB: '克罗地亚' },
+      { teamA: '德国', teamB: '卡塔尔' },
+    ]},
+  { phase: '🔢 小组排名确定', date: '2026年6月27-28日', venue: '最佳第三名晋级',
+    matches: [
+      { teamA: '32支球队晋级', teamB: '16支淘汰' },
+    ]},
+  { phase: '🔥 32强淘汰赛', date: '2026年6月29日 — 7月1日', venue: '8场比赛',
+    matches: [
+      { teamA: 'A1', teamB: 'B3/C3/D3' },
+      { teamA: 'B1', teamB: 'A3/C3/D3' },
+      { teamA: 'C1', teamB: 'A3/B3/D3' },
+      { teamA: 'D1', teamB: 'A3/B3/C3' },
+    ]},
+  { phase: '🔥 16强淘汰赛', date: '2026年7月3日 — 7月5日', venue: '8场比赛',
+    matches: [
+      { teamA: '胜者1', teamB: '胜者2' },
+      { teamA: '胜者3', teamB: '胜者4' },
+      { teamA: '胜者5', teamB: '胜者6' },
+      { teamA: '胜者7', teamB: '胜者8' },
+    ]},
+  { phase: '⚡ 四分之一决赛', date: '2026年7月9日 — 7月10日', venue: '4场比赛',
+    matches: [
+      { teamA: 'QF1', teamB: 'QF2' },
+      { teamA: 'QF3', teamB: 'QF4' },
+    ]},
+  { phase: '🏟️ 半决赛', date: '2026年7月14日 — 7月15日', venue: '待定',
+    matches: [
+      { teamA: 'SF1', teamB: 'SF2' },
+      { teamA: 'SF3', teamB: 'SF4' },
+    ]},
+  { phase: '🥉 三四名决赛', date: '2026年7月18日', venue: '待定',
+    matches: [
+      { teamA: '半决赛负者1', teamB: '半决赛负者2' },
+    ]},
+  { phase: '🏆 决赛', date: '2026年7月19日', highlight: true, venue: 'MetLife体育场 · 纽约/新泽西',
+    matches: [{ teamA: '决赛队伍1', teamB: '决赛队伍2' }] },
+];
+
+const ODDS = [
+  { rank: 1, flag: '🇫🇷', team: '法国', odds: '6.5' },
+  { rank: 2, flag: '🇧🇷', team: '巴西', odds: '7.0' },
+  { rank: 3, flag: '🇪🇸', team: '西班牙', odds: '7.5' },
+  { rank: 4, flag: '🇦🇷', team: '阿根廷', odds: '8.0' },
+  { rank: 5, flag: '🇩🇪', team: '德国', odds: '9.0' },
+  { rank: 6, flag: '🇬🇧', team: '英格兰', odds: '10.0' },
+  { rank: 7, flag: '🇵🇹', team: '葡萄牙', odds: '11.0' },
+  { rank: 8, flag: '🇳🇱', team: '荷兰', odds: '13.0' },
+  { rank: 9, flag: '🇮🇹', team: '意大利', odds: '15.0' },
+  { rank: 10, flag: '🇧🇪', team: '比利时', odds: '18.0' },
+  { rank: 11, flag: '🇺🇸', team: '美国', odds: '26.0' },
+  { rank: 12, flag: '🇲🇽', team: '墨西哥', odds: '34.0' },
 ];
 
 const CITIES = [
-  {name:'纽约/新泽西',flag:'🇺🇸',stadium:'MetLife体育场',cap:82500,role:'决赛',hl:1},
-  {name:'达拉斯',flag:'🇺🇸',stadium:'AT&T体育场',cap:80000,role:'半决赛',hl:1},
-  {name:'亚特兰大',flag:'🇺🇸',stadium:'Mercedes-Benz体育场',cap:71000,role:'半决赛',hl:1},
-  {name:'迈阿密',flag:'🇺🇸',stadium:'Hard Rock体育场',cap:65000,role:'三四名决赛',hl:1},
-  {name:'墨西哥城',flag:'🇲🇽',stadium:'阿兹特克体育场',cap:87523,role:'开幕战',hl:1},
-  {name:'洛杉矶',flag:'🇺🇸',stadium:'SoFi体育场',cap:70240,role:'小组赛'},
-  {name:'休斯顿',flag:'🇺🇸',stadium:'NRG体育场',cap:72220,role:'小组赛'},
-  {name:'堪萨斯城',flag:'🇺🇸',stadium:'Arrowhead体育场',cap:76416,role:'小组赛'},
-  {name:'波士顿',flag:'🇺🇸',stadium:'Gillette体育场',cap:65878,role:'小组赛'},
-  {name:'费城',flag:'🇺🇸',stadium:'Lincoln Financial球场',cap:69176,role:'小组赛'},
-  {name:'西雅图',flag:'🇺🇸',stadium:'Lumen球场',cap:69000,role:'小组赛'},
-  {name:'旧金山湾区',flag:'🇺🇸',stadium:"Levi's体育场",cap:68500,role:'小组赛'},
-  {name:'多伦多',flag:'🇨🇦',stadium:'BMO球场',cap:45500,role:'小组赛'},
-  {name:'温哥华',flag:'🇨🇦',stadium:'BC Place体育场',cap:54500,role:'小组赛'},
-  {name:'瓜达拉哈拉',flag:'🇲🇽',stadium:'Akron体育场',cap:49850,role:'小组赛'},
-  {name:'蒙特雷',flag:'🇲🇽',stadium:'BBVA体育场',cap:53500,role:'小组赛'},
+  { city: '纽约/新泽西', stadium: 'MetLife体育场', capacity: '82,500', country: 'USA', flag: '🇺🇸', matches: '8场（含决赛）' },
+  { city: '洛杉矶', stadium: 'SoFi体育场', capacity: '70,240', country: 'USA', flag: '🇺🇸', matches: '8场（含半决赛）' },
+  { city: '达拉斯', stadium: 'AT&T体育场', capacity: '80,000', country: 'USA', flag: '🇺🇸', matches: '8场（含半决赛）' },
+  { city: '堪萨斯城', stadium: 'GEHA Arrowhead体育场', capacity: '76,416', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '亚特兰大', stadium: '梅赛德斯-奔驰体育场', capacity: '71,000', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '休斯顿', stadium: 'NRG体育场', capacity: '72,220', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '费城', stadium: '林肯金融球场', capacity: '69,796', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '旧金山湾区', stadium: '李维斯体育场', capacity: '68,500', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '西雅图', stadium: 'Lumen Field', capacity: '68,740', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '波士顿', stadium: '吉列体育场', capacity: '65,878', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '迈阿密', stadium: 'Hard Rock体育场', capacity: '64,767', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '华盛顿', stadium: 'FedExField', capacity: '67,617', country: 'USA', flag: '🇺🇸', matches: '7场' },
+  { city: '墨西哥城', stadium: '阿兹特克体育场', capacity: '87,523', country: 'MEX', flag: '🇲🇽', matches: '8场（含开幕战）' },
+  { city: '蒙特雷', stadium: 'BBVA体育场', capacity: '53,500', country: 'MEX', flag: '🇲🇽', matches: '7场' },
+  { city: '瓜达拉哈拉', stadium: '阿克伦体育场', capacity: '49,850', country: 'MEX', flag: '🇲🇽', matches: '7场' },
+  { city: '多伦多', stadium: 'BMO Field', capacity: '45,500', country: 'CAN', flag: '🇨🇦', matches: '6场' },
+  { city: '温哥华', stadium: 'BC Place', capacity: '54,500', country: 'CAN', flag: '🇨🇦', matches: '7场' },
 ];
 
 const PLAYERS = [
-  {emoji:'⚡',name:'姆巴佩 Mbappé',detail:'法国 · 前锋',country:'🇫🇷 法国'},
-  {emoji:'🐐',name:'梅西 Messi',detail:'阿根廷 · 前锋 · 38岁',country:'🇦🇷 阿根廷'},
-  {emoji:'🤖',name:'哈兰德 Haaland',detail:'挪威 · 前锋',country:'🇳🇴 挪威'},
-  {emoji:'✨',name:'亚马尔 Yamal',detail:'西班牙 · 边锋 · €2.87亿',country:'🇪🇸 西班牙'},
-  {emoji:'🔮',name:'贝林厄姆 Bellingham',detail:'英格兰 · 中场',country:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰'},
-  {emoji:'🌟',name:'维尼修斯 Vini Jr.',detail:'巴西 · 前锋',country:'🇧🇷 巴西'},
-  {emoji:'👑',name:'C罗 Ronaldo',detail:'葡萄牙 · 前锋 · 41岁',country:'🇵🇹 葡萄牙'},
-  {emoji:'🎯',name:'穆西亚拉 Musiala',detail:'德国 · 中场/前锋',country:'🇩🇪 德国'},
-  {emoji:'🦁',name:'凯恩 Kane',detail:'英格兰 · 前锋',country:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰'},
-  {emoji:'🎻',name:'莫德里奇 Modrić',detail:'克罗地亚 · 中场 · 40岁',country:'🇭🇷 克罗地亚'},
+  { name: '姆巴佩', country: '法国', flag: '🇫🇷', position: '前锋', emoji: '⚡' },
+  { name: '梅西', country: '阿根廷', flag: '🇦🇷', position: '前锋', emoji: '🐐' },
+  { name: '哈兰德', country: '挪威', flag: '🇳🇴', position: '前锋', emoji: '💪' },
+  { name: '维尼修斯', country: '巴西', flag: '🇧🇷', position: '前锋', emoji: '🔥' },
+  { name: '贝林厄姆', country: '英格兰', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', position: '中场', emoji: '🌟' },
+  { name: '亚马尔', country: '西班牙', flag: '🇪🇸', position: '前锋', emoji: '💫' },
+  { name: '萨卡', country: '英格兰', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', position: '前锋', emoji: '🎯' },
+  { name: '巴尔韦德', country: '乌拉圭', flag: '🇺🇾', position: '中场', emoji: '🚀' },
+  { name: '洛佩斯', country: '墨西哥', flag: '🇲🇽', position: '中场', emoji: '🇲🇽' },
+  { name: '普利西奇', country: '美国', flag: '🇺🇸', position: '前锋', emoji: '🇺🇸' },
 ];
 
 const HISTORY = [
-  {flag:'🇧🇷',name:'巴西',desc:'五星巴西 · 1958, 1962, 1970, 1994, 2002',count:5},
-  {flag:'🇩🇪',name:'德国',desc:'日耳曼战车 · 1954, 1974, 1990, 2014',count:4},
-  {flag:'🇮🇹',name:'意大利',desc:'蓝衣军团 · 1934, 1938, 1982, 2006',count:4},
-  {flag:'🇦🇷',name:'阿根廷',desc:'潘帕斯雄鹰 · 1978, 1986, 2022',count:3},
-  {flag:'🇫🇷',name:'法国',desc:'高卢雄鸡 · 1998, 2018',count:2},
-  {flag:'🇺🇾',name:'乌拉圭',desc:'天蓝军团 · 1930, 1950',count:2},
-  {flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'英格兰',desc:'三狮军团 · 1966',count:1},
-  {flag:'🇪🇸',name:'西班牙',desc:'斗牛士军团 · 2010',count:1},
+  { country: '巴西', flag: '🇧🇷', count: 5, years: '1958, 1962, 1970, 1994, 2002' },
+  { country: '德国', flag: '🇩🇪', count: 4, years: '1954, 1974, 1990, 2014' },
+  { country: '意大利', flag: '🇮🇹', count: 4, years: '1934, 1938, 1982, 2006' },
+  { country: '阿根廷', flag: '🇦🇷', count: 3, years: '1978, 1986, 2022' },
+  { country: '法国', flag: '🇫🇷', count: 2, years: '1998, 2018' },
+  { country: '乌拉圭', flag: '🇺🇾', count: 2, years: '1930, 1950' },
+  { country: '英格兰', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', count: 1, years: '1966' },
+  { country: '西班牙', flag: '🇪🇸', count: 1, years: '2010' },
 ];
 
-/* ==================== RENDER ==================== */
-function renderGroups(){
-  const g=document.getElementById('groupsGrid');
-  g.innerHTML=GROUPS.map((gr,i)=>`
-    <div class="group-card reveal" style="transition-delay:${i*0.05}s">
-      <div class="group-letter">GROUP ${gr.letter}</div>
-      <ul class="group-teams">
-        ${gr.teams.map(t=>`<li><span class="flag">${t.f}</span>${t.p?`<span class="placeholder">${t.n}</span>`:t.n}</li>`).join('')}
-      </ul>
-    </div>`).join('');
+const BROADCAST = [
+  { icon: '📺', name: 'CCTV5 / 央视频', desc: '中央电视台体育频道，部分关键场次免费直播' },
+  { icon: '📱', name: '咪咕视频', desc: '中国移动旗下平台，全场次直播支持' },
+  { icon: '🌐', name: 'FIFA+', desc: '国际足联官方流媒体平台（部分地区）' },
+  { icon: '⏰', name: '观赛时间', desc: '北美赛事，北京时间多为晚间至凌晨时段' },
+];
+
+// ===== RENDER FUNCTIONS =====
+
+function renderGroups() {
+  const grid = document.getElementById('groupsGrid');
+  grid.innerHTML = GROUPS.map(g => `
+    <div class="card group-card fade-in">
+      <h3><span class="group-letter">${g.letter}</span> 小组</h3>
+      ${g.teams.map(t => `
+        <div class="group-team">
+          <div class="team-flag">${t.flag}</div>
+          <div class="team-name">${t.name}</div>
+          <div class="team-conf">${t.conf}</div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
 }
 
-function renderOdds(){
-  const g=document.getElementById('oddsGrid');
-  const maxPct=FAVORITES[0].pct;
-  g.innerHTML=FAVORITES.map((o,i)=>`
-    <div class="odds-card reveal" style="transition-delay:${i*0.06}s">
-      <span class="rank">#${i+1}</span>
-      <span class="flag">${o.flag}</span>
-      <div class="team">${o.team}</div>
-      <div class="odd">${o.odd}</div>
-      <div class="bar" style="width:${(o.pct/maxPct*100).toFixed(0)}%"></div>
-    </div>`).join('');
-}
-
-function renderCities(){
-  const g=document.getElementById('citiesGrid');
-  g.innerHTML=CITIES.map((c,i)=>`
-    <div class="city-card${c.hl?' highlight':''} reveal" style="transition-delay:${i*0.05}s">
-      <span class="flag-icon">${c.flag}</span>
-      <h3>${c.name}</h3>
-      <div class="stadium">${c.stadium}</div>
-      <div class="capacity">容量 ${c.cap.toLocaleString()}</div>
-      <div class="role">${c.role}</div>
-    </div>`).join('');
-}
-
-function renderPlayers(){
-  const g=document.getElementById('playersGrid');
-  g.innerHTML=PLAYERS.map((p,i)=>`
-    <div class="player-card reveal" style="transition-delay:${i*0.06}s">
-      <span class="emoji">${p.emoji}</span>
-      <div class="name">${p.name}</div>
-      <div class="detail">${p.detail}</div>
-      <div class="country">${p.country}</div>
-    </div>`).join('');
-}
-
-function renderHistory(){
-  const g=document.getElementById('historyList');
-  g.innerHTML=HISTORY.map((h,i)=>`
-    <div class="history-item reveal" style="transition-delay:${i*0.08}s">
-      <div class="rank">${i+1}</div>
-      <div class="flag">${h.flag}</div>
-      <div class="info">
-        <div class="name">${h.name}</div>
-        <div class="desc">${h.desc}</div>
+function renderSchedule() {
+  const grid = document.getElementById('scheduleGrid');
+  grid.innerHTML = SCHEDULE.map((s, i) => `
+    <div class="schedule-phase ${i < 2 ? 'open' : ''} fade-in">
+      <div class="schedule-phase-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3>${s.phase}</h3>
+        <span class="toggle-icon">▼</span>
       </div>
-      <div class="count">${h.count}<br><small>次夺冠</small></div>
-    </div>`).join('');
+      <div class="schedule-matches">
+        <div class="schedule-match">
+          <span class="match-date">${s.date}</span>
+        </div>
+        ${s.matches.map(m => `
+          <div class="schedule-match ${s.highlight ? 'highlight' : ''}">
+            <div class="team">${m.teamA}</div>
+            <div class="vs">VS</div>
+            <div class="team">${m.teamB}</div>
+          </div>
+        `).join('')}
+        <div class="schedule-match">
+          <span class="venue">📍 ${s.venue}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
 }
 
-/* ==================== COUNTDOWN ==================== */
-function updateCountdown(){
-  const target=new Date('2026-06-11T00:00:00-06:00').getTime();
-  const now=Date.now();
-  const diff=Math.max(0,target-now);
-  const d=Math.floor(diff/86400000);
-  const h=Math.floor((diff%86400000)/3600000);
-  const m=Math.floor((diff%3600000)/60000);
-  const s=Math.floor((diff%60000)/1000);
-  document.getElementById('cd-days').textContent=d;
-  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
+function renderOdds() {
+  const grid = document.getElementById('oddsGrid');
+  grid.innerHTML = ODDS.map(o => `
+    <div class="card odd-card fade-in">
+      <div class="rank">#${o.rank}</div>
+      <div class="flag">${o.flag}</div>
+      <div class="team">${o.team}</div>
+      <div class="odds">1赔${o.odds}</div>
+    </div>
+  `).join('');
 }
 
-/* ==================== SCROLL REVEAL ==================== */
-function initReveal(){
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-  },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function renderCities() {
+  const grid = document.getElementById('citiesGrid');
+  const countryMap = { USA: '美国', MEX: '墨西哥', CAN: '加拿大' };
+  grid.innerHTML = CITIES.map(c => `
+    <div class="card city-card fade-in">
+      <span class="country-badge ${c.country.toLowerCase()}">${c.flag} ${countryMap[c.country]}</span>
+      <h3>${c.city}</h3>
+      <div class="stadium">${c.stadium}</div>
+      <div class="capacity">👥 容量 ${c.capacity}</div>
+      <span class="matches-tag">${c.matches}</span>
+    </div>
+  `).join('');
 }
 
-/* ==================== NAV SCROLL ==================== */
-function initNav(){
-  const nav=document.getElementById('navbar');
-  const links=document.querySelectorAll('.nav-links a');
-  const sections=document.querySelectorAll('section');
-  window.addEventListener('scroll',()=>{
-    nav.classList.toggle('scrolled',window.scrollY>50);
-    let current='';
-    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-200)current=s.id});
-    links.forEach(a=>{
-      a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+function renderPlayers() {
+  const grid = document.getElementById('playersGrid');
+  grid.innerHTML = PLAYERS.map(p => `
+    <div class="card player-card fade-in">
+      <div class="player-avatar">${p.emoji}</div>
+      <div class="player-name">${p.name}</div>
+      <div class="player-country">${p.flag} ${p.country}</div>
+      <div class="player-position">${p.position}</div>
+    </div>
+  `).join('');
+}
+
+function renderHistory() {
+  const grid = document.getElementById('historyGrid');
+  grid.innerHTML = HISTORY.map(h => `
+    <div class="card history-card fade-in">
+      <div class="trophy">🏆</div>
+      <div>
+        <div class="country">${h.flag} ${h.country}</div>
+        <div class="years">${h.years}</div>
+      </div>
+      <div class="count">${h.count}</div>
+    </div>
+  `).join('');
+}
+
+function renderBroadcast() {
+  const grid = document.getElementById('broadcastGrid');
+  grid.innerHTML = BROADCAST.map(b => `
+    <div class="card broadcast-card fade-in">
+      <div class="icon">${b.icon}</div>
+      <div>
+        <h3>${b.name}</h3>
+        <p>${b.desc}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== COUNTDOWN =====
+
+function updateCountdown() {
+  const kickoff = new Date('2026-06-11T12:00:00-06:00'); // Mexico City time
+  const now = new Date();
+  const diff = kickoff - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+}
+
+// ===== SCROLL ANIMATIONS =====
+
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  });
-  // close mobile nav on link click
-  links.forEach(a=>a.addEventListener('click',()=>{
-    document.getElementById('navLinks').classList.remove('open');
-  }));
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 }
 
-/* ==================== INIT ==================== */
-renderGroups();renderOdds();renderCities();renderPlayers();renderHistory();
-updateCountdown();setInterval(updateCountdown,1000);
-window.addEventListener('DOMContentLoaded',()=>{
-  initReveal();initNav();
-});
+// ===== NAV =====
+
+function initNav() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  const navbar = document.getElementById('navbar');
+
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+
+// ===== INIT =====
+
+function init() {
+  renderGroups();
+  renderSchedule();
+  renderOdds();
+  renderCities();
+  renderPlayers();
+  renderHistory();
+  renderBroadcast();
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Delay to let DOM settle, then init animations
+  requestAnimationFrame(() => {
+    initScrollAnimations();
+    initNav();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
