@@ -11,4 +11,5 @@ claude
 将claude.md改为中文
 点击预测按钮没有反应
 弹窗的预测按钮没有反应
+MatchDetail.vue预测按钮没有反应
 ```

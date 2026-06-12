@@ -1,11 +1,13 @@
 <template>
+  <!-- Backdrop (outside modal wrapper to avoid z-index conflicts) -->
   <div v-show="visible"
-       class="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-    <!-- Backdrop -->
-    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" @click="close" />
+       class="fixed inset-0 z-[9998] bg-black/70 backdrop-blur-sm"
+       @click="close" />
 
-    <!-- Modal -->
-    <div class="relative w-full max-w-lg bg-bg-card border border-border rounded-card shadow-card max-h-[90vh] overflow-y-auto z-10">
+  <!-- Modal content -->
+  <div v-show="visible"
+       class="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
+    <div class="pointer-events-auto w-full max-w-lg bg-bg-card border border-border rounded-card shadow-card max-h-[90vh] overflow-y-auto">
       <!-- Header -->
       <div class="sticky top-0 bg-bg-card/95 backdrop-blur border-b border-border px-6 py-4 flex items-center justify-between z-10">
         <h3 class="font-bold text-lg">{{ homeLabel }} vs {{ awayLabel }}</h3>
