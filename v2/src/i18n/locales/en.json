@@ -67,7 +67,8 @@
     "aiPrediction": "AI Prediction",
     "homeScore": "Home",
     "awayScore": "Away",
-    "predict": "Predict"
+    "predict": "Predict",
+    "predict1": "Predict Score"
   },
   "match": {
     "vs": "VS",

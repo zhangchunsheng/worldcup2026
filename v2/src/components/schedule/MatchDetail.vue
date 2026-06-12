@@ -86,7 +86,7 @@
                   :disabled="isPredicting"
                   class="w-full px-6 py-3 rounded-lg font-semibold text-sm border border-border text-gold hover:bg-gold/10 transition-all"
                   :class="{ 'opacity-40 cursor-not-allowed': isPredicting }">
-            🤖 {{ isPredicting ? t('common.loading') : t('prediction.predict') }}
+            🤖 {{ isPredicting ? t('common.loading') : t('prediction.predict1') }}
           </button>
 
           <p v-if="predictionError" class="text-red-400 text-xs text-center mt-2">{{ predictionError }}</p>

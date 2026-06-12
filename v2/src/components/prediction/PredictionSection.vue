@@ -34,7 +34,7 @@
       <button @click="$emit('predictAI')"
               :disabled="isPredicting"
               class="px-6 py-2 rounded-lg font-semibold text-sm border border-border text-gold hover:bg-gold/10 disabled:opacity-40 disabled:cursor-not-allowed transition-all">
-        🤖 {{ t('prediction.predict') }}
+        🤖 {{ t('prediction.predict1') }}
       </button>
     </div>
 

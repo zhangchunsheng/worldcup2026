@@ -67,7 +67,8 @@
     "aiPrediction": "AI 预测",
     "homeScore": "主队",
     "awayScore": "客队",
-    "predict": "预测"
+    "predict": "预测",
+    "predict1": "预测比分"
   },
   "match": {
     "vs": "VS",
