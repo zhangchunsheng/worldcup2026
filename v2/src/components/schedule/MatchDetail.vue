@@ -1,9 +1,8 @@
 <template>
   <div v-show="visible"
-       class="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-       @click.self="close">
+       class="fixed inset-0 z-[9999] flex items-center justify-center p-4">
     <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" @click="close" />
 
     <!-- Modal -->
     <div class="relative w-full max-w-lg bg-bg-card border border-border rounded-card shadow-card max-h-[90vh] overflow-y-auto z-10">
@@ -83,9 +82,10 @@
             </div>
           </div>
 
-          <button @click="submitAIPrediction"
+          <button @click.stop="submitAIPrediction"
                   :disabled="isPredicting"
-                  class="w-full px-6 py-3 rounded-lg font-semibold text-sm border border-border text-gold hover:bg-gold/10 disabled:opacity-40 disabled:cursor-not-allowed transition-all">
+                  class="w-full px-6 py-3 rounded-lg font-semibold text-sm border border-border text-gold hover:bg-gold/10 transition-all"
+                  :class="{ 'opacity-40 cursor-not-allowed': isPredicting }">
             🤖 {{ isPredicting ? t('common.loading') : t('prediction.predict') }}
           </button>
 
