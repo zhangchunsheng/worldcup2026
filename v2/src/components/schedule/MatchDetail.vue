@@ -72,7 +72,7 @@
         <div v-if="!isFinished" class="border-t border-border pt-4">
           <div class="flex items-center justify-between mb-4">
             <h4 class="font-bold text-sm">🤖 {{ t('prediction.title') }}</h4>
-            <AISwitchToggle :mode="predMode" @toggle="$emit('toggleMode')" />
+            <AISwitchToggle :mode="predMode" @toggle="$emit('toggle-mode')" />
           </div>
 
           <!-- Existing AI prediction -->
@@ -119,7 +119,7 @@ const props = defineProps({
   predictionError: { type: String, default: null },
 })
 
-const emit = defineEmits(['close', 'predictAI', 'toggleMode'])
+const emit = defineEmits(['close', 'predict-ai', 'toggle-mode'])
 
 const teamFlags = {
   MEX: '🇲🇽', RSA: '🇿🇦', KOR: '🇰🇷', CZE: '🇨🇿',
@@ -163,7 +163,7 @@ function close() {
 }
 
 function submitAIPrediction() {
-  emit('predictAI', props.match)
+  emit('predict-ai', props.match)
 }
 
 function formatTime(timeStr) {

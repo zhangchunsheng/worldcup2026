@@ -12,4 +12,5 @@ claude
 点击预测按钮没有反应
 弹窗的预测按钮没有反应
 MatchDetail.vue预测按钮没有反应
+Extraneous non-emits event listeners (predictAi) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the "emits" option
 ```
