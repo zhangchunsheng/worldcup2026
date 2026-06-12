@@ -1,14 +1,164 @@
 {
   "players": [
-    { "name": { "zh": "姆巴佩", "en": "Mbappé" }, "country": { "zh": "法国", "en": "France" }, "flag": "🇫🇷", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "⚡" },
-    { "name": { "zh": "梅西", "en": "Messi" }, "country": { "zh": "阿根廷", "en": "Argentina" }, "flag": "🇦🇷", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "🐐" },
-    { "name": { "zh": "哈兰德", "en": "Haaland" }, "country": { "zh": "挪威", "en": "Norway" }, "flag": "🇳🇴", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "💪" },
-    { "name": { "zh": "维尼修斯", "en": "Vinícius Jr." }, "country": { "zh": "巴西", "en": "Brazil" }, "flag": "🇧🇷", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "🔥" },
-    { "name": { "zh": "贝林厄姆", "en": "Bellingham" }, "country": { "zh": "英格兰", "en": "England" }, "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "position": { "zh": "中场", "en": "Midfielder" }, "emoji": "🌟" },
-    { "name": { "zh": "亚马尔", "en": "Yamal" }, "country": { "zh": "西班牙", "en": "Spain" }, "flag": "🇪🇸", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "💫" },
-    { "name": { "zh": "萨卡", "en": "Saka" }, "country": { "zh": "英格兰", "en": "England" }, "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "🎯" },
-    { "name": { "zh": "巴尔韦德", "en": "Valverde" }, "country": { "zh": "乌拉圭", "en": "Uruguay" }, "flag": "🇺🇾", "position": { "zh": "中场", "en": "Midfielder" }, "emoji": "🚀" },
-    { "name": { "zh": "洛佩斯", "en": "Orbelín Pineda" }, "country": { "zh": "墨西哥", "en": "Mexico" }, "flag": "🇲🇽", "position": { "zh": "中场", "en": "Midfielder" }, "emoji": "🇲🇽" },
-    { "name": { "zh": "普利西奇", "en": "Pulisic" }, "country": { "zh": "美国", "en": "USA" }, "flag": "🇺🇸", "position": { "zh": "前锋", "en": "Forward" }, "emoji": "🇺🇸" }
+    {
+      "name": {
+        "zh": "姆巴佩",
+        "en": "Mbappé"
+      },
+      "country": {
+        "zh": "法国",
+        "en": "France"
+      },
+      "flag": "🇫🇷",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "⚡"
+    },
+    {
+      "name": {
+        "zh": "梅西",
+        "en": "Messi"
+      },
+      "country": {
+        "zh": "阿根廷",
+        "en": "Argentina"
+      },
+      "flag": "🇦🇷",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "🐐"
+    },
+    {
+      "name": {
+        "zh": "维尼修斯",
+        "en": "Vinícius Jr."
+      },
+      "country": {
+        "zh": "巴西",
+        "en": "Brazil"
+      },
+      "flag": "🇧🇷",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "🔥"
+    },
+    {
+      "name": {
+        "zh": "贝林厄姆",
+        "en": "Bellingham"
+      },
+      "country": {
+        "zh": "英格兰",
+        "en": "England"
+      },
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "position": {
+        "zh": "中场",
+        "en": "Midfielder"
+      },
+      "emoji": "🌟"
+    },
+    {
+      "name": {
+        "zh": "亚马尔",
+        "en": "Yamal"
+      },
+      "country": {
+        "zh": "西班牙",
+        "en": "Spain"
+      },
+      "flag": "🇪🇸",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "💫"
+    },
+    {
+      "name": {
+        "zh": "萨卡",
+        "en": "Saka"
+      },
+      "country": {
+        "zh": "英格兰",
+        "en": "England"
+      },
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "🎯"
+    },
+    {
+      "name": {
+        "zh": "巴尔韦德",
+        "en": "Valverde"
+      },
+      "country": {
+        "zh": "乌拉圭",
+        "en": "Uruguay"
+      },
+      "flag": "🇺🇾",
+      "position": {
+        "zh": "中场",
+        "en": "Midfielder"
+      },
+      "emoji": "🚀"
+    },
+    {
+      "name": {
+        "zh": "哈兰德",
+        "en": "Haaland"
+      },
+      "country": {
+        "zh": "挪威",
+        "en": "Norway"
+      },
+      "flag": "🇳🇴",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "💪"
+    },
+    {
+      "name": {
+        "zh": "洛萨诺",
+        "en": "Lozano"
+      },
+      "country": {
+        "zh": "墨西哥",
+        "en": "Mexico"
+      },
+      "flag": "🇲🇽",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "🇲🇽"
+    },
+    {
+      "name": {
+        "zh": "普利西奇",
+        "en": "Pulisic"
+      },
+      "country": {
+        "zh": "美国",
+        "en": "USA"
+      },
+      "flag": "🇺🇸",
+      "position": {
+        "zh": "前锋",
+        "en": "Forward"
+      },
+      "emoji": "🇺🇸"
+    }
   ]
 }

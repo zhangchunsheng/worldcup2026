@@ -1,11 +1,17 @@
 <template>
   <div
     class="card cursor-pointer relative group"
-    :class="{ 'border-gold/40 bg-gold/5': match.id === liveMatchId }"
+    :class="{ 'border-gold/40 bg-gold/5': prediction && !isFinished }"
     @click="$emit('openDetail', match)"
   >
+    <!-- Finished badge -->
+    <div v-if="isFinished" class="absolute top-3 right-3">
+      <span class="px-2 py-0.5 rounded-full bg-white/10 text-text-muted text-xs font-bold">
+        {{ t('match.finished') }}
+      </span>
+    </div>
     <!-- Live badge -->
-    <div v-if="liveData" class="absolute top-3 right-3">
+    <div v-else-if="liveData" class="absolute top-3 right-3">
       <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-xs font-bold animate-pulse">
         {{ t('match.live') }} {{ liveData.minute }}'
       </span>
@@ -13,25 +19,25 @@
 
     <!-- Teams -->
     <div class="flex items-center justify-between mb-3">
-      <div class="flex items-center gap-2 flex-1">
-        <span class="text-xl">{{ homeTeam.flag }}</span>
-        <span class="font-bold text-sm truncate">{{ homeTeam.label }}</span>
+      <div class="flex items-center gap-2 flex-1 min-w-0">
+        <span class="text-xl flex-shrink-0">{{ homeFlag }}</span>
+        <span class="font-bold text-sm truncate">{{ homeLabel }}</span>
       </div>
-      <div class="px-3 py-1 rounded text-xs font-bold"
-           :class="liveData ? 'bg-red-500/20 text-red-400' : 'bg-gold/10 text-gold'">
-        <template v-if="liveData">
-          {{ liveData.homeScore }} - {{ liveData.awayScore }}
-        </template>
-        <template v-else-if="prediction">
-          {{ prediction.homeScore }} - {{ prediction.awayScore }}
+
+      <!-- Center: Score / VS / Prediction -->
+      <div class="px-3 py-1 rounded text-xs font-bold flex-shrink-0 mx-2"
+           :class="scoreClass">
+        <template v-if="displayHome !== null">
+          {{ displayHome }} - {{ displayAway }}
         </template>
         <template v-else>
           {{ t('match.vs') }}
         </template>
       </div>
-      <div class="flex items-center gap-2 flex-1 justify-end">
-        <span class="font-bold text-sm truncate">{{ awayTeam.label }}</span>
-        <span class="text-xl">{{ awayTeam.flag }}</span>
+
+      <div class="flex items-center gap-2 flex-1 justify-end min-w-0">
+        <span class="font-bold text-sm truncate">{{ awayLabel }}</span>
+        <span class="text-xl flex-shrink-0">{{ awayFlag }}</span>
       </div>
     </div>
 
@@ -45,8 +51,17 @@
       </div>
     </div>
 
-    <!-- Predict button -->
-    <div class="mt-3 flex justify-end">
+    <!-- AI Prediction badge -->
+    <div v-if="prediction && !isFinished" class="mt-2 flex items-center justify-between">
+      <span class="text-xs text-gold/70">🤖 AI {{ prediction.confidence }}%</span>
+      <button @click.stop="$emit('openDetail', match)"
+              class="px-3 py-1 rounded-lg text-xs font-semibold border border-border text-gold hover:bg-gold/10 transition-all">
+        🔮 {{ t('prediction.predict') }}
+      </button>
+    </div>
+
+    <!-- Predict button for non-finished, non-predicted -->
+    <div v-else-if="!isFinished" class="mt-3 flex justify-end">
       <button @click.stop="$emit('openDetail', match)"
               class="px-3 py-1 rounded-lg text-xs font-semibold border border-border text-gold hover:bg-gold/10 transition-all">
         🔮 {{ t('prediction.predict') }}
@@ -71,34 +86,50 @@ const props = defineProps({
 
 defineEmits(['openDetail'])
 
-// Get team flag from groups data (fallback to emoji)
-const teamFlags = computed(() => {
-  const map = {
-    MEX: '🇲🇽', GER: '🇩🇪', QAT: '🇶🇦', NZL: '🇳🇿',
-    CAN: '🇨🇦', MAR: '🇲🇦', UZB: '🇺🇿', PLB: '❓',
-    USA: '🇺🇸', TUN: '🇹🇳', PLA: '❓', PLCD: '❓',
-    ARG: '🇦🇷', NGA: '🇳🇬', KOR: '🇰🇷',
-    FRA: '🇫🇷', COL: '🇨🇴', PAR: '🇵🇾',
-    ESP: '🇪🇸', CMR: '🇨🇲', KSA: '🇸🇦',
-    BRA: '🇧🇷', CIV: '🇨🇮', JPN: '🇯🇵',
-    ENG: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', ECU: '🇪🇨', SEN: '🇸🇳',
-    POR: '🇵🇹', IRN: '🇮🇷', GHA: '🇬🇭',
-    NED: '🇳🇱', URU: '🇺🇾', EGY: '🇪🇬',
-    BEL: '🇧🇪', AUS: '🇦🇺', PER: '🇵🇪',
-    ITA: '🇮🇹', CRO: '🇭🇷', ALG: '🇩🇿',
-  }
-  return map
+const teamFlags = {
+  MEX: '🇲🇽', RSA: '🇿🇦', KOR: '🇰🇷', CZE: '🇨🇿',
+  CAN: '🇨🇦', BIH: '🇧🇦', USA: '🇺🇸', PAR: '🇵🇾',
+  QAT: '🇶🇦', SUI: '🇨🇭', BRA: '🇧🇷', MAR: '🇲🇦',
+  HAI: '🇭🇹', SCO: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', AUS: '🇦🇺', TUR: '🇹🇷',
+  GER: '🇩🇪', CUW: '🇨🇼', NED: '🇳🇱', JPN: '🇯🇵',
+  CIV: '🇨🇮', ECU: '🇪🇨', SWE: '🇸🇪', TUN: '🇹🇳',
+  ESP: '🇪🇸', CPV: '🇨🇻', KSA: '🇸🇦', URU: '🇺🇾',
+  BEL: '🇧🇪', EGY: '🇪🇬', NZL: '🇳🇿', IRN: '🇮🇷',
+  FRA: '🇫🇷', SEN: '🇸🇳', IRQ: '🇮🇶', NOR: '🇳🇴',
+  ARG: '🇦🇷', ALG: '🇩🇿', AUT: '🇦🇹', JOR: '🇯🇴',
+  POR: '🇵🇹', COD: '🇨🇩', ENG: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', CRO: '🇭🇷',
+  GHA: '🇬🇭', PAN: '🇵🇦', UZB: '🇺🇿', COL: '🇨🇴',
+}
+
+const homeFlag = computed(() => teamFlags[props.match.homeTeam] || '🏳️')
+const awayFlag = computed(() => teamFlags[props.match.awayTeam] || '🏳️')
+const homeLabel = computed(() => getLocaleLabel(props.match.homeLabel))
+const awayLabel = computed(() => getLocaleLabel(props.match.awayLabel))
+
+const isFinished = computed(() => props.match.score?.status === 'FT')
+const actualScore = computed(() => props.match.score || null)
+
+// Display: live score > actual score > AI prediction > VS
+const displayHome = computed(() => {
+  if (props.liveData) return props.liveData.homeScore
+  if (actualScore.value) return actualScore.value.home
+  if (props.prediction) return props.prediction.homeScore
+  return null
 })
 
-const homeTeam = computed(() => ({
-  label: getLocaleLabel(props.match.homeLabel),
-  flag: teamFlags.value[props.match.homeTeam] || '🏳️',
-}))
+const displayAway = computed(() => {
+  if (props.liveData) return props.liveData.awayScore
+  if (actualScore.value) return actualScore.value.away
+  if (props.prediction) return props.prediction.awayScore
+  return null
+})
 
-const awayTeam = computed(() => ({
-  label: getLocaleLabel(props.match.awayLabel),
-  flag: teamFlags.value[props.match.awayTeam] || '🏳️',
-}))
+const scoreClass = computed(() => {
+  if (props.liveData) return 'bg-red-500/20 text-red-400'
+  if (actualScore.value) return 'bg-white/10 text-text-primary'
+  if (props.prediction) return 'bg-gold/15 text-gold'
+  return 'bg-gold/10 text-gold'
+})
 
 function formatTime(timeStr) {
   if (!timeStr) return ''

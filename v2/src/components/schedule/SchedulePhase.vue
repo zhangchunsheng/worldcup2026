@@ -6,8 +6,7 @@
       <h3 class="text-base font-bold">{{ phase.icon }} {{ getLocaleLabel(phase.label) }}</h3>
       <span class="text-text-muted text-xl transition-transform duration-300" :class="{ 'rotate-180': isOpen }">▼</span>
     </div>
-
-    <!-- Matches grid -->
+    <!-- Matches -->
     <div class="max-h-0 overflow-hidden transition-max-height duration-400 ease" :class="{ 'max-h-[20000px]': isOpen }">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6 pt-2">
         <MatchCard v-for="match in phase.matches" :key="match.id"

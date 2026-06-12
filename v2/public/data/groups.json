@@ -3,109 +3,493 @@
     {
       "letter": "A",
       "teams": [
-        { "name": { "zh": "墨西哥", "en": "Mexico" }, "code": "MEX", "flag": "🇲🇽", "conf": "CONCACAF" },
-        { "name": { "zh": "德国", "en": "Germany" }, "code": "GER", "flag": "🇩🇪", "conf": "UEFA" },
-        { "name": { "zh": "卡塔尔", "en": "Qatar" }, "code": "QAT", "flag": "🇶🇦", "conf": "AFC" },
-        { "name": { "zh": "新西兰", "en": "New Zealand" }, "code": "NZL", "flag": "🇳🇿", "conf": "OFC" }
+        {
+          "name": {
+            "zh": "墨西哥",
+            "en": "Mexico"
+          },
+          "code": "MEX",
+          "flag": "🇲🇽",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "南非",
+            "en": "South Africa"
+          },
+          "code": "RSA",
+          "flag": "🇿🇦",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "韩国",
+            "en": "South Korea"
+          },
+          "code": "KOR",
+          "flag": "🇰🇷",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "捷克",
+            "en": "Czechia"
+          },
+          "code": "CZE",
+          "flag": "🇨🇿",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "B",
       "teams": [
-        { "name": { "zh": "加拿大", "en": "Canada" }, "code": "CAN", "flag": "🇨🇦", "conf": "CONCACAF" },
-        { "name": { "zh": "摩洛哥", "en": "Morocco" }, "code": "MAR", "flag": "🇲🇦", "conf": "CAF" },
-        { "name": { "zh": "乌兹别克斯坦", "en": "Uzbekistan" }, "code": "UZB", "flag": "🇺🇿", "conf": "AFC" },
-        { "name": { "zh": "附加赛B", "en": "Playoff B" }, "code": "PLB", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "加拿大",
+            "en": "Canada"
+          },
+          "code": "CAN",
+          "flag": "🇨🇦",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "波黑",
+            "en": "Bosnia and Herzegovina"
+          },
+          "code": "BIH",
+          "flag": "🇧🇦",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "卡塔尔",
+            "en": "Qatar"
+          },
+          "code": "QAT",
+          "flag": "🇶🇦",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "瑞士",
+            "en": "Switzerland"
+          },
+          "code": "SUI",
+          "flag": "🇨🇭",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "C",
       "teams": [
-        { "name": { "zh": "美国", "en": "USA" }, "code": "USA", "flag": "🇺🇸", "conf": "CONCACAF" },
-        { "name": { "zh": "突尼斯", "en": "Tunisia" }, "code": "TUN", "flag": "🇹🇳", "conf": "CAF" },
-        { "name": { "zh": "附加赛A", "en": "Playoff A" }, "code": "PLA", "flag": "❓", "conf": "TBD" },
-        { "name": { "zh": "附加赛C/D", "en": "Playoff C/D" }, "code": "PLCD", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "美国",
+            "en": "USA"
+          },
+          "code": "USA",
+          "flag": "🇺🇸",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "巴拉圭",
+            "en": "Paraguay"
+          },
+          "code": "PAR",
+          "flag": "🇵🇾",
+          "conf": "CONMEBOL"
+        },
+        {
+          "name": {
+            "zh": "澳大利亚",
+            "en": "Australia"
+          },
+          "code": "AUS",
+          "flag": "🇦🇺",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "土耳其",
+            "en": "Türkiye"
+          },
+          "code": "TUR",
+          "flag": "🇹🇷",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "D",
       "teams": [
-        { "name": { "zh": "阿根廷", "en": "Argentina" }, "code": "ARG", "flag": "🇦🇷", "conf": "CONMEBOL" },
-        { "name": { "zh": "尼日利亚", "en": "Nigeria" }, "code": "NGA", "flag": "🇳🇬", "conf": "CAF" },
-        { "name": { "zh": "韩国", "en": "South Korea" }, "code": "KOR", "flag": "🇰🇷", "conf": "AFC" },
-        { "name": { "zh": "附加赛C/D", "en": "Playoff C/D" }, "code": "PLCD", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "巴西",
+            "en": "Brazil"
+          },
+          "code": "BRA",
+          "flag": "🇧🇷",
+          "conf": "CONMEBOL"
+        },
+        {
+          "name": {
+            "zh": "摩洛哥",
+            "en": "Morocco"
+          },
+          "code": "MAR",
+          "flag": "🇲🇦",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "海地",
+            "en": "Haiti"
+          },
+          "code": "HAI",
+          "flag": "🇭🇹",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "苏格兰",
+            "en": "Scotland"
+          },
+          "code": "SCO",
+          "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "E",
       "teams": [
-        { "name": { "zh": "法国", "en": "France" }, "code": "FRA", "flag": "🇫🇷", "conf": "UEFA" },
-        { "name": { "zh": "哥伦比亚", "en": "Colombia" }, "code": "COL", "flag": "🇨🇴", "conf": "CONMEBOL" },
-        { "name": { "zh": "巴拉圭", "en": "Paraguay" }, "code": "PAR", "flag": "🇵🇾", "conf": "CONMEBOL" },
-        { "name": { "zh": "附加赛A", "en": "Playoff A" }, "code": "PLA", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "德国",
+            "en": "Germany"
+          },
+          "code": "GER",
+          "flag": "🇩🇪",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "库拉索",
+            "en": "Curaçao"
+          },
+          "code": "CUW",
+          "flag": "🇨🇼",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "荷兰",
+            "en": "Netherlands"
+          },
+          "code": "NED",
+          "flag": "🇳🇱",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "日本",
+            "en": "Japan"
+          },
+          "code": "JPN",
+          "flag": "🇯🇵",
+          "conf": "AFC"
+        }
       ]
     },
     {
       "letter": "F",
       "teams": [
-        { "name": { "zh": "西班牙", "en": "Spain" }, "code": "ESP", "flag": "🇪🇸", "conf": "UEFA" },
-        { "name": { "zh": "喀麦隆", "en": "Cameroon" }, "code": "CMR", "flag": "🇨🇲", "conf": "CAF" },
-        { "name": { "zh": "沙特阿拉伯", "en": "Saudi Arabia" }, "code": "KSA", "flag": "🇸🇦", "conf": "AFC" },
-        { "name": { "zh": "附加赛B", "en": "Playoff B" }, "code": "PLB", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "科特迪瓦",
+            "en": "Ivory Coast"
+          },
+          "code": "CIV",
+          "flag": "🇨🇮",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "厄瓜多尔",
+            "en": "Ecuador"
+          },
+          "code": "ECU",
+          "flag": "🇪🇨",
+          "conf": "CONMEBOL"
+        },
+        {
+          "name": {
+            "zh": "瑞典",
+            "en": "Sweden"
+          },
+          "code": "SWE",
+          "flag": "🇸🇪",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "突尼斯",
+            "en": "Tunisia"
+          },
+          "code": "TUN",
+          "flag": "🇹🇳",
+          "conf": "CAF"
+        }
       ]
     },
     {
       "letter": "G",
       "teams": [
-        { "name": { "zh": "巴西", "en": "Brazil" }, "code": "BRA", "flag": "🇧🇷", "conf": "CONMEBOL" },
-        { "name": { "zh": "科特迪瓦", "en": "Ivory Coast" }, "code": "CIV", "flag": "🇨🇮", "conf": "CAF" },
-        { "name": { "zh": "日本", "en": "Japan" }, "code": "JPN", "flag": "🇯🇵", "conf": "AFC" },
-        { "name": { "zh": "附加赛A", "en": "Playoff A" }, "code": "PLA", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "西班牙",
+            "en": "Spain"
+          },
+          "code": "ESP",
+          "flag": "🇪🇸",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "佛得角",
+            "en": "Cape Verde"
+          },
+          "code": "CPV",
+          "flag": "🇨🇻",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "沙特阿拉伯",
+            "en": "Saudi Arabia"
+          },
+          "code": "KSA",
+          "flag": "🇸🇦",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "乌拉圭",
+            "en": "Uruguay"
+          },
+          "code": "URU",
+          "flag": "🇺🇾",
+          "conf": "CONMEBOL"
+        }
       ]
     },
     {
       "letter": "H",
       "teams": [
-        { "name": { "zh": "英格兰", "en": "England" }, "code": "ENG", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "conf": "UEFA" },
-        { "name": { "zh": "厄瓜多尔", "en": "Ecuador" }, "code": "ECU", "flag": "🇪🇨", "conf": "CONMEBOL" },
-        { "name": { "zh": "塞内加尔", "en": "Senegal" }, "code": "SEN", "flag": "🇸🇳", "conf": "CAF" },
-        { "name": { "zh": "附加赛C/D", "en": "Playoff C/D" }, "code": "PLCD", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "比利时",
+            "en": "Belgium"
+          },
+          "code": "BEL",
+          "flag": "🇧🇪",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "埃及",
+            "en": "Egypt"
+          },
+          "code": "EGY",
+          "flag": "🇪🇬",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "新西兰",
+            "en": "New Zealand"
+          },
+          "code": "NZL",
+          "flag": "🇳🇿",
+          "conf": "OFC"
+        },
+        {
+          "name": {
+            "zh": "伊朗",
+            "en": "Iran"
+          },
+          "code": "IRN",
+          "flag": "🇮🇷",
+          "conf": "AFC"
+        }
       ]
     },
     {
       "letter": "I",
       "teams": [
-        { "name": { "zh": "葡萄牙", "en": "Portugal" }, "code": "POR", "flag": "🇵🇹", "conf": "UEFA" },
-        { "name": { "zh": "伊朗", "en": "Iran" }, "code": "IRN", "flag": "🇮🇷", "conf": "AFC" },
-        { "name": { "zh": "加纳", "en": "Ghana" }, "code": "GHA", "flag": "🇬🇭", "conf": "CAF" },
-        { "name": { "zh": "附加赛B", "en": "Playoff B" }, "code": "PLB", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "法国",
+            "en": "France"
+          },
+          "code": "FRA",
+          "flag": "🇫🇷",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "塞内加尔",
+            "en": "Senegal"
+          },
+          "code": "SEN",
+          "flag": "🇸🇳",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "伊拉克",
+            "en": "Iraq"
+          },
+          "code": "IRQ",
+          "flag": "🇮🇶",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "挪威",
+            "en": "Norway"
+          },
+          "code": "NOR",
+          "flag": "🇳🇴",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "J",
       "teams": [
-        { "name": { "zh": "荷兰", "en": "Netherlands" }, "code": "NED", "flag": "🇳🇱", "conf": "UEFA" },
-        { "name": { "zh": "乌拉圭", "en": "Uruguay" }, "code": "URU", "flag": "🇺🇾", "conf": "CONMEBOL" },
-        { "name": { "zh": "埃及", "en": "Egypt" }, "code": "EGY", "flag": "🇪🇬", "conf": "CAF" },
-        { "name": { "zh": "附加赛A", "en": "Playoff A" }, "code": "PLA", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "阿根廷",
+            "en": "Argentina"
+          },
+          "code": "ARG",
+          "flag": "🇦🇷",
+          "conf": "CONMEBOL"
+        },
+        {
+          "name": {
+            "zh": "阿尔及利亚",
+            "en": "Algeria"
+          },
+          "code": "ALG",
+          "flag": "🇩🇿",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "奥地利",
+            "en": "Austria"
+          },
+          "code": "AUT",
+          "flag": "🇦🇹",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "约旦",
+            "en": "Jordan"
+          },
+          "code": "JOR",
+          "flag": "🇯🇴",
+          "conf": "AFC"
+        }
       ]
     },
     {
       "letter": "K",
       "teams": [
-        { "name": { "zh": "比利时", "en": "Belgium" }, "code": "BEL", "flag": "🇧🇪", "conf": "UEFA" },
-        { "name": { "zh": "澳大利亚", "en": "Australia" }, "code": "AUS", "flag": "🇦🇺", "conf": "AFC" },
-        { "name": { "zh": "秘鲁", "en": "Peru" }, "code": "PER", "flag": "🇵🇪", "conf": "CONMEBOL" },
-        { "name": { "zh": "附加赛C/D", "en": "Playoff C/D" }, "code": "PLCD", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "葡萄牙",
+            "en": "Portugal"
+          },
+          "code": "POR",
+          "flag": "🇵🇹",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "刚果民主共和国",
+            "en": "DR Congo"
+          },
+          "code": "COD",
+          "flag": "🇨🇩",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "英格兰",
+            "en": "England"
+          },
+          "code": "ENG",
+          "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "克罗地亚",
+            "en": "Croatia"
+          },
+          "code": "CRO",
+          "flag": "🇭🇷",
+          "conf": "UEFA"
+        }
       ]
     },
     {
       "letter": "L",
       "teams": [
-        { "name": { "zh": "意大利", "en": "Italy" }, "code": "ITA", "flag": "🇮🇹", "conf": "UEFA" },
-        { "name": { "zh": "克罗地亚", "en": "Croatia" }, "code": "CRO", "flag": "🇭🇷", "conf": "UEFA" },
-        { "name": { "zh": "阿尔及利亚", "en": "Algeria" }, "code": "ALG", "flag": "🇩🇿", "conf": "CAF" },
-        { "name": { "zh": "附加赛B", "en": "Playoff B" }, "code": "PLB", "flag": "❓", "conf": "TBD" }
+        {
+          "name": {
+            "zh": "加纳",
+            "en": "Ghana"
+          },
+          "code": "GHA",
+          "flag": "🇬🇭",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "巴拿马",
+            "en": "Panama"
+          },
+          "code": "PAN",
+          "flag": "🇵🇦",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "乌兹别克斯坦",
+            "en": "Uzbekistan"
+          },
+          "code": "UZB",
+          "flag": "🇺🇿",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "哥伦比亚",
+            "en": "Colombia"
+          },
+          "code": "COL",
+          "flag": "🇨🇴",
+          "conf": "CONMEBOL"
+        }
       ]
     }
   ]

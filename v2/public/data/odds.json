@@ -1,16 +1,124 @@
 {
   "teams": [
-    { "rank": 1, "code": "FRA", "name": { "zh": "法国", "en": "France" }, "flag": "🇫🇷", "odds": "6.5" },
-    { "rank": 2, "code": "BRA", "name": { "zh": "巴西", "en": "Brazil" }, "flag": "🇧🇷", "odds": "7.0" },
-    { "rank": 3, "code": "ESP", "name": { "zh": "西班牙", "en": "Spain" }, "flag": "🇪🇸", "odds": "7.5" },
-    { "rank": 4, "code": "ARG", "name": { "zh": "阿根廷", "en": "Argentina" }, "flag": "🇦🇷", "odds": "8.0" },
-    { "rank": 5, "code": "GER", "name": { "zh": "德国", "en": "Germany" }, "flag": "🇩🇪", "odds": "9.0" },
-    { "rank": 6, "code": "ENG", "name": { "zh": "英格兰", "en": "England" }, "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "odds": "10.0" },
-    { "rank": 7, "code": "POR", "name": { "zh": "葡萄牙", "en": "Portugal" }, "flag": "🇵🇹", "odds": "11.0" },
-    { "rank": 8, "code": "NED", "name": { "zh": "荷兰", "en": "Netherlands" }, "flag": "🇳🇱", "odds": "13.0" },
-    { "rank": 9, "code": "ITA", "name": { "zh": "意大利", "en": "Italy" }, "flag": "🇮🇹", "odds": "15.0" },
-    { "rank": 10, "code": "BEL", "name": { "zh": "比利时", "en": "Belgium" }, "flag": "🇧🇪", "odds": "18.0" },
-    { "rank": 11, "code": "USA", "name": { "zh": "美国", "en": "USA" }, "flag": "🇺🇸", "odds": "26.0" },
-    { "rank": 12, "code": "MEX", "name": { "zh": "墨西哥", "en": "Mexico" }, "flag": "🇲🇽", "odds": "34.0" }
+    {
+      "rank": 1,
+      "code": "FRA",
+      "name": {
+        "zh": "法国",
+        "en": "France"
+      },
+      "flag": "🇫🇷",
+      "odds": "6.5"
+    },
+    {
+      "rank": 2,
+      "code": "BRA",
+      "name": {
+        "zh": "巴西",
+        "en": "Brazil"
+      },
+      "flag": "🇧🇷",
+      "odds": "7.0"
+    },
+    {
+      "rank": 3,
+      "code": "ESP",
+      "name": {
+        "zh": "西班牙",
+        "en": "Spain"
+      },
+      "flag": "🇪🇸",
+      "odds": "7.5"
+    },
+    {
+      "rank": 4,
+      "code": "ARG",
+      "name": {
+        "zh": "阿根廷",
+        "en": "Argentina"
+      },
+      "flag": "🇦🇷",
+      "odds": "8.0"
+    },
+    {
+      "rank": 5,
+      "code": "GER",
+      "name": {
+        "zh": "德国",
+        "en": "Germany"
+      },
+      "flag": "🇩🇪",
+      "odds": "9.0"
+    },
+    {
+      "rank": 6,
+      "code": "ENG",
+      "name": {
+        "zh": "英格兰",
+        "en": "England"
+      },
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "odds": "10.0"
+    },
+    {
+      "rank": 7,
+      "code": "POR",
+      "name": {
+        "zh": "葡萄牙",
+        "en": "Portugal"
+      },
+      "flag": "🇵🇹",
+      "odds": "11.0"
+    },
+    {
+      "rank": 8,
+      "code": "NED",
+      "name": {
+        "zh": "荷兰",
+        "en": "Netherlands"
+      },
+      "flag": "🇳🇱",
+      "odds": "13.0"
+    },
+    {
+      "rank": 9,
+      "code": "BEL",
+      "name": {
+        "zh": "比利时",
+        "en": "Belgium"
+      },
+      "flag": "🇧🇪",
+      "odds": "15.0"
+    },
+    {
+      "rank": 10,
+      "code": "USA",
+      "name": {
+        "zh": "美国",
+        "en": "USA"
+      },
+      "flag": "🇺🇸",
+      "odds": "26.0"
+    },
+    {
+      "rank": 11,
+      "code": "MEX",
+      "name": {
+        "zh": "墨西哥",
+        "en": "Mexico"
+      },
+      "flag": "🇲🇽",
+      "odds": "34.0"
+    },
+    {
+      "rank": 12,
+      "code": "KOR",
+      "name": {
+        "zh": "韩国",
+        "en": "South Korea"
+      },
+      "flag": "🇰🇷",
+      "odds": "50.0"
+    }
   ]
 }
