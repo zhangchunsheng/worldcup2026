@@ -72,9 +72,21 @@
   "match": {
     "vs": "VS",
     "venue": "场地",
-    "live": "进行中",
+    "live": "LIVE",
     "finished": "已结束",
-    "upcoming": "未开始"
+    "upcoming": "未开始",
+    "details": "比赛详情",
+    "liveScore": "实时比分",
+    "time": "比赛时间"
+  },
+  "settings": {
+    "title": "API 设置",
+    "baseUrl": "Claude Base URL",
+    "apiKey": "Claude API Key",
+    "model": "Claude Model",
+    "save": "保存",
+    "cancel": "取消",
+    "saved": "✅ 已保存"
   },
   "group": {
     "group": "小组"

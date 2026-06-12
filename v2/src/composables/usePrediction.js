@@ -1,8 +1,16 @@
 import { ref, reactive } from 'vue'
 import { generatePrediction } from '../utils/predictionEngine'
 
+function loadSetting(key, fallback) {
+  try {
+    return localStorage.getItem(key) || fallback
+  } catch {
+    return fallback
+  }
+}
+
 export function usePrediction() {
-  const mode = ref(localStorage.getItem('wc2026_pred_mode') || 'simulated') // 'simulated' | 'ai'
+  const mode = ref(loadSetting('wc2026_pred_mode', 'simulated'))
   const predictions = reactive(loadPredictions())
   const isPredicting = ref(false)
   const predictionError = ref(null)
@@ -41,12 +49,18 @@ export function usePrediction() {
       } else {
         // AI mode — try Claude API, fallback to simulated
         try {
-          const apiKey = import.meta.env.VITE_CLAUDE_API_KEY
+          const apiKey = loadSetting('wc2026_claude_api_key', import.meta.env.VITE_CLAUDE_API_KEY || '')
           if (!apiKey) throw new Error('No API key configured')
 
-          const model = import.meta.env.VITE_CLAUDE_MODEL || 'claude-sonnet-4-6'
+          const model = loadSetting('wc2026_claude_model', import.meta.env.VITE_CLAUDE_MODEL || 'claude-sonnet-4-6')
+          const baseUrl = loadSetting('wc2026_claude_base_url', import.meta.env.VITE_CLAUDE_BASE_URL || 'https://api.anthropic.com')
+
           const { Anthropic } = await import('@anthropic-ai/sdk')
-          const anthropic = new Anthropic({ apiKey, dangerouslyAllowBrowser: true })
+          const anthropic = new Anthropic({
+            apiKey,
+            baseURL: baseUrl,
+            dangerouslyAllowBrowser: true,
+          })
 
           const response = await anthropic.messages.create({
             model,
@@ -70,7 +84,6 @@ export function usePrediction() {
             mode: 'ai',
           }
         } catch (apiErr) {
-          // Fallback to simulated
           console.warn('AI prediction failed, falling back to simulated:', apiErr.message)
           const result = generatePrediction(matchData, oddsData)
           predictions[matchId] = {

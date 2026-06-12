@@ -14,8 +14,14 @@
         </a>
         <!-- Language toggle -->
         <button @click="toggleLanguage"
-                class="ml-2 text-xs font-semibold px-3 py-1.5 rounded-md border border-border text-gold hover:bg-gold/10 transition-all duration-300">
+                class="text-xs font-semibold px-3 py-1.5 rounded-md border border-border text-gold hover:bg-gold/10 transition-all duration-300">
           {{ currentLocale === 'zh' ? 'EN' : '中文' }}
+        </button>
+        <!-- Settings -->
+        <button @click="$emit('openSettings')"
+                class="text-sm px-2 py-1.5 rounded-md hover:bg-gold/10 transition-all duration-300"
+                title="Settings">
+          ⚙️
         </button>
       </div>
 
@@ -81,6 +87,8 @@ function toggleLanguage() {
 function handleScroll() {
   isScrolled.value = window.scrollY > 50
 }
+
+defineEmits(['openSettings'])
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)

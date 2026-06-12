@@ -74,7 +74,19 @@
     "venue": "Venue",
     "live": "LIVE",
     "finished": "Finished",
-    "upcoming": "Upcoming"
+    "upcoming": "Upcoming",
+    "details": "Match Details",
+    "liveScore": "Live Score",
+    "time": "Match Time"
+  },
+  "settings": {
+    "title": "API Settings",
+    "baseUrl": "Claude Base URL",
+    "apiKey": "Claude API Key",
+    "model": "Claude Model",
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "✅ Saved"
   },
   "group": {
     "group": "Group"
