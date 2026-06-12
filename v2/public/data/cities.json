@@ -1,0 +1,21 @@
+{
+  "cities": [
+    { "city": { "zh": "纽约/新泽西", "en": "New York/New Jersey" }, "stadium": { "zh": "MetLife体育场", "en": "MetLife Stadium" }, "capacity": "82,500", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "8场（含决赛）", "en": "8 matches (incl. Final)" } },
+    { "city": { "zh": "洛杉矶", "en": "Los Angeles" }, "stadium": { "zh": "SoFi体育场", "en": "SoFi Stadium" }, "capacity": "70,240", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "8场（含半决赛）", "en": "8 matches (incl. Semi-final)" } },
+    { "city": { "zh": "达拉斯", "en": "Dallas" }, "stadium": { "zh": "AT&T体育场", "en": "AT&T Stadium" }, "capacity": "80,000", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "8场（含半决赛）", "en": "8 matches (incl. Semi-final)" } },
+    { "city": { "zh": "堪萨斯城", "en": "Kansas City" }, "stadium": { "zh": "GEHA Arrowhead体育场", "en": "GEHA Arrowhead Stadium" }, "capacity": "76,416", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "亚特兰大", "en": "Atlanta" }, "stadium": { "zh": "梅赛德斯-奔驰体育场", "en": "Mercedes-Benz Stadium" }, "capacity": "71,000", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "休斯顿", "en": "Houston" }, "stadium": { "zh": "NRG体育场", "en": "NRG Stadium" }, "capacity": "72,220", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "费城", "en": "Philadelphia" }, "stadium": { "zh": "林肯金融球场", "en": "Lincoln Financial Field" }, "capacity": "69,796", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "旧金山湾区", "en": "San Francisco Bay Area" }, "stadium": { "zh": "李维斯体育场", "en": "Levi's Stadium" }, "capacity": "68,500", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "西雅图", "en": "Seattle" }, "stadium": { "zh": "Lumen Field", "en": "Lumen Field" }, "capacity": "68,740", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "波士顿", "en": "Boston" }, "stadium": { "zh": "吉列体育场", "en": "Gillette Stadium" }, "capacity": "65,878", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "迈阿密", "en": "Miami" }, "stadium": { "zh": "Hard Rock体育场", "en": "Hard Rock Stadium" }, "capacity": "64,767", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "华盛顿", "en": "Washington D.C." }, "stadium": { "zh": "FedExField", "en": "FedExField" }, "capacity": "67,617", "country": "USA", "flag": "🇺🇸", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "墨西哥城", "en": "Mexico City" }, "stadium": { "zh": "阿兹特克体育场", "en": "Estadio Azteca" }, "capacity": "87,523", "country": "MEX", "flag": "🇲🇽", "matches": { "zh": "8场（含开幕战）", "en": "8 matches (incl. Opening)" } },
+    { "city": { "zh": "蒙特雷", "en": "Monterrey" }, "stadium": { "zh": "BBVA体育场", "en": "BBVA Stadium" }, "capacity": "53,500", "country": "MEX", "flag": "🇲🇽", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "瓜达拉哈拉", "en": "Guadalajara" }, "stadium": { "zh": "阿克伦体育场", "en": "Akron Stadium" }, "capacity": "49,850", "country": "MEX", "flag": "🇲🇽", "matches": { "zh": "7场", "en": "7 matches" } },
+    { "city": { "zh": "多伦多", "en": "Toronto" }, "stadium": { "zh": "BMO Field", "en": "BMO Field" }, "capacity": "45,500", "country": "CAN", "flag": "🇨🇦", "matches": { "zh": "6场", "en": "6 matches" } },
+    { "city": { "zh": "温哥华", "en": "Vancouver" }, "stadium": { "zh": "BC Place", "en": "BC Place" }, "capacity": "54,500", "country": "CAN", "flag": "🇨🇦", "matches": { "zh": "7场", "en": "7 matches" } }
+  ]
+}

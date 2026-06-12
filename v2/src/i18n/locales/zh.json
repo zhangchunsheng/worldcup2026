@@ -1,0 +1,96 @@
+{
+  "site": {
+    "title": "2026 FIFA 世界杯",
+    "subtitle": "美国 · 加拿大 · 墨西哥 联合主办",
+    "tagline": "首届48支球队参赛，16座主办城市，39天，104场巅峰对决"
+  },
+  "nav": {
+    "home": "首页",
+    "schedule": "赛程",
+    "groups": "分组",
+    "odds": "热门",
+    "cities": "城市",
+    "players": "球星",
+    "history": "历史",
+    "broadcast": "转播"
+  },
+  "hero": {
+    "teams": "参赛球队",
+    "matches": "比赛场次",
+    "days": "比赛天数",
+    "hostCities": "主办城市"
+  },
+  "countdown": {
+    "days": "天",
+    "hours": "时",
+    "mins": "分",
+    "secs": "秒"
+  },
+  "sections": {
+    "schedule": {
+      "title": "赛程安排",
+      "desc": "从开幕战到决赛，39天精彩不间断"
+    },
+    "groups": {
+      "title": "小组分组",
+      "desc": "12个小组，48支球队，小组前二及8个最佳第三名晋级"
+    },
+    "odds": {
+      "title": "夺冠热门",
+      "desc": "各支球队的夺冠赔率"
+    },
+    "cities": {
+      "title": "主办城市",
+      "desc": "横跨北美三大国的16座主办城市"
+    },
+    "players": {
+      "title": "焦点球星",
+      "desc": "世界顶级球员齐聚北美"
+    },
+    "history": {
+      "title": "冠军历史",
+      "desc": "22届世界杯，8个冠军国家"
+    },
+    "broadcast": {
+      "title": "观赛指南",
+      "desc": "中国大陆地区转播平台与观赛时间参考"
+    }
+  },
+  "prediction": {
+    "title": "比分预测",
+    "simulated": "模拟预测",
+    "ai": "AI 预测",
+    "submit": "提交预测",
+    "switchToAI": "切换 AI 预测",
+    "switchToSimulated": "切换模拟预测",
+    "yourPrediction": "你的预测",
+    "aiPrediction": "AI 预测",
+    "homeScore": "主队",
+    "awayScore": "客队",
+    "predict": "预测"
+  },
+  "match": {
+    "vs": "VS",
+    "venue": "场地",
+    "live": "进行中",
+    "finished": "已结束",
+    "upcoming": "未开始"
+  },
+  "group": {
+    "group": "小组"
+  },
+  "city": {
+    "capacity": "容量",
+    "matches": "场次"
+  },
+  "common": {
+    "loading": "加载中...",
+    "tbd": "待定",
+    "winner": "胜者",
+    "loser": "负者"
+  },
+  "footer": {
+    "disclaimer": "本站仅为信息展示，与国际足联（FIFA）无关。FIFA World Cup™ 是国际足联的注册商标。",
+    "copyright": "© 2026 World Cup Info Site · MIT License"
+  }
+}

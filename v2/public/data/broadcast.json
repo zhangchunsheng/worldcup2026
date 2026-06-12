@@ -1,0 +1,8 @@
+{
+  "broadcasters": [
+    { "icon": "📺", "name": { "zh": "CCTV5 / 央视频", "en": "CCTV5 / Yangshipin" }, "desc": { "zh": "中央电视台体育频道，部分关键场次免费直播", "en": "CCTV Sports Channel, free broadcast for key matches" } },
+    { "icon": "📱", "name": { "zh": "咪咕视频", "en": "Migu Video" }, "desc": { "zh": "中国移动旗下平台，全场次直播支持", "en": "China Mobile platform, full match live streaming" } },
+    { "icon": "🌐", "name": { "zh": "FIFA+", "en": "FIFA+" }, "desc": { "zh": "国际足联官方流媒体平台（部分地区）", "en": "FIFA official streaming platform (select regions)" } },
+    { "icon": "⏰", "name": { "zh": "观赛时间", "en": "Viewing Hours" }, "desc": { "zh": "北美赛事，北京时间多为晚间至凌晨时段", "en": "North American schedule, Beijing time usually evening to early morning" } }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "phases": [
+    {
+      "id": "opening",
+      "label": { "zh": "开幕战", "en": "Opening Match" },
+      "icon": "🏟️",
+      "dateRange": { "zh": "2026年6月11日", "en": "June 11, 2026" },
+      "highlight": true,
+      "venue": { "zh": "阿兹特克体育场 · 墨西哥城", "en": "Estadio Azteca · Mexico City" },
+      "matches": [
+        { "id": "opening-1", "homeTeam": "MEX", "awayTeam": "TBD", "homeLabel": { "zh": "墨西哥", "en": "Mexico" }, "awayLabel": { "zh": "待定", "en": "TBD" } }
+      ]
+    },
+    {
+      "id": "group-round-1",
+      "label": { "zh": "小组赛 · 第一轮", "en": "Group Stage · Round 1" },
+      "icon": "⚽",
+      "dateRange": { "zh": "2026年6月12-15日", "en": "June 12-15, 2026" },
+      "highlight": false,
+      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "matches": [
+        { "id": "gr1-1", "homeTeam": "CAN", "awayTeam": "MAR", "homeLabel": { "zh": "加拿大", "en": "Canada" }, "awayLabel": { "zh": "摩洛哥", "en": "Morocco" } },
+        { "id": "gr1-2", "homeTeam": "USA", "awayTeam": "TUN", "homeLabel": { "zh": "美国", "en": "USA" }, "awayLabel": { "zh": "突尼斯", "en": "Tunisia" } },
+        { "id": "gr1-3", "homeTeam": "ARG", "awayTeam": "NGA", "homeLabel": { "zh": "阿根廷", "en": "Argentina" }, "awayLabel": { "zh": "尼日利亚", "en": "Nigeria" } },
+        { "id": "gr1-4", "homeTeam": "FRA", "awayTeam": "COL", "homeLabel": { "zh": "法国", "en": "France" }, "awayLabel": { "zh": "哥伦比亚", "en": "Colombia" } }
+      ]
+    },
+    {
+      "id": "group-round-2",
+      "label": { "zh": "小组赛 · 第二轮", "en": "Group Stage · Round 2" },
+      "icon": "⚽",
+      "dateRange": { "zh": "2026年6月18-21日", "en": "June 18-21, 2026" },
+      "highlight": false,
+      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "matches": [
+        { "id": "gr2-1", "homeTeam": "BRA", "awayTeam": "CIV", "homeLabel": { "zh": "巴西", "en": "Brazil" }, "awayLabel": { "zh": "科特迪瓦", "en": "Ivory Coast" } },
+        { "id": "gr2-2", "homeTeam": "ENG", "awayTeam": "ECU", "homeLabel": { "zh": "英格兰", "en": "England" }, "awayLabel": { "zh": "厄瓜多尔", "en": "Ecuador" } },
+        { "id": "gr2-3", "homeTeam": "POR", "awayTeam": "IRN", "homeLabel": { "zh": "葡萄牙", "en": "Portugal" }, "awayLabel": { "zh": "伊朗", "en": "Iran" } },
+        { "id": "gr2-4", "homeTeam": "ESP", "awayTeam": "CMR", "homeLabel": { "zh": "西班牙", "en": "Spain" }, "awayLabel": { "zh": "喀麦隆", "en": "Cameroon" } }
+      ]
+    },
+    {
+      "id": "group-round-3",
+      "label": { "zh": "小组赛 · 第三轮", "en": "Group Stage · Round 3" },
+      "icon": "⚽",
+      "dateRange": { "zh": "2026年6月24-26日", "en": "June 24-26, 2026" },
+      "highlight": false,
+      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "matches": [
+        { "id": "gr3-1", "homeTeam": "NED", "awayTeam": "URU", "homeLabel": { "zh": "荷兰", "en": "Netherlands" }, "awayLabel": { "zh": "乌拉圭", "en": "Uruguay" } },
+        { "id": "gr3-2", "homeTeam": "BEL", "awayTeam": "AUS", "homeLabel": { "zh": "比利时", "en": "Belgium" }, "awayLabel": { "zh": "澳大利亚", "en": "Australia" } },
+        { "id": "gr3-3", "homeTeam": "ITA", "awayTeam": "CRO", "homeLabel": { "zh": "意大利", "en": "Italy" }, "awayLabel": { "zh": "克罗地亚", "en": "Croatia" } },
+        { "id": "gr3-4", "homeTeam": "GER", "awayTeam": "QAT", "homeLabel": { "zh": "德国", "en": "Germany" }, "awayLabel": { "zh": "卡塔尔", "en": "Qatar" } }
+      ]
+    },
+    {
+      "id": "group-ranking",
+      "label": { "zh": "小组排名确定", "en": "Group Rankings Finalized" },
+      "icon": "🔢",
+      "dateRange": { "zh": "2026年6月27-28日", "en": "June 27-28, 2026" },
+      "highlight": false,
+      "venue": { "zh": "最佳第三名晋级", "en": "Best 3rd Places Advance" },
+      "matches": [
+        { "id": "rank-1", "homeTeam": "", "awayTeam": "", "homeLabel": { "zh": "32支球队晋级", "en": "32 Teams Advance" }, "awayLabel": { "zh": "16支淘汰", "en": "16 Eliminated" } }
+      ]
+    },
+    {
+      "id": "r32",
+      "label": { "zh": "32强淘汰赛", "en": "Round of 32" },
+      "icon": "🔥",
+      "dateRange": { "zh": "2026年6月29日 — 7月1日", "en": "June 29 — July 1, 2026" },
+      "highlight": false,
+      "venue": { "zh": "8场比赛", "en": "8 Matches" },
+      "matches": [
+        { "id": "r32-1", "homeTeam": "A1", "awayTeam": "B3/C3/D3", "homeLabel": { "zh": "A组第一", "en": "Group A 1st" }, "awayLabel": { "zh": "B/C/D组第三", "en": "Group B/C/D 3rd" } },
+        { "id": "r32-2", "homeTeam": "B1", "awayTeam": "A3/C3/D3", "homeLabel": { "zh": "B组第一", "en": "Group B 1st" }, "awayLabel": { "zh": "A/C/D组第三", "en": "Group A/C/D 3rd" } },
+        { "id": "r32-3", "homeTeam": "C1", "awayTeam": "A3/B3/D3", "homeLabel": { "zh": "C组第一", "en": "Group C 1st" }, "awayLabel": { "zh": "A/B/D组第三", "en": "Group A/B/D 3rd" } },
+        { "id": "r32-4", "homeTeam": "D1", "awayTeam": "A3/B3/C3", "homeLabel": { "zh": "D组第一", "en": "Group D 1st" }, "awayLabel": { "zh": "A/B/C组第三", "en": "Group A/B/C 3rd" } }
+      ]
+    },
+    {
+      "id": "r16",
+      "label": { "zh": "16强淘汰赛", "en": "Round of 16" },
+      "icon": "🔥",
+      "dateRange": { "zh": "2026年7月3日 — 7月5日", "en": "July 3-5, 2026" },
+      "highlight": false,
+      "venue": { "zh": "8场比赛", "en": "8 Matches" },
+      "matches": [
+        { "id": "r16-1", "homeTeam": "W1", "awayTeam": "W2", "homeLabel": { "zh": "胜者1", "en": "Winner 1" }, "awayLabel": { "zh": "胜者2", "en": "Winner 2" } },
+        { "id": "r16-2", "homeTeam": "W3", "awayTeam": "W4", "homeLabel": { "zh": "胜者3", "en": "Winner 3" }, "awayLabel": { "zh": "胜者4", "en": "Winner 4" } },
+        { "id": "r16-3", "homeTeam": "W5", "awayTeam": "W6", "homeLabel": { "zh": "胜者5", "en": "Winner 5" }, "awayLabel": { "zh": "胜者6", "en": "Winner 6" } },
+        { "id": "r16-4", "homeTeam": "W7", "awayTeam": "W8", "homeLabel": { "zh": "胜者7", "en": "Winner 7" }, "awayLabel": { "zh": "胜者8", "en": "Winner 8" } }
+      ]
+    },
+    {
+      "id": "quarter",
+      "label": { "zh": "四分之一决赛", "en": "Quarter-finals" },
+      "icon": "⚡",
+      "dateRange": { "zh": "2026年7月9日 — 7月10日", "en": "July 9-10, 2026" },
+      "highlight": false,
+      "venue": { "zh": "4场比赛", "en": "4 Matches" },
+      "matches": [
+        { "id": "qf-1", "homeTeam": "QF1", "awayTeam": "QF2", "homeLabel": { "zh": "QF1", "en": "QF1" }, "awayLabel": { "zh": "QF2", "en": "QF2" } },
+        { "id": "qf-2", "homeTeam": "QF3", "awayTeam": "QF4", "homeLabel": { "zh": "QF3", "en": "QF3" }, "awayLabel": { "zh": "QF4", "en": "QF4" } }
+      ]
+    },
+    {
+      "id": "semi",
+      "label": { "zh": "半决赛", "en": "Semi-finals" },
+      "icon": "🏟️",
+      "dateRange": { "zh": "2026年7月14日 — 7月15日", "en": "July 14-15, 2026" },
+      "highlight": false,
+      "venue": { "zh": "待定", "en": "TBD" },
+      "matches": [
+        { "id": "sf-1", "homeTeam": "SF1", "awayTeam": "SF2", "homeLabel": { "zh": "半决赛队伍1", "en": "Semi-finalist 1" }, "awayLabel": { "zh": "半决赛队伍2", "en": "Semi-finalist 2" } },
+        { "id": "sf-2", "homeTeam": "SF3", "awayTeam": "SF4", "homeLabel": { "zh": "半决赛队伍3", "en": "Semi-finalist 3" }, "awayLabel": { "zh": "半决赛队伍4", "en": "Semi-finalist 4" } }
+      ]
+    },
+    {
+      "id": "third-place",
+      "label": { "zh": "三四名决赛", "en": "Third Place Play-off" },
+      "icon": "🥉",
+      "dateRange": { "zh": "2026年7月18日", "en": "July 18, 2026" },
+      "highlight": false,
+      "venue": { "zh": "待定", "en": "TBD" },
+      "matches": [
+        { "id": "tp-1", "homeTeam": "L1", "awayTeam": "L2", "homeLabel": { "zh": "半决赛负者1", "en": "Semi-final Loser 1" }, "awayLabel": { "zh": "半决赛负者2", "en": "Semi-final Loser 2" } }
+      ]
+    },
+    {
+      "id": "final",
+      "label": { "zh": "决赛", "en": "Final" },
+      "icon": "🏆",
+      "dateRange": { "zh": "2026年7月19日", "en": "July 19, 2026" },
+      "highlight": true,
+      "venue": { "zh": "MetLife体育场 · 纽约/新泽西", "en": "MetLife Stadium · New York/New Jersey" },
+      "matches": [
+        { "id": "final-1", "homeTeam": "F1", "awayTeam": "F2", "homeLabel": { "zh": "决赛队伍1", "en": "Finalist 1" }, "awayLabel": { "zh": "决赛队伍2", "en": "Finalist 2" } }
+      ]
+    }
+  ]
+}

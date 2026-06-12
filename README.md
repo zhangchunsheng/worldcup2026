@@ -2,68 +2,33 @@
 
 > 🏟️ 美国 · 加拿大 · 墨西哥 | 2026年6月11日 — 7月19日
 
-## 概览
+## 版本
 
-2026年世界杯是首届 **48支球队** 参赛的世界杯，由美国、加拿大和墨西哥三国联合主办。赛事横跨北美三大国，共 **16座主办城市**，在 **39天** 内进行 **104场** 比赛。
+- **v2/** — Vite + Vue 3 + Tailwind CSS 4 + Vue I18n + Pinia（当前版本）
+- **v1/** — 纯 HTML/CSS/JS 单文件页面（历史版本）
 
-- **赛制**：12个小组 × 4队，小组前二 + 8个最佳第三名晋级淘汰赛
-- **开幕战**：墨西哥城 · 阿兹特克体育场
-- **决赛**：纽约 · MetLife体育场
-
-## 数据
-
-数据来源于 [worldcup2026cn.com](https://worldcup2026cn.com)，包括：
-
-- 球队分组（12组 × 4队）
-- 赛程安排（开幕战至决赛）
-- 夺冠赔率
-- 主办城市与体育场信息
-- 球星资料
-- 历届冠军历史
-
-## 技术
-
-| 项目 | 说明 |
-|------|------|
-| 技术栈 | 纯 HTML / CSS / JS，零依赖 |
-| 文件 | 单文件 `index.html` |
-| 设计 | 暗色主题 + 金杯色调 + 体育场灯光动效 |
-| 适配 | 响应式设计（桌面端 + 移动端） |
-| 动画 | Intersection Observer 滚动渐入 + CSS 动效 |
-| 语言 | 简体中文（zh-CN） |
-
-## 使用
-
-直接在浏览器中打开 `index.html` 即可：
+## v2 开发
 
 ```bash
-open index.html        # macOS
-xdg-open index.html    # Linux
-start index.html       # Windows
+cd v2
+npm install
+npm run dev     # 开发服务器
+npm run build   # 构建生产版本
 ```
 
-或使用任意本地服务器：
+详细文档请参阅 [v2/README.md](../v2/README.md)
 
-```bash
-python -m http.server 8000
-# 访问 http://localhost:8000
-```
+## 数据更新
 
-## 板块
+编辑 `v2/public/data/` 下的 JSON 文件即可更新数据，无需重新构建。
 
-| 板块 | 内容 |
+| 文件 | 内容 |
 |------|------|
-| 🏠 Hero | 倒计时、关键数据（48队/104场/39天/16城） |
-| 📅 赛程 | 开幕战、小组赛、半决赛、三四名、决赛 |
-| 📋 分组 | 全部12个小组、48支球队 |
-| 🏆 热门 | 12支夺冠热门球队及赔率 |
-| 🌆 城市 | 16座主办城市、体育场、容量 |
-| ⭐ 球星 | Mbappé、Messi、Haaland 等10位球星 |
-| 📜 历史 | 8个冠军国家、22届世界杯历史 |
-| 📺 转播 | CCTV5、咪咕视频、观赛时间指南 |
-
-## 许可
-
-[MIT License](LICENSE)
-
-> ⚽ 本站仅为信息展示，与国际足联（FIFA）无关。FIFA World Cup™ 是国际足联的注册商标。
+| `groups.json` | 12个小组分组 |
+| `schedule.json` | 赛程安排 |
+| `odds.json` | 夺冠赔率 |
+| `cities.json` | 主办城市 |
+| `players.json` | 球星资料 |
+| `history.json` | 历届冠军 |
+| `broadcast.json` | 转播信息 |
+| `live-scores.json` | 实时比分（编辑后刷新页面生效） |

@@ -1,0 +1,96 @@
+{
+  "site": {
+    "title": "2026 FIFA World Cup",
+    "subtitle": "USA · Canada · Mexico",
+    "tagline": "48 teams, 16 host cities, 39 days, 104 matches of peak competition"
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "groups": "Groups",
+    "odds": "Favorites",
+    "cities": "Cities",
+    "players": "Players",
+    "history": "History",
+    "broadcast": "Broadcast"
+  },
+  "hero": {
+    "teams": "Teams",
+    "matches": "Matches",
+    "days": "Days",
+    "hostCities": "Host Cities"
+  },
+  "countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "mins": "Mins",
+    "secs": "Secs"
+  },
+  "sections": {
+    "schedule": {
+      "title": "Schedule",
+      "desc": "39 days of non-stop action from opening match to final"
+    },
+    "groups": {
+      "title": "Group Stage",
+      "desc": "12 groups, 48 teams, top 2 + 8 best 3rd places advance"
+    },
+    "odds": {
+      "title": "Title Favorites",
+      "desc": "Odds for each team to win the tournament"
+    },
+    "cities": {
+      "title": "Host Cities",
+      "desc": "16 host cities across three North American nations"
+    },
+    "players": {
+      "title": "Star Players",
+      "desc": "World-class players gather in North America"
+    },
+    "history": {
+      "title": "Champions History",
+      "desc": "22 World Cups, 8 champion nations"
+    },
+    "broadcast": {
+      "title": "Viewing Guide",
+      "desc": "Broadcast platforms and viewing time reference"
+    }
+  },
+  "prediction": {
+    "title": "Score Prediction",
+    "simulated": "Simulated",
+    "ai": "AI Prediction",
+    "submit": "Submit Prediction",
+    "switchToAI": "Switch to AI",
+    "switchToSimulated": "Switch to Simulated",
+    "yourPrediction": "Your Prediction",
+    "aiPrediction": "AI Prediction",
+    "homeScore": "Home",
+    "awayScore": "Away",
+    "predict": "Predict"
+  },
+  "match": {
+    "vs": "VS",
+    "venue": "Venue",
+    "live": "LIVE",
+    "finished": "Finished",
+    "upcoming": "Upcoming"
+  },
+  "group": {
+    "group": "Group"
+  },
+  "city": {
+    "capacity": "Capacity",
+    "matches": "Matches"
+  },
+  "common": {
+    "loading": "Loading...",
+    "tbd": "TBD",
+    "winner": "Winner",
+    "loser": "Loser"
+  },
+  "footer": {
+    "disclaimer": "This site is for informational purposes only and is not affiliated with FIFA. FIFA World Cup™ is a registered trademark of FIFA.",
+    "copyright": "© 2026 World Cup Info Site · MIT License"
+  }
+}
