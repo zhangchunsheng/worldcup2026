@@ -22,11 +22,10 @@
 
     <!-- Match Detail Modal -->
     <MatchDetail
-      v-if="selectedMatch"
       :match="selectedMatch"
       :visible="showDetail"
-      :prediction="getPrediction(selectedMatch.id)"
-      :live-data="getLiveData(selectedMatch.id)"
+      :prediction="selectedMatch ? getPrediction(selectedMatch.id) : null"
+      :live-data="selectedMatch ? getLiveData(selectedMatch.id) : null"
       :pred-mode="predMode"
       :is-predicting="isPredicting"
       :prediction-error="predictionError"
@@ -43,7 +42,6 @@ import { useI18n } from 'vue-i18n'
 import { useData } from '../../composables/useData'
 import { usePrediction } from '../../composables/usePrediction'
 import { useLiveScores } from '../../composables/useLiveScores'
-import SchedulePhase from './SchedulePhase.vue'
 import MatchCard from './MatchCard.vue'
 import MatchDetail from './MatchDetail.vue'
 

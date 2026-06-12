@@ -2,96 +2,96 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## 项目概述
 
-2026 FIFA World Cup website built with **Vite + Vue 3 + Tailwind CSS 4 + Vue I18n + Pinia**. Single-page application with dark theme and gold accent colors. All content is driven by JSON files in `public/data/`.
+2026 FIFA 世界杯网站，技术栈：**Vite + Vue 3 + Tailwind CSS 4 + Vue I18n + Pinia**。单页应用，暗色主题 + 金杯配色。所有内容数据由 `public/data/` 下的 JSON 文件驱动。
 
-## Working Directory
+## 工作目录
 
-All development happens in the **`v2/`** directory. `v1/` is a legacy single-file HTML version (historical reference only).
+所有开发在 **`v2/`** 目录下进行。`v1/` 是历史版本的单文件 HTML 页面（仅供参考）。
 
-## Key Commands
+## 常用命令
 
 ```bash
 cd v2
-npm run dev       # Start dev server (Vite)
-npm run build     # Production build → dist/
-npm run preview   # Preview production build
+npm run dev       # 启动开发服务器（Vite）
+npm run build     # 生产构建 → dist/
+npm run preview   # 预览生产构建
 ```
 
-No lint or test commands are configured.
+未配置 lint 和测试命令。
 
-## Architecture
+## 架构
 
-### Data Flow
+### 数据流
 
-All data is fetched at runtime from `/data/*.json` files (served from `public/data/`) via the `useData()` composable. Results are cached in a module-level `Map`. Edit JSON files directly — no rebuild needed for data changes.
+所有数据在运行时通过 `useData()` 组合式函数从 `/data/*.json` 文件（由 `public/data/` 提供）获取。结果缓存在模块级的 `Map` 中。直接编辑 JSON 文件即可 — 数据变更无需重新构建。
 
 ```
-public/data/*.json → useData() → Vue Components
-                       ↓
-                  fetch('/data/...')
-                       ↓
-                module-level cache (Map)
+public/data/*.json → useData() → Vue 组件
+                         ↓
+                    fetch('/data/...')
+                         ↓
+                  模块级缓存 (Map)
 ```
 
-### Core Composables
+### 核心 Composables
 
-- **`useData(resource)`** — Fetches `public/data/{resource}.json`, caches results. Returns `{ data, loading, error, refetch }`. **Never name an inner function `fetch()` — it shadows the global `fetch` API.**
-- **`usePrediction()`** — Manages match predictions stored in `localStorage` (`wc2026_predictions`). Supports two modes:
-  - `simulated` — Poisson distribution based on odds (`utils/predictionEngine.js`)
-  - `ai` — Calls Claude API. Reads config from `localStorage` keys: `wc2026_claude_base_url`, `wc2026_claude_api_key`, `wc2026_claude_model`. Falls back to `import.meta.env` values, then to simulated mode.
-- **`useLiveScores()`** — Polls `live-scores.json` every 30s. Returns `{ scores, getMatchStatus }`.
-- **`useCountdown(targetDate)`** — Reactive countdown timer.
-- **`useScrollAnimation()`** — IntersectionObserver for fade-in effects.
+- **`useData(resource)`** — 获取 `public/data/{resource}.json`，缓存结果。返回 `{ data, loading, error, refetch }`。**内部函数绝不能命名为 `fetch()` — 会遮蔽全局 `fetch` API。**
+- **`usePrediction()`** — 管理比赛预测，存储在 `localStorage`（key: `wc2026_predictions`）。支持两种模式：
+  - `simulated`（模拟）— 基于赔率的泊松分布算法（`utils/predictionEngine.js`）
+  - `ai` — 调用 Claude API。从 `localStorage` 读取配置：`wc2026_claude_base_url`、`wc2026_claude_api_key`、`wc2026_claude_model`。回退到 `import.meta.env` 值，最终回退到模拟模式。
+- **`useLiveScores()`** — 每 30 秒轮询 `live-scores.json`。返回 `{ scores, getMatchStatus }`。
+- **`useCountdown(targetDate)`** — 响应式倒计时。
+- **`useScrollAnimation()`** — IntersectionObserver 滚动渐入效果。
 
 ### Pinia Stores
 
-- **`stores/app.js`** — Nav state (mobile open/close, active section)
-- **`stores/settings.js`** — Claude API config (baseUrl, apiKey, model), persisted to localStorage
+- **`stores/app.js`** — 导航栏状态（移动端展开/收起、当前区域）
+- **`stores/settings.js`** — Claude API 配置（baseUrl、apiKey、model），持久化到 localStorage
 
-### Component Structure
+### 组件结构
 
-- **`components/layout/`** — `NavBar.vue` (fixed nav + language toggle + settings button), `Footer.vue`, `SettingsModal.vue`
-- **`components/schedule/`** — `ScheduleSection.vue` (groups matches by Beijing date), `MatchCard.vue` (shows score/prediction/venue/time), `MatchDetail.vue` (modal with AI prediction), `SchedulePhase.vue` (accordion for phase-organized view)
-- **`components/hero/`** — Hero section with stadium light beam animations, countdown, key stats
-- **Section components** — Each section (groups, odds, cities, players, history, broadcast) has a `*Section.vue` container and `*Card.vue` item
-- **`components/shared/`** — Reusable: `SectionHeader`, `FadeInWrapper`, `TeamFlag`, `CountryBadge`
+- **`components/layout/`** — `NavBar.vue`（固定导航 + 语言切换 + 设置按钮）、`Footer.vue`、`SettingsModal.vue`
+- **`components/schedule/`** — `ScheduleSection.vue`（按北京时间日期分组）、`MatchCard.vue`（显示比分/预测/场地/时间）、`MatchDetail.vue`（AI 预测弹窗）、`SchedulePhase.vue`（按阶段手风琴展开）
+- **`components/hero/`** — 首页 Hero 区域，含体育场光束动画、倒计时、关键数据
+- **区域组件** — 每个区域（分组、赔率、城市、球星、历史、转播）都有 `*Section.vue` 容器和 `*Card.vue` 卡片
+- **`components/shared/`** — 可复用组件：`SectionHeader`、`FadeInWrapper`、`TeamFlag`、`CountryBadge`
 
-### i18n
+### 国际化（i18n）
 
-- `src/i18n/locales/zh.json` (default) and `en.json`
-- Locale stored in `localStorage` (`wc2026_locale`)
-- Content data (team names, venues) use `{ "zh": "...", "en": "..." }` objects in JSON data files
-- `getLocaleLabel()` helper in `useLiveScores.js` picks the right language
+- `src/i18n/locales/zh.json`（默认）和 `en.json`
+- 语言偏好存储在 `localStorage`（key: `wc2026_locale`）
+- 内容数据（球队名、场地名）在 JSON 数据文件中使用 `{ "zh": "...", "en": "..." }` 对象
+- `getLocaleLabel()` 辅助函数在 `useLiveScores.js` 中，根据当前语言选择对应文本
 
-### Design Tokens
+### 设计令牌
 
-Defined in `src/assets/styles/global.css` via Tailwind `@theme`:
-- Backgrounds: `bg-primary` (#0a0a12), `bg-secondary` (#12121f), `bg-card` (#1a1a2e)
-- Gold: `gold` (#d4a843), `gold-light` (#f0d078), `gold-dark` (#a07828)
-- Text: `text-primary` (#f0f0f5), `text-secondary` (#a0a0b8), `text-muted` (#6a6a80)
-- Custom animations: `beam-pulse`, `shimmer`, `glow-pulse`
-- `.card` base class with hover effect
+定义在 `src/assets/styles/global.css`，通过 Tailwind `@theme`：
+- 背景色：`bg-primary` (#0a0a12)、`bg-secondary` (#12121f)、`bg-card` (#1a1a2e)
+- 金色：`gold` (#d4a843)、`gold-light` (#f0d078)、`gold-dark` (#a07828)
+- 文字色：`text-primary` (#f0f0f5)、`text-secondary` (#a0a0b8)、`text-muted` (#6a6a80)
+- 自定义动画：`beam-pulse`（光束脉冲）、`shimmer`（闪光）、`glow-pulse`（发光脉冲）
+- `.card` 基础类带 hover 效果
 
-### JSON Data Files
+### JSON 数据文件
 
-| File | Key Structure |
-|------|---------------|
-| `schedule.json` | `{ matches: [...], byDate: {...} }` — each match has `id`, `homeTeam`, `awayTeam`, `homeLabel`, `awayLabel`, `time` (Beijing), `venue` (zh/en), optional `score: { home, away, status }` |
+| 文件 | 关键结构 |
+|------|----------|
+| `schedule.json` | `{ matches: [...], byDate: {...} }` — 每场比赛含 `id`、`homeTeam`、`awayTeam`、`homeLabel`、`awayLabel`、`time`（北京时间）、`venue`（zh/en）、可选 `score: { home, away, status }` |
 | `groups.json` | `{ groups: [{ letter, teams: [{ name: {zh,en}, code, flag, conf }] }] }` |
 | `odds.json` | `{ teams: [{ rank, code, name: {zh,en}, flag, odds }] }` |
 | `live-scores.json` | `{ lastUpdated, matches: [{ id, status, minute, homeScore, awayScore }] }` |
 
-Finished matches have `score.status === "FT"` — these show actual scores instead of predictions.
+已结束的比赛 `score.status === "FT"` — 这些显示实际比分而非预测。
 
-### API Configuration
+### API 配置
 
-Claude API is called from `usePrediction.js` using `@anthropic-ai/sdk`. The SDK is dynamically imported to keep bundle size manageable. Configuration priority:
-1. `localStorage` (set via Settings modal in UI)
-2. `.env` (`VITE_CLAUDE_API_KEY`, `VITE_CLAUDE_BASE_URL`, `VITE_CLAUDE_MODEL`)
-3. Falls back to simulated prediction if no API key
+Claude API 在 `usePrediction.js` 中通过 `@anthropic-ai/sdk` 调用。SDK 使用动态导入以控制打包体积。配置优先级：
+1. `localStorage`（通过页面设置界面配置）
+2. `.env` 文件（`VITE_CLAUDE_API_KEY`、`VITE_CLAUDE_BASE_URL`、`VITE_CLAUDE_MODEL`）
+3. 无 API Key 时回退到模拟预测
 
-### Match Card Display Priority
+### 比赛卡片比分显示优先级
 
-Scores display in this order: live score > actual score (FT) > AI prediction > VS text.
+比分按以下顺序显示：实时比分 > 实际比分（FT）> AI 预测 > VS 文字。
