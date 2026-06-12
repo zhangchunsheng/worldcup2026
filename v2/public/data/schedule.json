@@ -2,140 +2,1589 @@
   "phases": [
     {
       "id": "opening",
-      "label": { "zh": "开幕战", "en": "Opening Match" },
+      "label": {
+        "zh": "开幕战",
+        "en": "Opening Match"
+      },
       "icon": "🏟️",
-      "dateRange": { "zh": "2026年6月11日", "en": "June 11, 2026" },
+      "dateRange": {
+        "zh": "2026年6月11日",
+        "en": "June 11, 2026"
+      },
       "highlight": true,
-      "venue": { "zh": "阿兹特克体育场 · 墨西哥城", "en": "Estadio Azteca · Mexico City" },
+      "venue": {
+        "zh": "阿兹特克体育场 · 墨西哥城",
+        "en": "Estadio Azteca · Mexico City"
+      },
       "matches": [
-        { "id": "opening-1", "homeTeam": "MEX", "awayTeam": "TBD", "homeLabel": { "zh": "墨西哥", "en": "Mexico" }, "awayLabel": { "zh": "待定", "en": "TBD" } }
+        {
+          "id": "opening-1",
+          "homeTeam": "MEX",
+          "awayTeam": "TBD",
+          "homeLabel": {
+            "zh": "墨西哥",
+            "en": "Mexico"
+          },
+          "awayLabel": {
+            "zh": "待定",
+            "en": "TBD"
+          }
+        }
       ]
     },
     {
       "id": "group-round-1",
-      "label": { "zh": "小组赛 · 第一轮", "en": "Group Stage · Round 1" },
+      "label": {
+        "zh": "小组赛 · 第一轮",
+        "en": "Group Stage · Round 1"
+      },
       "icon": "⚽",
-      "dateRange": { "zh": "2026年6月12-15日", "en": "June 12-15, 2026" },
+      "dateRange": {
+        "zh": "2026年6月12-15日",
+        "en": "June 12-15, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "venue": {
+        "zh": "16座主办城市",
+        "en": "16 Host Cities"
+      },
       "matches": [
-        { "id": "gr1-1", "homeTeam": "CAN", "awayTeam": "MAR", "homeLabel": { "zh": "加拿大", "en": "Canada" }, "awayLabel": { "zh": "摩洛哥", "en": "Morocco" } },
-        { "id": "gr1-2", "homeTeam": "USA", "awayTeam": "TUN", "homeLabel": { "zh": "美国", "en": "USA" }, "awayLabel": { "zh": "突尼斯", "en": "Tunisia" } },
-        { "id": "gr1-3", "homeTeam": "ARG", "awayTeam": "NGA", "homeLabel": { "zh": "阿根廷", "en": "Argentina" }, "awayLabel": { "zh": "尼日利亚", "en": "Nigeria" } },
-        { "id": "gr1-4", "homeTeam": "FRA", "awayTeam": "COL", "homeLabel": { "zh": "法国", "en": "France" }, "awayLabel": { "zh": "哥伦比亚", "en": "Colombia" } }
+        {
+          "id": "gr1-A1",
+          "homeTeam": "MEX",
+          "awayTeam": "NZL",
+          "homeLabel": {
+            "zh": "墨西哥",
+            "en": "Mexico"
+          },
+          "awayLabel": {
+            "zh": "新西兰",
+            "en": "New Zealand"
+          }
+        },
+        {
+          "id": "gr1-A2",
+          "homeTeam": "GER",
+          "awayTeam": "QAT",
+          "homeLabel": {
+            "zh": "德国",
+            "en": "Germany"
+          },
+          "awayLabel": {
+            "zh": "卡塔尔",
+            "en": "Qatar"
+          }
+        },
+        {
+          "id": "gr1-B1",
+          "homeTeam": "CAN",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "加拿大",
+            "en": "Canada"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr1-B2",
+          "homeTeam": "MAR",
+          "awayTeam": "UZB",
+          "homeLabel": {
+            "zh": "摩洛哥",
+            "en": "Morocco"
+          },
+          "awayLabel": {
+            "zh": "乌兹别克斯坦",
+            "en": "Uzbekistan"
+          }
+        },
+        {
+          "id": "gr1-C1",
+          "homeTeam": "USA",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "美国",
+            "en": "USA"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr1-C2",
+          "homeTeam": "TUN",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "突尼斯",
+            "en": "Tunisia"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr1-D1",
+          "homeTeam": "ARG",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "阿根廷",
+            "en": "Argentina"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr1-D2",
+          "homeTeam": "NGA",
+          "awayTeam": "KOR",
+          "homeLabel": {
+            "zh": "尼日利亚",
+            "en": "Nigeria"
+          },
+          "awayLabel": {
+            "zh": "韩国",
+            "en": "South Korea"
+          }
+        },
+        {
+          "id": "gr1-E1",
+          "homeTeam": "FRA",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "法国",
+            "en": "France"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr1-E2",
+          "homeTeam": "COL",
+          "awayTeam": "PAR",
+          "homeLabel": {
+            "zh": "哥伦比亚",
+            "en": "Colombia"
+          },
+          "awayLabel": {
+            "zh": "巴拉圭",
+            "en": "Paraguay"
+          }
+        },
+        {
+          "id": "gr1-F1",
+          "homeTeam": "ESP",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "西班牙",
+            "en": "Spain"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr1-F2",
+          "homeTeam": "CMR",
+          "awayTeam": "KSA",
+          "homeLabel": {
+            "zh": "喀麦隆",
+            "en": "Cameroon"
+          },
+          "awayLabel": {
+            "zh": "沙特阿拉伯",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "id": "gr1-G1",
+          "homeTeam": "BRA",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "巴西",
+            "en": "Brazil"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr1-G2",
+          "homeTeam": "CIV",
+          "awayTeam": "JPN",
+          "homeLabel": {
+            "zh": "科特迪瓦",
+            "en": "Ivory Coast"
+          },
+          "awayLabel": {
+            "zh": "日本",
+            "en": "Japan"
+          }
+        },
+        {
+          "id": "gr1-H1",
+          "homeTeam": "ENG",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "英格兰",
+            "en": "England"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr1-H2",
+          "homeTeam": "ECU",
+          "awayTeam": "SEN",
+          "homeLabel": {
+            "zh": "厄瓜多尔",
+            "en": "Ecuador"
+          },
+          "awayLabel": {
+            "zh": "塞内加尔",
+            "en": "Senegal"
+          }
+        },
+        {
+          "id": "gr1-I1",
+          "homeTeam": "POR",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "葡萄牙",
+            "en": "Portugal"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr1-I2",
+          "homeTeam": "IRN",
+          "awayTeam": "GHA",
+          "homeLabel": {
+            "zh": "伊朗",
+            "en": "Iran"
+          },
+          "awayLabel": {
+            "zh": "加纳",
+            "en": "Ghana"
+          }
+        },
+        {
+          "id": "gr1-J1",
+          "homeTeam": "NED",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "荷兰",
+            "en": "Netherlands"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr1-J2",
+          "homeTeam": "URU",
+          "awayTeam": "EGY",
+          "homeLabel": {
+            "zh": "乌拉圭",
+            "en": "Uruguay"
+          },
+          "awayLabel": {
+            "zh": "埃及",
+            "en": "Egypt"
+          }
+        },
+        {
+          "id": "gr1-K1",
+          "homeTeam": "BEL",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "比利时",
+            "en": "Belgium"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr1-K2",
+          "homeTeam": "AUS",
+          "awayTeam": "PER",
+          "homeLabel": {
+            "zh": "澳大利亚",
+            "en": "Australia"
+          },
+          "awayLabel": {
+            "zh": "秘鲁",
+            "en": "Peru"
+          }
+        },
+        {
+          "id": "gr1-L1",
+          "homeTeam": "ITA",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "意大利",
+            "en": "Italy"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr1-L2",
+          "homeTeam": "CRO",
+          "awayTeam": "ALG",
+          "homeLabel": {
+            "zh": "克罗地亚",
+            "en": "Croatia"
+          },
+          "awayLabel": {
+            "zh": "阿尔及利亚",
+            "en": "Algeria"
+          }
+        }
       ]
     },
     {
       "id": "group-round-2",
-      "label": { "zh": "小组赛 · 第二轮", "en": "Group Stage · Round 2" },
+      "label": {
+        "zh": "小组赛 · 第二轮",
+        "en": "Group Stage · Round 2"
+      },
       "icon": "⚽",
-      "dateRange": { "zh": "2026年6月18-21日", "en": "June 18-21, 2026" },
+      "dateRange": {
+        "zh": "2026年6月18-21日",
+        "en": "June 18-21, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "venue": {
+        "zh": "16座主办城市",
+        "en": "16 Host Cities"
+      },
       "matches": [
-        { "id": "gr2-1", "homeTeam": "BRA", "awayTeam": "CIV", "homeLabel": { "zh": "巴西", "en": "Brazil" }, "awayLabel": { "zh": "科特迪瓦", "en": "Ivory Coast" } },
-        { "id": "gr2-2", "homeTeam": "ENG", "awayTeam": "ECU", "homeLabel": { "zh": "英格兰", "en": "England" }, "awayLabel": { "zh": "厄瓜多尔", "en": "Ecuador" } },
-        { "id": "gr2-3", "homeTeam": "POR", "awayTeam": "IRN", "homeLabel": { "zh": "葡萄牙", "en": "Portugal" }, "awayLabel": { "zh": "伊朗", "en": "Iran" } },
-        { "id": "gr2-4", "homeTeam": "ESP", "awayTeam": "CMR", "homeLabel": { "zh": "西班牙", "en": "Spain" }, "awayLabel": { "zh": "喀麦隆", "en": "Cameroon" } }
+        {
+          "id": "gr2-A1",
+          "homeTeam": "MEX",
+          "awayTeam": "QAT",
+          "homeLabel": {
+            "zh": "墨西哥",
+            "en": "Mexico"
+          },
+          "awayLabel": {
+            "zh": "卡塔尔",
+            "en": "Qatar"
+          }
+        },
+        {
+          "id": "gr2-A2",
+          "homeTeam": "NZL",
+          "awayTeam": "GER",
+          "homeLabel": {
+            "zh": "新西兰",
+            "en": "New Zealand"
+          },
+          "awayLabel": {
+            "zh": "德国",
+            "en": "Germany"
+          }
+        },
+        {
+          "id": "gr2-B1",
+          "homeTeam": "CAN",
+          "awayTeam": "UZB",
+          "homeLabel": {
+            "zh": "加拿大",
+            "en": "Canada"
+          },
+          "awayLabel": {
+            "zh": "乌兹别克斯坦",
+            "en": "Uzbekistan"
+          }
+        },
+        {
+          "id": "gr2-B2",
+          "homeTeam": "PLB",
+          "awayTeam": "MAR",
+          "homeLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          },
+          "awayLabel": {
+            "zh": "摩洛哥",
+            "en": "Morocco"
+          }
+        },
+        {
+          "id": "gr2-C1",
+          "homeTeam": "USA",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "美国",
+            "en": "USA"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr2-C2",
+          "homeTeam": "PLCD",
+          "awayTeam": "TUN",
+          "homeLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          },
+          "awayLabel": {
+            "zh": "突尼斯",
+            "en": "Tunisia"
+          }
+        },
+        {
+          "id": "gr2-D1",
+          "homeTeam": "ARG",
+          "awayTeam": "KOR",
+          "homeLabel": {
+            "zh": "阿根廷",
+            "en": "Argentina"
+          },
+          "awayLabel": {
+            "zh": "韩国",
+            "en": "South Korea"
+          }
+        },
+        {
+          "id": "gr2-D2",
+          "homeTeam": "PLCD",
+          "awayTeam": "NGA",
+          "homeLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          },
+          "awayLabel": {
+            "zh": "尼日利亚",
+            "en": "Nigeria"
+          }
+        },
+        {
+          "id": "gr2-E1",
+          "homeTeam": "FRA",
+          "awayTeam": "PAR",
+          "homeLabel": {
+            "zh": "法国",
+            "en": "France"
+          },
+          "awayLabel": {
+            "zh": "巴拉圭",
+            "en": "Paraguay"
+          }
+        },
+        {
+          "id": "gr2-E2",
+          "homeTeam": "PLA",
+          "awayTeam": "COL",
+          "homeLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          },
+          "awayLabel": {
+            "zh": "哥伦比亚",
+            "en": "Colombia"
+          }
+        },
+        {
+          "id": "gr2-F1",
+          "homeTeam": "ESP",
+          "awayTeam": "KSA",
+          "homeLabel": {
+            "zh": "西班牙",
+            "en": "Spain"
+          },
+          "awayLabel": {
+            "zh": "沙特阿拉伯",
+            "en": "Saudi Arabia"
+          }
+        },
+        {
+          "id": "gr2-F2",
+          "homeTeam": "PLB",
+          "awayTeam": "CMR",
+          "homeLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          },
+          "awayLabel": {
+            "zh": "喀麦隆",
+            "en": "Cameroon"
+          }
+        },
+        {
+          "id": "gr2-G1",
+          "homeTeam": "BRA",
+          "awayTeam": "JPN",
+          "homeLabel": {
+            "zh": "巴西",
+            "en": "Brazil"
+          },
+          "awayLabel": {
+            "zh": "日本",
+            "en": "Japan"
+          }
+        },
+        {
+          "id": "gr2-G2",
+          "homeTeam": "PLA",
+          "awayTeam": "CIV",
+          "homeLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          },
+          "awayLabel": {
+            "zh": "科特迪瓦",
+            "en": "Ivory Coast"
+          }
+        },
+        {
+          "id": "gr2-H1",
+          "homeTeam": "ENG",
+          "awayTeam": "SEN",
+          "homeLabel": {
+            "zh": "英格兰",
+            "en": "England"
+          },
+          "awayLabel": {
+            "zh": "塞内加尔",
+            "en": "Senegal"
+          }
+        },
+        {
+          "id": "gr2-H2",
+          "homeTeam": "PLCD",
+          "awayTeam": "ECU",
+          "homeLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          },
+          "awayLabel": {
+            "zh": "厄瓜多尔",
+            "en": "Ecuador"
+          }
+        },
+        {
+          "id": "gr2-I1",
+          "homeTeam": "POR",
+          "awayTeam": "GHA",
+          "homeLabel": {
+            "zh": "葡萄牙",
+            "en": "Portugal"
+          },
+          "awayLabel": {
+            "zh": "加纳",
+            "en": "Ghana"
+          }
+        },
+        {
+          "id": "gr2-I2",
+          "homeTeam": "PLB",
+          "awayTeam": "IRN",
+          "homeLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          },
+          "awayLabel": {
+            "zh": "伊朗",
+            "en": "Iran"
+          }
+        },
+        {
+          "id": "gr2-J1",
+          "homeTeam": "NED",
+          "awayTeam": "EGY",
+          "homeLabel": {
+            "zh": "荷兰",
+            "en": "Netherlands"
+          },
+          "awayLabel": {
+            "zh": "埃及",
+            "en": "Egypt"
+          }
+        },
+        {
+          "id": "gr2-J2",
+          "homeTeam": "PLA",
+          "awayTeam": "URU",
+          "homeLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          },
+          "awayLabel": {
+            "zh": "乌拉圭",
+            "en": "Uruguay"
+          }
+        },
+        {
+          "id": "gr2-K1",
+          "homeTeam": "BEL",
+          "awayTeam": "PER",
+          "homeLabel": {
+            "zh": "比利时",
+            "en": "Belgium"
+          },
+          "awayLabel": {
+            "zh": "秘鲁",
+            "en": "Peru"
+          }
+        },
+        {
+          "id": "gr2-K2",
+          "homeTeam": "PLCD",
+          "awayTeam": "AUS",
+          "homeLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          },
+          "awayLabel": {
+            "zh": "澳大利亚",
+            "en": "Australia"
+          }
+        },
+        {
+          "id": "gr2-L1",
+          "homeTeam": "ITA",
+          "awayTeam": "ALG",
+          "homeLabel": {
+            "zh": "意大利",
+            "en": "Italy"
+          },
+          "awayLabel": {
+            "zh": "阿尔及利亚",
+            "en": "Algeria"
+          }
+        },
+        {
+          "id": "gr2-L2",
+          "homeTeam": "PLB",
+          "awayTeam": "CRO",
+          "homeLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          },
+          "awayLabel": {
+            "zh": "克罗地亚",
+            "en": "Croatia"
+          }
+        }
       ]
     },
     {
       "id": "group-round-3",
-      "label": { "zh": "小组赛 · 第三轮", "en": "Group Stage · Round 3" },
+      "label": {
+        "zh": "小组赛 · 第三轮",
+        "en": "Group Stage · Round 3"
+      },
       "icon": "⚽",
-      "dateRange": { "zh": "2026年6月24-26日", "en": "June 24-26, 2026" },
+      "dateRange": {
+        "zh": "2026年6月24-26日",
+        "en": "June 24-26, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "16座主办城市", "en": "16 Host Cities" },
+      "venue": {
+        "zh": "16座主办城市",
+        "en": "16 Host Cities"
+      },
       "matches": [
-        { "id": "gr3-1", "homeTeam": "NED", "awayTeam": "URU", "homeLabel": { "zh": "荷兰", "en": "Netherlands" }, "awayLabel": { "zh": "乌拉圭", "en": "Uruguay" } },
-        { "id": "gr3-2", "homeTeam": "BEL", "awayTeam": "AUS", "homeLabel": { "zh": "比利时", "en": "Belgium" }, "awayLabel": { "zh": "澳大利亚", "en": "Australia" } },
-        { "id": "gr3-3", "homeTeam": "ITA", "awayTeam": "CRO", "homeLabel": { "zh": "意大利", "en": "Italy" }, "awayLabel": { "zh": "克罗地亚", "en": "Croatia" } },
-        { "id": "gr3-4", "homeTeam": "GER", "awayTeam": "QAT", "homeLabel": { "zh": "德国", "en": "Germany" }, "awayLabel": { "zh": "卡塔尔", "en": "Qatar" } }
+        {
+          "id": "gr3-A1",
+          "homeTeam": "MEX",
+          "awayTeam": "GER",
+          "homeLabel": {
+            "zh": "墨西哥",
+            "en": "Mexico"
+          },
+          "awayLabel": {
+            "zh": "德国",
+            "en": "Germany"
+          }
+        },
+        {
+          "id": "gr3-A2",
+          "homeTeam": "QAT",
+          "awayTeam": "NZL",
+          "homeLabel": {
+            "zh": "卡塔尔",
+            "en": "Qatar"
+          },
+          "awayLabel": {
+            "zh": "新西兰",
+            "en": "New Zealand"
+          }
+        },
+        {
+          "id": "gr3-B1",
+          "homeTeam": "CAN",
+          "awayTeam": "MAR",
+          "homeLabel": {
+            "zh": "加拿大",
+            "en": "Canada"
+          },
+          "awayLabel": {
+            "zh": "摩洛哥",
+            "en": "Morocco"
+          }
+        },
+        {
+          "id": "gr3-B2",
+          "homeTeam": "UZB",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "乌兹别克斯坦",
+            "en": "Uzbekistan"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr3-C1",
+          "homeTeam": "USA",
+          "awayTeam": "TUN",
+          "homeLabel": {
+            "zh": "美国",
+            "en": "USA"
+          },
+          "awayLabel": {
+            "zh": "突尼斯",
+            "en": "Tunisia"
+          }
+        },
+        {
+          "id": "gr3-C2",
+          "homeTeam": "PLA",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr3-D1",
+          "homeTeam": "ARG",
+          "awayTeam": "NGA",
+          "homeLabel": {
+            "zh": "阿根廷",
+            "en": "Argentina"
+          },
+          "awayLabel": {
+            "zh": "尼日利亚",
+            "en": "Nigeria"
+          }
+        },
+        {
+          "id": "gr3-D2",
+          "homeTeam": "KOR",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "韩国",
+            "en": "South Korea"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr3-E1",
+          "homeTeam": "FRA",
+          "awayTeam": "COL",
+          "homeLabel": {
+            "zh": "法国",
+            "en": "France"
+          },
+          "awayLabel": {
+            "zh": "哥伦比亚",
+            "en": "Colombia"
+          }
+        },
+        {
+          "id": "gr3-E2",
+          "homeTeam": "PAR",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "巴拉圭",
+            "en": "Paraguay"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr3-F1",
+          "homeTeam": "ESP",
+          "awayTeam": "CMR",
+          "homeLabel": {
+            "zh": "西班牙",
+            "en": "Spain"
+          },
+          "awayLabel": {
+            "zh": "喀麦隆",
+            "en": "Cameroon"
+          }
+        },
+        {
+          "id": "gr3-F2",
+          "homeTeam": "KSA",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "沙特阿拉伯",
+            "en": "Saudi Arabia"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr3-G1",
+          "homeTeam": "BRA",
+          "awayTeam": "CIV",
+          "homeLabel": {
+            "zh": "巴西",
+            "en": "Brazil"
+          },
+          "awayLabel": {
+            "zh": "科特迪瓦",
+            "en": "Ivory Coast"
+          }
+        },
+        {
+          "id": "gr3-G2",
+          "homeTeam": "JPN",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "日本",
+            "en": "Japan"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr3-H1",
+          "homeTeam": "ENG",
+          "awayTeam": "ECU",
+          "homeLabel": {
+            "zh": "英格兰",
+            "en": "England"
+          },
+          "awayLabel": {
+            "zh": "厄瓜多尔",
+            "en": "Ecuador"
+          }
+        },
+        {
+          "id": "gr3-H2",
+          "homeTeam": "SEN",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "塞内加尔",
+            "en": "Senegal"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr3-I1",
+          "homeTeam": "POR",
+          "awayTeam": "IRN",
+          "homeLabel": {
+            "zh": "葡萄牙",
+            "en": "Portugal"
+          },
+          "awayLabel": {
+            "zh": "伊朗",
+            "en": "Iran"
+          }
+        },
+        {
+          "id": "gr3-I2",
+          "homeTeam": "GHA",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "加纳",
+            "en": "Ghana"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        },
+        {
+          "id": "gr3-J1",
+          "homeTeam": "NED",
+          "awayTeam": "URU",
+          "homeLabel": {
+            "zh": "荷兰",
+            "en": "Netherlands"
+          },
+          "awayLabel": {
+            "zh": "乌拉圭",
+            "en": "Uruguay"
+          }
+        },
+        {
+          "id": "gr3-J2",
+          "homeTeam": "EGY",
+          "awayTeam": "PLA",
+          "homeLabel": {
+            "zh": "埃及",
+            "en": "Egypt"
+          },
+          "awayLabel": {
+            "zh": "附加赛A",
+            "en": "Playoff A"
+          }
+        },
+        {
+          "id": "gr3-K1",
+          "homeTeam": "BEL",
+          "awayTeam": "AUS",
+          "homeLabel": {
+            "zh": "比利时",
+            "en": "Belgium"
+          },
+          "awayLabel": {
+            "zh": "澳大利亚",
+            "en": "Australia"
+          }
+        },
+        {
+          "id": "gr3-K2",
+          "homeTeam": "PER",
+          "awayTeam": "PLCD",
+          "homeLabel": {
+            "zh": "秘鲁",
+            "en": "Peru"
+          },
+          "awayLabel": {
+            "zh": "附加赛C/D",
+            "en": "Playoff C/D"
+          }
+        },
+        {
+          "id": "gr3-L1",
+          "homeTeam": "ITA",
+          "awayTeam": "CRO",
+          "homeLabel": {
+            "zh": "意大利",
+            "en": "Italy"
+          },
+          "awayLabel": {
+            "zh": "克罗地亚",
+            "en": "Croatia"
+          }
+        },
+        {
+          "id": "gr3-L2",
+          "homeTeam": "ALG",
+          "awayTeam": "PLB",
+          "homeLabel": {
+            "zh": "阿尔及利亚",
+            "en": "Algeria"
+          },
+          "awayLabel": {
+            "zh": "附加赛B",
+            "en": "Playoff B"
+          }
+        }
       ]
     },
     {
       "id": "group-ranking",
-      "label": { "zh": "小组排名确定", "en": "Group Rankings Finalized" },
+      "label": {
+        "zh": "小组排名确定",
+        "en": "Group Rankings Finalized"
+      },
       "icon": "🔢",
-      "dateRange": { "zh": "2026年6月27-28日", "en": "June 27-28, 2026" },
+      "dateRange": {
+        "zh": "2026年6月27-28日",
+        "en": "June 27-28, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "最佳第三名晋级", "en": "Best 3rd Places Advance" },
+      "venue": {
+        "zh": "最佳第三名晋级",
+        "en": "Best 3rd Places Advance"
+      },
       "matches": [
-        { "id": "rank-1", "homeTeam": "", "awayTeam": "", "homeLabel": { "zh": "32支球队晋级", "en": "32 Teams Advance" }, "awayLabel": { "zh": "16支淘汰", "en": "16 Eliminated" } }
+        {
+          "id": "rank-1",
+          "homeTeam": "",
+          "awayTeam": "",
+          "homeLabel": {
+            "zh": "32支球队晋级",
+            "en": "32 Teams Advance"
+          },
+          "awayLabel": {
+            "zh": "16支淘汰",
+            "en": "16 Eliminated"
+          }
+        }
       ]
     },
     {
       "id": "r32",
-      "label": { "zh": "32强淘汰赛", "en": "Round of 32" },
+      "label": {
+        "zh": "32强淘汰赛",
+        "en": "Round of 32"
+      },
       "icon": "🔥",
-      "dateRange": { "zh": "2026年6月29日 — 7月1日", "en": "June 29 — July 1, 2026" },
+      "dateRange": {
+        "zh": "2026年6月29日 — 7月1日",
+        "en": "June 29 — July 1, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "8场比赛", "en": "8 Matches" },
+      "venue": {
+        "zh": "16场比赛",
+        "en": "16 Matches"
+      },
       "matches": [
-        { "id": "r32-1", "homeTeam": "A1", "awayTeam": "B3/C3/D3", "homeLabel": { "zh": "A组第一", "en": "Group A 1st" }, "awayLabel": { "zh": "B/C/D组第三", "en": "Group B/C/D 3rd" } },
-        { "id": "r32-2", "homeTeam": "B1", "awayTeam": "A3/C3/D3", "homeLabel": { "zh": "B组第一", "en": "Group B 1st" }, "awayLabel": { "zh": "A/C/D组第三", "en": "Group A/C/D 3rd" } },
-        { "id": "r32-3", "homeTeam": "C1", "awayTeam": "A3/B3/D3", "homeLabel": { "zh": "C组第一", "en": "Group C 1st" }, "awayLabel": { "zh": "A/B/D组第三", "en": "Group A/B/D 3rd" } },
-        { "id": "r32-4", "homeTeam": "D1", "awayTeam": "A3/B3/C3", "homeLabel": { "zh": "D组第一", "en": "Group D 1st" }, "awayLabel": { "zh": "A/B/C组第三", "en": "Group A/B/C 3rd" } }
+        {
+          "id": "r32-1",
+          "homeTeam": "A1",
+          "awayTeam": "B3/C3/D3",
+          "homeLabel": {
+            "zh": "A组第一",
+            "en": "Group A 1st"
+          },
+          "awayLabel": {
+            "zh": "B/C/D组第三",
+            "en": "Group B/C/D 3rd"
+          }
+        },
+        {
+          "id": "r32-2",
+          "homeTeam": "C1",
+          "awayTeam": "A3/B3/D3",
+          "homeLabel": {
+            "zh": "C组第一",
+            "en": "Group C 1st"
+          },
+          "awayLabel": {
+            "zh": "A/B/D组第三",
+            "en": "Group A/B/D 3rd"
+          }
+        },
+        {
+          "id": "r32-3",
+          "homeTeam": "E1",
+          "awayTeam": "F3/G3/H3",
+          "homeLabel": {
+            "zh": "E组第一",
+            "en": "Group E 1st"
+          },
+          "awayLabel": {
+            "zh": "F/G/H组第三",
+            "en": "Group F/G/H 3rd"
+          }
+        },
+        {
+          "id": "r32-4",
+          "homeTeam": "G1",
+          "awayTeam": "E3/F3/H3",
+          "homeLabel": {
+            "zh": "G组第一",
+            "en": "Group G 1st"
+          },
+          "awayLabel": {
+            "zh": "E/F/H组第三",
+            "en": "Group E/F/H 3rd"
+          }
+        },
+        {
+          "id": "r32-5",
+          "homeTeam": "I1",
+          "awayTeam": "J3/K3/L3",
+          "homeLabel": {
+            "zh": "I组第一",
+            "en": "Group I 1st"
+          },
+          "awayLabel": {
+            "zh": "J/K/L组第三",
+            "en": "Group J/K/L 3rd"
+          }
+        },
+        {
+          "id": "r32-6",
+          "homeTeam": "K1",
+          "awayTeam": "I3/J3/L3",
+          "homeLabel": {
+            "zh": "K组第一",
+            "en": "Group K 1st"
+          },
+          "awayLabel": {
+            "zh": "I/J/L组第三",
+            "en": "Group I/J/L 3rd"
+          }
+        },
+        {
+          "id": "r32-7",
+          "homeTeam": "B1",
+          "awayTeam": "A3/C3/D3",
+          "homeLabel": {
+            "zh": "B组第一",
+            "en": "Group B 1st"
+          },
+          "awayLabel": {
+            "zh": "A/C/D组第三",
+            "en": "Group A/C/D 3rd"
+          }
+        },
+        {
+          "id": "r32-8",
+          "homeTeam": "D1",
+          "awayTeam": "A3/B3/C3",
+          "homeLabel": {
+            "zh": "D组第一",
+            "en": "Group D 1st"
+          },
+          "awayLabel": {
+            "zh": "A/B/C组第三",
+            "en": "Group A/B/C 3rd"
+          }
+        },
+        {
+          "id": "r32-9",
+          "homeTeam": "F1",
+          "awayTeam": "E3/G3/H3",
+          "homeLabel": {
+            "zh": "F组第一",
+            "en": "Group F 1st"
+          },
+          "awayLabel": {
+            "zh": "E/G/H组第三",
+            "en": "Group E/G/H 3rd"
+          }
+        },
+        {
+          "id": "r32-10",
+          "homeTeam": "H1",
+          "awayTeam": "E3/F3/G3",
+          "homeLabel": {
+            "zh": "H组第一",
+            "en": "Group H 1st"
+          },
+          "awayLabel": {
+            "zh": "E/F/G组第三",
+            "en": "Group E/F/G 3rd"
+          }
+        },
+        {
+          "id": "r32-11",
+          "homeTeam": "J1",
+          "awayTeam": "I3/K3/L3",
+          "homeLabel": {
+            "zh": "J组第一",
+            "en": "Group J 1st"
+          },
+          "awayLabel": {
+            "zh": "I/K/L组第三",
+            "en": "Group I/K/L 3rd"
+          }
+        },
+        {
+          "id": "r32-12",
+          "homeTeam": "L1",
+          "awayTeam": "I3/J3/K3",
+          "homeLabel": {
+            "zh": "L组第一",
+            "en": "Group L 1st"
+          },
+          "awayLabel": {
+            "zh": "I/J/K组第三",
+            "en": "Group I/J/K 3rd"
+          }
+        },
+        {
+          "id": "r32-13",
+          "homeTeam": "A2",
+          "awayTeam": "C2",
+          "homeLabel": {
+            "zh": "A组第二",
+            "en": "Group A 2nd"
+          },
+          "awayLabel": {
+            "zh": "C组第二",
+            "en": "Group C 2nd"
+          }
+        },
+        {
+          "id": "r32-14",
+          "homeTeam": "B2",
+          "awayTeam": "D2",
+          "homeLabel": {
+            "zh": "B组第二",
+            "en": "Group B 2nd"
+          },
+          "awayLabel": {
+            "zh": "D组第二",
+            "en": "Group D 2nd"
+          }
+        },
+        {
+          "id": "r32-15",
+          "homeTeam": "E2",
+          "awayTeam": "G2",
+          "homeLabel": {
+            "zh": "E组第二",
+            "en": "Group E 2nd"
+          },
+          "awayLabel": {
+            "zh": "G组第二",
+            "en": "Group G 2nd"
+          }
+        },
+        {
+          "id": "r32-16",
+          "homeTeam": "F2",
+          "awayTeam": "H2",
+          "homeLabel": {
+            "zh": "F组第二",
+            "en": "Group F 2nd"
+          },
+          "awayLabel": {
+            "zh": "H组第二",
+            "en": "Group H 2nd"
+          }
+        }
       ]
     },
     {
       "id": "r16",
-      "label": { "zh": "16强淘汰赛", "en": "Round of 16" },
+      "label": {
+        "zh": "16强淘汰赛",
+        "en": "Round of 16"
+      },
       "icon": "🔥",
-      "dateRange": { "zh": "2026年7月3日 — 7月5日", "en": "July 3-5, 2026" },
+      "dateRange": {
+        "zh": "2026年7月3日 — 7月5日",
+        "en": "July 3-5, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "8场比赛", "en": "8 Matches" },
+      "venue": {
+        "zh": "8场比赛",
+        "en": "8 Matches"
+      },
       "matches": [
-        { "id": "r16-1", "homeTeam": "W1", "awayTeam": "W2", "homeLabel": { "zh": "胜者1", "en": "Winner 1" }, "awayLabel": { "zh": "胜者2", "en": "Winner 2" } },
-        { "id": "r16-2", "homeTeam": "W3", "awayTeam": "W4", "homeLabel": { "zh": "胜者3", "en": "Winner 3" }, "awayLabel": { "zh": "胜者4", "en": "Winner 4" } },
-        { "id": "r16-3", "homeTeam": "W5", "awayTeam": "W6", "homeLabel": { "zh": "胜者5", "en": "Winner 5" }, "awayLabel": { "zh": "胜者6", "en": "Winner 6" } },
-        { "id": "r16-4", "homeTeam": "W7", "awayTeam": "W8", "homeLabel": { "zh": "胜者7", "en": "Winner 7" }, "awayLabel": { "zh": "胜者8", "en": "Winner 8" } }
+        {
+          "id": "r16-1",
+          "homeTeam": "W1",
+          "awayTeam": "W2",
+          "homeLabel": {
+            "zh": "胜者1",
+            "en": "Winner 1"
+          },
+          "awayLabel": {
+            "zh": "胜者2",
+            "en": "Winner 2"
+          }
+        },
+        {
+          "id": "r16-2",
+          "homeTeam": "W3",
+          "awayTeam": "W4",
+          "homeLabel": {
+            "zh": "胜者3",
+            "en": "Winner 3"
+          },
+          "awayLabel": {
+            "zh": "胜者4",
+            "en": "Winner 4"
+          }
+        },
+        {
+          "id": "r16-3",
+          "homeTeam": "W5",
+          "awayTeam": "W6",
+          "homeLabel": {
+            "zh": "胜者5",
+            "en": "Winner 5"
+          },
+          "awayLabel": {
+            "zh": "胜者6",
+            "en": "Winner 6"
+          }
+        },
+        {
+          "id": "r16-4",
+          "homeTeam": "W7",
+          "awayTeam": "W8",
+          "homeLabel": {
+            "zh": "胜者7",
+            "en": "Winner 7"
+          },
+          "awayLabel": {
+            "zh": "胜者8",
+            "en": "Winner 8"
+          }
+        },
+        {
+          "id": "r16-5",
+          "homeTeam": "W9",
+          "awayTeam": "W10",
+          "homeLabel": {
+            "zh": "胜者9",
+            "en": "Winner 9"
+          },
+          "awayLabel": {
+            "zh": "胜者10",
+            "en": "Winner 10"
+          }
+        },
+        {
+          "id": "r16-6",
+          "homeTeam": "W11",
+          "awayTeam": "W12",
+          "homeLabel": {
+            "zh": "胜者11",
+            "en": "Winner 11"
+          },
+          "awayLabel": {
+            "zh": "胜者12",
+            "en": "Winner 12"
+          }
+        },
+        {
+          "id": "r16-7",
+          "homeTeam": "W13",
+          "awayTeam": "W14",
+          "homeLabel": {
+            "zh": "胜者13",
+            "en": "Winner 13"
+          },
+          "awayLabel": {
+            "zh": "胜者14",
+            "en": "Winner 14"
+          }
+        },
+        {
+          "id": "r16-8",
+          "homeTeam": "W15",
+          "awayTeam": "W16",
+          "homeLabel": {
+            "zh": "胜者15",
+            "en": "Winner 15"
+          },
+          "awayLabel": {
+            "zh": "胜者16",
+            "en": "Winner 16"
+          }
+        }
       ]
     },
     {
       "id": "quarter",
-      "label": { "zh": "四分之一决赛", "en": "Quarter-finals" },
+      "label": {
+        "zh": "四分之一决赛",
+        "en": "Quarter-finals"
+      },
       "icon": "⚡",
-      "dateRange": { "zh": "2026年7月9日 — 7月10日", "en": "July 9-10, 2026" },
+      "dateRange": {
+        "zh": "2026年7月9日 — 7月10日",
+        "en": "July 9-10, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "4场比赛", "en": "4 Matches" },
+      "venue": {
+        "zh": "8场比赛",
+        "en": "8 Matches"
+      },
       "matches": [
-        { "id": "qf-1", "homeTeam": "QF1", "awayTeam": "QF2", "homeLabel": { "zh": "QF1", "en": "QF1" }, "awayLabel": { "zh": "QF2", "en": "QF2" } },
-        { "id": "qf-2", "homeTeam": "QF3", "awayTeam": "QF4", "homeLabel": { "zh": "QF3", "en": "QF3" }, "awayLabel": { "zh": "QF4", "en": "QF4" } }
+        {
+          "id": "qf-1",
+          "homeTeam": "QF1",
+          "awayTeam": "QF2",
+          "homeLabel": {
+            "zh": "QF1",
+            "en": "QF1"
+          },
+          "awayLabel": {
+            "zh": "QF2",
+            "en": "QF2"
+          }
+        },
+        {
+          "id": "qf-2",
+          "homeTeam": "QF3",
+          "awayTeam": "QF4",
+          "homeLabel": {
+            "zh": "QF3",
+            "en": "QF3"
+          },
+          "awayLabel": {
+            "zh": "QF4",
+            "en": "QF4"
+          }
+        },
+        {
+          "id": "qf-3",
+          "homeTeam": "QF5",
+          "awayTeam": "QF6",
+          "homeLabel": {
+            "zh": "QF5",
+            "en": "QF5"
+          },
+          "awayLabel": {
+            "zh": "QF6",
+            "en": "QF6"
+          }
+        },
+        {
+          "id": "qf-4",
+          "homeTeam": "QF7",
+          "awayTeam": "QF8",
+          "homeLabel": {
+            "zh": "QF7",
+            "en": "QF7"
+          },
+          "awayLabel": {
+            "zh": "QF8",
+            "en": "QF8"
+          }
+        }
       ]
     },
     {
       "id": "semi",
-      "label": { "zh": "半决赛", "en": "Semi-finals" },
+      "label": {
+        "zh": "半决赛",
+        "en": "Semi-finals"
+      },
       "icon": "🏟️",
-      "dateRange": { "zh": "2026年7月14日 — 7月15日", "en": "July 14-15, 2026" },
+      "dateRange": {
+        "zh": "2026年7月14日 — 7月15日",
+        "en": "July 14-15, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "待定", "en": "TBD" },
+      "venue": {
+        "zh": "待定",
+        "en": "TBD"
+      },
       "matches": [
-        { "id": "sf-1", "homeTeam": "SF1", "awayTeam": "SF2", "homeLabel": { "zh": "半决赛队伍1", "en": "Semi-finalist 1" }, "awayLabel": { "zh": "半决赛队伍2", "en": "Semi-finalist 2" } },
-        { "id": "sf-2", "homeTeam": "SF3", "awayTeam": "SF4", "homeLabel": { "zh": "半决赛队伍3", "en": "Semi-finalist 3" }, "awayLabel": { "zh": "半决赛队伍4", "en": "Semi-finalist 4" } }
+        {
+          "id": "sf-1",
+          "homeTeam": "SF1",
+          "awayTeam": "SF2",
+          "homeLabel": {
+            "zh": "半决赛队伍1",
+            "en": "Semi-finalist 1"
+          },
+          "awayLabel": {
+            "zh": "半决赛队伍2",
+            "en": "Semi-finalist 2"
+          }
+        },
+        {
+          "id": "sf-2",
+          "homeTeam": "SF3",
+          "awayTeam": "SF4",
+          "homeLabel": {
+            "zh": "半决赛队伍3",
+            "en": "Semi-finalist 3"
+          },
+          "awayLabel": {
+            "zh": "半决赛队伍4",
+            "en": "Semi-finalist 4"
+          }
+        }
       ]
     },
     {
       "id": "third-place",
-      "label": { "zh": "三四名决赛", "en": "Third Place Play-off" },
+      "label": {
+        "zh": "三四名决赛",
+        "en": "Third Place Play-off"
+      },
       "icon": "🥉",
-      "dateRange": { "zh": "2026年7月18日", "en": "July 18, 2026" },
+      "dateRange": {
+        "zh": "2026年7月18日",
+        "en": "July 18, 2026"
+      },
       "highlight": false,
-      "venue": { "zh": "待定", "en": "TBD" },
+      "venue": {
+        "zh": "待定",
+        "en": "TBD"
+      },
       "matches": [
-        { "id": "tp-1", "homeTeam": "L1", "awayTeam": "L2", "homeLabel": { "zh": "半决赛负者1", "en": "Semi-final Loser 1" }, "awayLabel": { "zh": "半决赛负者2", "en": "Semi-final Loser 2" } }
+        {
+          "id": "tp-1",
+          "homeTeam": "L1",
+          "awayTeam": "L2",
+          "homeLabel": {
+            "zh": "半决赛负者1",
+            "en": "Semi-final Loser 1"
+          },
+          "awayLabel": {
+            "zh": "半决赛负者2",
+            "en": "Semi-final Loser 2"
+          }
+        }
       ]
     },
     {
       "id": "final",
-      "label": { "zh": "决赛", "en": "Final" },
+      "label": {
+        "zh": "决赛",
+        "en": "Final"
+      },
       "icon": "🏆",
-      "dateRange": { "zh": "2026年7月19日", "en": "July 19, 2026" },
+      "dateRange": {
+        "zh": "2026年7月19日",
+        "en": "July 19, 2026"
+      },
       "highlight": true,
-      "venue": { "zh": "MetLife体育场 · 纽约/新泽西", "en": "MetLife Stadium · New York/New Jersey" },
+      "venue": {
+        "zh": "MetLife体育场 · 纽约/新泽西",
+        "en": "MetLife Stadium · New York/New Jersey"
+      },
       "matches": [
-        { "id": "final-1", "homeTeam": "F1", "awayTeam": "F2", "homeLabel": { "zh": "决赛队伍1", "en": "Finalist 1" }, "awayLabel": { "zh": "决赛队伍2", "en": "Finalist 2" } }
+        {
+          "id": "final-1",
+          "homeTeam": "F1",
+          "awayTeam": "F2",
+          "homeLabel": {
+            "zh": "决赛队伍1",
+            "en": "Finalist 1"
+          },
+          "awayLabel": {
+            "zh": "决赛队伍2",
+            "en": "Finalist 2"
+          }
+        }
       ]
     }
   ]
