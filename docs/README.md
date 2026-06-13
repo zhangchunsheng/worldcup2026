@@ -17,4 +17,5 @@ AISwitchToggle组件样式错误
 AI预测没有请求大模型
 优化index.html页面seo
 将AI预测接口改为请求https://about.luomor.com/ai/claude，post请求，传入timestamp, sign, messages参数，其中sign为md5(key + timestamp)，其中key为常量，messages同anthropic api参数
+md5结果同php计算不一致
 ```
