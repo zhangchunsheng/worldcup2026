@@ -69,10 +69,12 @@ export function usePrediction() {
 
           // Parse response - handle different response formats
           let homeScore, awayScore
-          if (result.content) {
+          console.log('API response:', result)
+          if (result.result.content) {
             // Claude-like response format
-            const text = typeof result.content === 'string' ? result.content : result.content[0]?.text || ''
-            const json = JSON.parse(text.replace(/```json\s*|\s*```/g, '').trim())
+            const text = typeof result.result.content === 'string' ? result.result.content : result.result.content[1]?.text || ''
+            console.log('Raw text:', text)
+            const json = JSON.parse(text.trim())
             homeScore = json.homeScore
             awayScore = json.awayScore
           } else if (result.homeScore !== undefined) {
