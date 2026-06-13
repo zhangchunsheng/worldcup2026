@@ -30,9 +30,11 @@ export function usePrediction() {
   function toggleMode() {
     mode.value = mode.value === 'simulated' ? 'ai' : 'simulated'
     localStorage.setItem('wc2026_pred_mode', mode.value)
+    console.log('[toggleMode] switched to:', mode.value)
   }
 
   async function predictMatch(matchId, matchData, oddsData) {
+    console.log('[predictMatch] called, mode:', mode.value, 'matchId:', matchId)
     isPredicting.value = true
     predictionError.value = null
 
