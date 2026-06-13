@@ -44,7 +44,7 @@ export function usePrediction() {
           homeScore: result.homeScore,
           awayScore: result.awayScore,
           confidence: result.confidence,
-          timestamp: Date.now(),
+          timestamp: parseInt(Date.now() / 1000),
           mode: 'simulated',
         }
       } else {
@@ -87,7 +87,7 @@ export function usePrediction() {
             homeScore,
             awayScore,
             confidence: 72,
-            timestamp: Date.now(),
+            timestamp: parseInt(Date.now() / 1000),
             mode: 'ai',
           }
         } catch (apiErr) {
@@ -97,7 +97,7 @@ export function usePrediction() {
             homeScore: result.homeScore,
             awayScore: result.awayScore,
             confidence: result.confidence,
-            timestamp: Date.now(),
+            timestamp: parseInt(Date.now() / 1000),
             mode: 'simulated (fallback)',
           }
         }
