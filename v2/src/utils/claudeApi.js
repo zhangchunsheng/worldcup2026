@@ -2,7 +2,8 @@
  * Custom Claude API client.
  * POST to https://about.luomor.com/ai/claude with signed request.
  */
-const crypto = require('crypto');
+// Use a small MD5 library in browser builds. Install with `npm install js-md5`.
+import md5 from 'js-md5';
 
 const API_BASE_URL = 'https://about.luomor.com/ai/claude'
 const API_KEY = 'luomor2026' // Key for sign generation
@@ -12,9 +13,9 @@ export async function callClaudeApi(messages, options = {}) {
   const maxTokens = options.maxTokens || 4096
   const systemPrompt = options.systemPrompt || ''
 
-  const timestamp = parseInt(Date.now() / 1000)
-  console.log(API_KEY + timestamp)
-  const sign = crypto.createHash('md5').update(API_KEY + timestamp).digest('hex')
+  const timestamp = Math.floor(Date.now() / 1000)
+  // compute MD5 signature (browser-safe)
+  const sign = md5(API_KEY + timestamp)
 
   const body = {
     timestamp,

@@ -12,6 +12,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",
     "@tailwindcss/vite": "^4.3.0",
+    "js-md5": "^0.8.3",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.3.0",
     "vue": "^3.5.34",
