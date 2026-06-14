@@ -63,7 +63,11 @@
         "zh": "BMO Field · 多伦多",
         "en": "BMO Field · Toronto"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m004",
@@ -82,7 +86,11 @@
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
       },
-      "score": null
+      "score": {
+        "home": 4,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m005",
@@ -101,7 +109,11 @@
         "zh": "李维斯体育场 · 旧金山",
         "en": "Levi's Stadium · San Francisco"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m006",
@@ -120,7 +132,11 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · New York"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m007",
@@ -139,7 +155,11 @@
         "zh": "吉列体育场 · 波士顿",
         "en": "Gillette Stadium · Boston"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m008",
@@ -158,7 +178,11 @@
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m009",
