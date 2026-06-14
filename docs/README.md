@@ -19,4 +19,5 @@ AI预测没有请求大模型
 将AI预测接口改为请求https://about.luomor.com/ai/claude，post请求，传入timestamp, sign, messages参数，其中sign为md5(key + timestamp)，其中key为常量，messages同anthropic api参数
 md5结果同php计算不一致
 已经结束比赛，同时显示真实比分和预测比分，如果比分一样，显示预测一致，否则显示预测错误
+从网络上获取数据，更新已经结束比赛比分
 ```
