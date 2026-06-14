@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>世界杯 2026 - 比赛结果与预测对比</title>
+  <style>
+    :root {
+      --bg: #0d0d1a;
+      --surface: #13131f;
+      --surface2: #1a1a2e;
+      --border: rgba(255,255,255,0.08);
+      --text: #e2e8f0;
+      --text-muted: rgba(255,255,255,0.45);
+      --success: #22c55e;
+      --error: #ef4444;
+      --warning: #f59e0b;
+      --primary: #6ee7f7;
+      --secondary: #a78bfa;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* 头部 */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #6ee7f7 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* 筛选栏 */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .filter-btn.active {
+      background: rgba(110, 231, 247, 0.15);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* 比赛卡片 */
+    .match-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: all 0.2s;
+    }
+
+    .match-card:hover {
+      border-color: rgba(110, 231, 247, 0.2);
+    }
+
+    .match-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .match-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.06);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .match-status {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .match-status.completed {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+    }
+
+    .match-status.predict-correct {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+    }
+
+    .match-status.predict-wrong {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--error);
+    }
+
+    /* 比赛内容 */
+    .match-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .team {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .team-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .team-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .team-short {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* 比分区域 */
+    .score-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 140px;
+    }
+
+    .score-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .score {
+      font-size: 2rem;
+      font-weight: 700;
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .score.real {
+      color: var(--primary);
+    }
+
+    .score.predict {
+      color: var(--secondary);
+    }
+
+    .vs {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .score-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .result-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 8px;
+    }
+
+    .result-badge.correct {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+    }
+
+    .result-badge.wrong {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--error);
+    }
+
+    /* 预测详情 */
+    .predict-detail {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .predict-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .predict-info svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .predict-confidence {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .confidence-bar {
+      width: 100px;
+      height: 6px;
+      background: var(--surface2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .confidence-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s;
+    }
+
+    .confidence-fill.high {
+      background: var(--success);
+    }
+
+    .confidence-fill.medium {
+      background: var(--warning);
+    }
+
+    .confidence-fill.low {
+      background: var(--error);
+    }
+
+    .confidence-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 45px;
+      text-align: right;
+    }
+
+    /* 统计面板 */
+    .stats-panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .stat-value.correct {
+      color: var(--success);
+    }
+
+    .stat-value.wrong {
+      color: var(--error);
+    }
+
+    .stat-value.total {
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 空状态 */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-state svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .match-content {
+        flex-direction: column;
+      }
+
+      .team {
+        justify-content: center;
+      }
+
+      .score-section {
+        order: -1;
+      }
+
+      .match-header {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <h1>🏆 世界杯 2026</h1>
+      <p>已结束比赛 - 真实比分 vs 预测比分</p>
+    </header>
+
+    <!-- 统计面板 -->
+    <div class="stats-panel">
+      <div class="stat-card">
+        <div class="stat-value total">12</div>
+        <div class="stat-label">已结束比赛</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value correct">7</div>
+        <div class="stat-label">预测一致</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value wrong">5</div>
+        <div class="stat-label">预测错误</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value total">58%</div>
+        <div class="stat-label">预测准确率</div>
+      </div>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterMatches('all')">全部比赛</button>
+      <button class="filter-btn" onclick="filterMatches('correct')">预测一致</button>
+      <button class="filter-btn" onclick="filterMatches('wrong')">预测错误</button>
+    </div>
+
+    <!-- 比赛列表 -->
+    <div id="matches-container">
+      <!-- 比赛卡片将通过 JavaScript 动态生成 -->
+    </div>
+  </div>
+
+  <script>
+    // 模拟比赛数据
+    const matchesData = [
+      {
+        id: 1,
+        date: '2026-06-14',
+        team1: { name: '巴西', short: 'BRA', emoji: '🇧🇷' },
+        team2: { name: '塞尔维亚', short: 'SRB', emoji: '🇷🇸' },
+        realScore: { team1: 2, team2: 0 },
+        predictScore: { team1: 2, team2: 0 },
+        confidence: 85,
+        predictTime: '2026-06-13 18:00'
+      },
+      {
+        id: 2,
+        date: '2026-06-14',
+        team1: { name: '德国', short: 'GER', emoji: '🇩🇪' },
+        team2: { name: '墨西哥', short: 'MEX', emoji: '🇲🇽' },
+        realScore: { team1: 1, team2: 1 },
+        predictScore: { team1: 2, team2: 0 },
+        confidence: 72,
+        predictTime: '2026-06-13 15:00'
+      },
+      {
+        id: 3,
+        date: '2026-06-15',
+        team1: { name: '阿根廷', short: 'ARG', emoji: '🇦🇷' },
+        team2: { name: '沙特阿拉伯', short: 'KSA', emoji: '🇸🇦' },
+        realScore: { team1: 3, team2: 1 },
+        predictScore: { team1: 3, team2: 1 },
+        confidence: 68,
+        predictTime: '2026-06-14 20:00'
+      },
+      {
+        id: 4,
+        date: '2026-06-15',
+        team1: { name: '法国', short: 'FRA', emoji: '🇫🇷' },
+        team2: { name: '澳大利亚', short: 'AUS', emoji: '🇦🇺' },
+        realScore: { team1: 4, team2: 1 },
+        predictScore: { team1: 3, team2: 0 },
+        confidence: 80,
+        predictTime: '2026-06-14 16:00'
+      },
+      {
+        id: 5,
+        date: '2026-06-16',
+        team1: { name: '英格兰', short: 'ENG', emoji: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+        team2: { name: '伊朗', short: 'IRN', emoji: '🇮🇷' },
+        realScore: { team1: 6, team2: 2 },
+        predictScore: { team1: 6, team2: 2 },
+        confidence: 75,
+        predictTime: '2026-06-15 14:00'
+      },
+      {
+        id: 6,
+        date: '2026-06-16',
+        team1: { name: '西班牙', short: 'ESP', emoji: '🇪🇸' },
+        team2: { name: '哥斯达黎加', short: 'CRC', emoji: '🇨🇷' },
+        realScore: { team1: 7, team2: 0 },
+        predictScore: { team1: 4, team2: 0 },
+        confidence: 88,
+        predictTime: '2026-06-15 18:00'
+      },
+      {
+        id: 7,
+        date: '2026-06-17',
+        team1: { name: '葡萄牙', short: 'POR', emoji: '🇵🇹' },
+        team2: { name: '乌拉圭', short: 'URU', emoji: '🇺🇾' },
+        realScore: { team1: 2, team2: 2 },
+        predictScore: { team1: 2, team2: 2 },
+        confidence: 65,
+        predictTime: '2026-06-16 20:00'
+      },
+      {
+        id: 8,
+        date: '2026-06-17',
+        team1: { name: '荷兰', short: 'NED', emoji: '🇳🇱' },
+        team2: { name: '厄瓜多尔', short: 'ECU', emoji: '🇪🇨' },
+        realScore: { team1: 2, team2: 0 },
+        predictScore: { team1: 2, team2: 0 },
+        confidence: 78,
+        predictTime: '2026-06-16 15:00'
+      },
+      {
+        id: 9,
+        date: '2026-06-18',
+        team1: { name: '比利时', short: 'BEL', emoji: '🇧🇪' },
+        team2: { name: '摩洛哥', short: 'MAR', emoji: '🇲🇦' },
+        realScore: { team1: 1, team2: 0 },
+        predictScore: { team1: 2, team2: 1 },
+        confidence: 70,
+        predictTime: '2026-06-17 17:00'
+      },
+      {
+        id: 10,
+        date: '2026-06-18',
+        team1: { name: '克罗地亚', short: 'CRO', emoji: '🇭🇷' },
+        team2: { name: '加拿大', short: 'CAN', emoji: '🇨🇦' },
+        realScore: { team1: 4, team2: 1 },
+        predictScore: { team1: 3, team2: 1 },
+        confidence: 62,
+        predictTime: '2026-06-17 19:00'
+      },
+      {
+        id: 11,
+        date: '2026-06-19',
+        team1: { name: '日本', short: 'JPN', emoji: '🇯🇵' },
+        team2: { name: '喀麦隆', short: 'CMR', emoji: '🇨🇲' },
+        realScore: { team1: 2, team2: 1 },
+        predictScore: { team1: 2, team2: 1 },
+        confidence: 58,
+        predictTime: '2026-06-18 16:00'
+      },
+      {
+        id: 12,
+        date: '2026-06-19',
+        team1: { name: '韩国', short: 'KOR', emoji: '🇰🇷' },
+        team2: { name: '加纳', short: 'GHA', emoji: '🇬🇭' },
+        realScore: { team1: 1, team2: 3 },
+        predictScore: { team1: 2, team2: 1 },
+        confidence: 60,
+        predictTime: '2026-06-18 14:00'
+      }
+    ];
+
+    // 判断预测是否正确
+    function isPredictCorrect(match) {
+      return match.realScore.team1 === match.predictScore.team1 && 
+             match.realScore.team2 === match.predictScore.team2;
+    }
+
+    // 获取置信度等级
+    function getConfidenceLevel(confidence) {
+      if (confidence >= 75) return 'high';
+      if (confidence >= 60) return 'medium';
+      return 'low';
+    }
+
+    // 渲染比赛卡片
+    function renderMatchCard(match) {
+      const isCorrect = isPredictCorrect(match);
+      const confLevel = getConfidenceLevel(match.confidence);
+
+      return `
+        <div class="match-card" data-id="${match.id}" data-result="${isCorrect ? 'correct' : 'wrong'}">
+          <div class="match-header">
+            <span class="match-date">📅 ${match.date}</span>
+            <span class="match-status completed">已结束</span>
+            <span class="match-status ${isCorrect ? 'predict-correct' : 'predict-wrong'}">
+              ${isCorrect ? '✓ 预测一致' : '✗ 预测错误'}
+            </span>
+          </div>
+          
+          <div class="match-content">
+            <div class="team">
+              <div class="team-logo">${match.team1.emoji}</div>
+              <div class="team-info">
+                <span class="team-name">${match.team1.name}</span>
+                <span class="team-short">${match.team1.short}</span>
+              </div>
+            </div>
+            
+            <div class="score-section">
+              <div class="score-box">
+                <span class="score real">${match.realScore.team1}</span>
+                <span class="vs">:</span>
+                <span class="score real">${match.realScore.team2}</span>
+              </div>
+              <span class="score-label">真实比分</span>
+              
+              <div class="score-box" style="margin-top: 8px;">
+                <span class="score predict">${match.predictScore.team1}</span>
+                <span class="vs">:</span>
+                <span class="score predict">${match.predictScore.team2}</span>
+              </div>
+              <span class="score-label">预测比分</span>
+              
+              <div class="result-badge ${isCorrect ? 'correct' : 'wrong'}">
+                ${isCorrect ? '✅ 预测一致' : '❌ 预测错误'}
+              </div>
+            </div>
+            
+            <div class="team">
+              <div class="team-info" style="align-items: flex-end;">
+                <span class="team-name">${match.team2.name}</span>
+                <span class="team-short">${match.team2.short}</span>
+              </div>
+              <div class="team-logo">${match.team2.emoji}</div>
+            </div>
+          </div>
+          
+          <div class="predict-detail">
+            <div class="predict-info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 8v4l3 3"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              预测时间: ${match.predictTime}
+            </div>
+            <div class="predict-confidence">
+              <span style="font-size: 13px; color: var(--text-muted);">置信度:</span>
+              <div class="confidence-bar">
+                <div class="confidence-fill ${confLevel}" style="width: ${match.confidence}%"></div>
+              </div>
+              <span class="confidence-value">${match.confidence}%</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 渲染所有比赛
+    function renderMatches(filter = 'all') {
+      const container = document.getElementById('matches-container');
+      
+      let filteredMatches = matchesData;
+      if (filter === 'correct') {
+        filteredMatches = matchesData.filter(m => isPredictCorrect(m));
+      } else if (filter === 'wrong') {
+        filteredMatches = matchesData.filter(m => !isPredictCorrect(m));
+      }
+
+      if (filteredMatches.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 15s1.5-2 4-2 4 2 4 2"/>
+              <circle cx="9" cy="9" r="1" fill="currentColor"/>
+              <circle cx="15" cy="9" r="1" fill="currentColor"/>
+            </svg>
+            <p>暂无符合条件的比赛</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filteredMatches.map(renderMatchCard).join('');
+    }
+
+    // 筛选函数
+    function filterMatches(filter) {
+      // 更新按钮状态
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick').includes(filter));
+      });
+      // 重新渲染
+      renderMatches(filter);
+    }
+
+    // 页面加载完成后渲染
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMatches('all');
+    });
+  </script>
+</body>
+</html>
