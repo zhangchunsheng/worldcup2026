@@ -25,14 +25,22 @@
       </div>
 
       <!-- Center: Score / VS / Prediction -->
-      <div class="px-3 py-1 rounded text-xs font-bold flex-shrink-0 mx-2"
-           :class="scoreClass">
-        <template v-if="displayHome !== null">
-          {{ displayHome }} - {{ displayAway }}
-        </template>
-        <template v-else>
-          {{ t('match.vs') }}
-        </template>
+      <div class="flex flex-col items-center gap-1 flex-shrink-0 mx-2">
+        <!-- Actual score -->
+        <div class="px-3 py-1 rounded text-xs font-bold" :class="scoreClass">
+          <template v-if="displayHome !== null">
+            {{ displayHome }} - {{ displayAway }}
+          </template>
+          <template v-else>
+            {{ t('match.vs') }}
+          </template>
+        </div>
+        <!-- Prediction result for finished matches -->
+        <div v-if="isFinished && prediction" class="text-xs font-bold px-2 py-0.5 rounded-full"
+             :class="predictionCorrect ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'">
+          🤖 {{ prediction.homeScore }}-{{ prediction.awayScore }}
+          <span class="ml-1">{{ predictionCorrect ? t('prediction.correct') : t('prediction.incorrect') }}</span>
+        </div>
       </div>
 
       <div class="flex items-center gap-2 flex-1 justify-end min-w-0">
@@ -108,6 +116,13 @@ const awayLabel = computed(() => getLocaleLabel(props.match.awayLabel))
 
 const isFinished = computed(() => props.match.score?.status === 'FT')
 const actualScore = computed(() => props.match.score || null)
+
+// Check if prediction matches actual result
+const predictionCorrect = computed(() => {
+  if (!isFinished.value || !actualScore.value || !props.prediction) return false
+  return actualScore.value.home === props.prediction.homeScore && 
+         actualScore.value.away === props.prediction.awayScore
+})
 
 // Display: live score > actual score > AI prediction > VS
 const displayHome = computed(() => {

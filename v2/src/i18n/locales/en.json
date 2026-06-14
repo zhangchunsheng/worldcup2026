@@ -68,7 +68,9 @@
     "homeScore": "Home",
     "awayScore": "Away",
     "predict": "Predict",
-    "predict1": "Predict Score"
+    "predict1": "Predict Score",
+    "correct": "Correct",
+    "incorrect": "Incorrect"
   },
   "match": {
     "vs": "VS",
