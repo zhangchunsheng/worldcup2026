@@ -13,7 +13,7 @@
           <!-- Base URL -->
           <div>
             <label class="block text-sm font-medium mb-1.5 text-text-secondary">{{ t('settings.baseUrl') }}</label>
-            <input v-model="form.baseUrl" type="text" placeholder="https://api.anthropic.com"
+            <input v-model="form.baseUrl" type="text" placeholder="https://api.luomor.com"
                    class="w-full px-3 py-2 rounded-lg bg-bg-secondary border border-border text-text-primary text-sm focus:outline-none focus:border-gold transition-colors" />
           </div>
 

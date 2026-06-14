@@ -10,9 +10,9 @@ function loadSetting(key, fallback) {
 }
 
 export const useSettingsStore = defineStore('settings', () => {
-  const baseUrl = ref(loadSetting('wc2026_claude_base_url', 'https://api.anthropic.com'))
+  const baseUrl = ref(loadSetting('wc2026_claude_base_url', 'https://api.luomor.com'))
   const apiKey = ref(loadSetting('wc2026_claude_api_key', ''))
-  const model = ref(loadSetting('wc2026_claude_model', 'claude-sonnet-4-6'))
+  const model = ref(loadSetting('wc2026_claude_model', 'qwen3.7-plus'))
 
   function save() {
     localStorage.setItem('wc2026_claude_base_url', baseUrl.value)
@@ -21,9 +21,9 @@ export const useSettingsStore = defineStore('settings', () => {
   }
 
   function reset() {
-    baseUrl.value = 'https://api.anthropic.com'
+    baseUrl.value = 'https://api.luomor.com'
     apiKey.value = ''
-    model.value = 'claude-sonnet-4-6'
+    model.value = 'qwen3.7-plus'
     save()
   }
 
