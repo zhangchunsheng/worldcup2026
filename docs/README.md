@@ -15,9 +15,9 @@ MatchDetail.vue预测按钮没有反应
 Extraneous non-emits event listeners (predictAi) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the "emits" option
 AISwitchToggle组件样式错误
 AI预测没有请求大模型
-优化index.html页面seo
 将AI预测接口改为请求https://about.luomor.com/ai/claude，post请求，传入timestamp, sign, messages参数，其中sign为md5(key + timestamp)，其中key为常量，messages同anthropic api参数
 md5结果同php计算不一致
 已经结束比赛，同时显示真实比分和预测比分，如果比分一样，显示预测一致，否则显示预测错误
 更新已经结束比赛比分
+优化index.html页面seo
 ```
