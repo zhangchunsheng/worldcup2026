@@ -201,7 +201,11 @@
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
       },
-      "score": null
+      "score": {
+        "home": 7,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m010",
@@ -220,7 +224,11 @@
         "zh": "AT&T体育场 · 达拉斯",
         "en": "AT&T Stadium · Dallas"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m011",
@@ -239,7 +247,11 @@
         "zh": "林肯金融球场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m012",
@@ -253,12 +265,16 @@
         "zh": "突尼斯",
         "en": "Tunisia"
       },
-      "time": "2026-06-16 10:00",
+      "time": "2026-06-15 10:00",
       "venue": {
         "zh": "BBVA体育场 · 蒙特雷",
         "en": "BBVA Stadium · Monterrey"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m013",
