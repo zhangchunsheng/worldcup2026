@@ -130,7 +130,8 @@ const actualScore = computed(() => props.match.score || null)
 
 // Check if prediction matches actual result
 const predictionCorrect = computed(() => {
-  if (!isFinished.value || !actualScore.value || !props.prediction) return false
+  if (!(isFinished.value || isPlaying.value) || !actualScore.value || !props.prediction) return false
+  console.log(actualScore.value, props.prediction)
   return actualScore.value.home === props.prediction.homeScore && 
          actualScore.value.away === props.prediction.awayScore
 })
