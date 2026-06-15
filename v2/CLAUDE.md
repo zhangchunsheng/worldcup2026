@@ -83,7 +83,8 @@ public/data/*.json → useData() → Vue 组件
 | `odds.json` | `{ teams: [{ rank, code, name: {zh,en}, flag, odds }] }` |
 | `live-scores.json` | `{ lastUpdated, matches: [{ id, status, minute, homeScore, awayScore }] }` |
 
-已结束的比赛 `score.status === "FT"` — 这些显示实际比分而非预测。
+已结束的比赛 `score.status === "FT"` — 这些显示实际比分和预测比分。
+进行的比赛 `score.status === "Playing"` — 这些显示进行中比分和预测比分。
 
 ### API 配置
 

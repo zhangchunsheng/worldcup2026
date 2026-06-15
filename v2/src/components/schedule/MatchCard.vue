@@ -10,6 +10,11 @@
         {{ t('match.finished') }}
       </span>
     </div>
+    <div v-if="isPlaying" class="absolute top-3 right-3">
+      <span class="px-2 py-0.5 rounded-full bg-white/10 text-text-muted text-xs font-bold">
+        {{ t('match.playing') }}
+      </span>
+    </div>
     <!-- Live badge -->
     <div v-else-if="liveData" class="absolute top-3 right-3">
       <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-xs font-bold animate-pulse">

@@ -77,6 +77,7 @@
     "venue": "场地",
     "live": "LIVE",
     "finished": "已结束",
+    "playing": "进行中",
     "upcoming": "未开始",
     "details": "比赛详情",
     "liveScore": "实时比分",
