@@ -141,6 +141,7 @@ const awayFlag = computed(() => teamFlags[props.match?.awayTeam] || '🏳️')
 const homeLabel = computed(() => getLocaleLabel(props.match?.homeLabel))
 const awayLabel = computed(() => getLocaleLabel(props.match?.awayLabel))
 const isFinished = computed(() => props.match?.score?.status === 'FT')
+const isPlaying = computed(() => props.match.score?.status === 'Playing')
 const actualScore = computed(() => props.match?.score || null)
 
 const scoreTextColor = computed(() => {

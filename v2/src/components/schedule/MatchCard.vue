@@ -115,6 +115,7 @@ const homeLabel = computed(() => getLocaleLabel(props.match.homeLabel))
 const awayLabel = computed(() => getLocaleLabel(props.match.awayLabel))
 
 const isFinished = computed(() => props.match.score?.status === 'FT')
+const isPlaying = computed(() => props.match.score?.status === 'Playing')
 const actualScore = computed(() => props.match.score || null)
 
 // Check if prediction matches actual result
