@@ -46,6 +46,11 @@
           🤖 {{ prediction.homeScore }}-{{ prediction.awayScore }}
           <span class="ml-1">{{ predictionCorrect ? t('prediction.correct') : t('prediction.incorrect') }}</span>
         </div>
+        <div v-if="isPlaying && prediction" class="text-xs font-bold px-2 py-0.5 rounded-full"
+             :class="predictionCorrect ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'">
+          🤖 {{ prediction.homeScore }}-{{ prediction.awayScore }}
+          <span class="ml-1">{{ predictionCorrect ? t('prediction.correct') : t('prediction.incorrect') }}</span>
+        </div>
       </div>
 
       <div class="flex items-center gap-2 flex-1 justify-end min-w-0">
