@@ -20,4 +20,7 @@ md5结果同php计算不一致
 已经结束比赛，同时显示真实比分和预测比分，如果比分一样，显示预测一致，否则显示预测错误
 更新已经结束比赛比分
 优化index.html页面seo
+
+{"max_tokens": 4096, "temperature": 0.7}
+{"max_tokens": 1280000, "temperature": 0.7}
 ```
