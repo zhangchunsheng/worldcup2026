@@ -454,7 +454,11 @@
         "zh": "李维斯体育场 · 旧金山",
         "en": "Levi's Stadium · San Francisco"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m021",
