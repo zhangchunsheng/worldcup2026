@@ -293,7 +293,11 @@
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m014",
@@ -312,7 +316,11 @@
         "zh": "Lumen Field · 西雅图",
         "en": "Lumen Field · Seattle"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m015",
@@ -331,7 +339,11 @@
         "zh": "Hard Rock体育场 · 迈阿密",
         "en": "Hard Rock Stadium · Miami"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m016",
@@ -350,7 +362,11 @@
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m017",
@@ -369,7 +385,11 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · New York"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m018",
@@ -388,7 +408,11 @@
         "zh": "吉列体育场 · 波士顿",
         "en": "Gillette Stadium · Boston"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 4,
+        "status": "FT"
+      }
     },
     {
       "id": "m019",
@@ -402,12 +426,16 @@
         "zh": "阿尔及利亚",
         "en": "Algeria"
       },
-      "time": "2026-06-18 09:00",
+      "time": "2026-06-17 09:00",
       "venue": {
         "zh": "GEHA Arrowhead体育场 · 堪萨斯城",
         "en": "GEHA Arrowhead Stadium · Kansas City"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m020",
