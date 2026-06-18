@@ -23,4 +23,5 @@ md5结果同php计算不一致
 
 {"max_tokens": 4096, "temperature": 0.7}
 {"max_tokens": 1280000, "temperature": 0.7}
+schedule.json中小组赛有些存在日期错误，请修改
 ```

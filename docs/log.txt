@@ -1,1 +1,2 @@
 {"model":"qwen3.7-plus","max_tokens":256,"system":"You are a football match predictor. Output ONLY a JSON object with homeScore and awayScore fields (integers 0-9). No explanation.","messages":[{"role":"user","content":"Predict the score for: 加拿大 vs 波黑. Odds: home=2.5, away=3. Output JSON: {\"homeScore\": X, \"awayScore\": Y}"}]}
+
