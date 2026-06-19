@@ -569,7 +569,11 @@
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m026",
@@ -588,7 +592,11 @@
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
       },
-      "score": null
+      "score": {
+        "home": 4,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m027",
@@ -607,7 +615,11 @@
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
       },
-      "score": null
+      "score": {
+        "home": 6,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m028",
@@ -621,12 +633,16 @@
         "zh": "韩国",
         "en": "South Korea"
       },
-      "time": "2026-06-19 11:00",
+      "time": "2026-06-19 09:00",
       "venue": {
         "zh": "阿克伦体育场 · 瓜达拉哈拉",
         "en": "Akron Stadium · Guadalajara"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m029",
