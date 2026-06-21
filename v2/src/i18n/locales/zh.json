@@ -7,6 +7,7 @@
   "nav": {
     "home": "首页",
     "schedule": "赛程",
+    "groupStandings": "积分",
     "groups": "分组",
     "odds": "热门",
     "cities": "城市",
@@ -30,6 +31,10 @@
     "schedule": {
       "title": "赛程安排",
       "desc": "从开幕战到决赛，39天精彩不间断"
+    },
+    "groupStandings": {
+      "title": "小组积分",
+      "desc": "根据已结束比赛实时计算的各小组排名"
     },
     "groups": {
       "title": "小组分组",
@@ -93,7 +98,20 @@
     "saved": "✅ 已保存"
   },
   "group": {
-    "group": "小组"
+    "group": "小组",
+    "badge": "{group}组",
+    "standings": "小组积分",
+    "standingsDesc": "根据已结束比赛实时计算的各小组积分排名",
+    "rank": "排名",
+    "team": "球队",
+    "played": "赛",
+    "won": "胜",
+    "drawn": "平",
+    "lost": "负",
+    "goalsFor": "进",
+    "goalsAgainst": "失",
+    "goalDifference": "净",
+    "points": "分"
   },
   "city": {
     "capacity": "容量",

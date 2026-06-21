@@ -11,6 +11,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <MatchCard v-for="match in dateMatches" :key="match.id"
             :match="match"
+            :group="groupByTeamCode[match.homeTeam] || groupByTeamCode[match.awayTeam]"
             :prediction="getPrediction(match.id)"
             :live-match-id="getLiveData(match.id)?.id"
             :live-data="getLiveData(match.id)"
@@ -47,6 +48,18 @@ import MatchDetail from './MatchDetail.vue'
 
 const { t, locale } = useI18n()
 const { data: scheduleData, loading } = useData('schedule')
+const { data: groupsData } = useData('groups')
+
+const groupByTeamCode = computed(() => {
+  const map = {}
+  if (!groupsData.value?.groups) return map
+  for (const g of groupsData.value.groups) {
+    for (const team of g.teams) {
+      map[team.code] = g.letter
+    }
+  }
+  return map
+})
 
 const { mode: predMode, isPredicting, predictionError, toggleMode, predictMatch, getPrediction } = usePrediction()
 const { getMatchStatus: getLiveData } = useLiveScores()

@@ -7,6 +7,7 @@
   "nav": {
     "home": "Home",
     "schedule": "Schedule",
+    "groupStandings": "Standings",
     "groups": "Groups",
     "odds": "Favorites",
     "cities": "Cities",
@@ -30,6 +31,10 @@
     "schedule": {
       "title": "Schedule",
       "desc": "39 days of non-stop action from opening match to final"
+    },
+    "groupStandings": {
+      "title": "Group Standings",
+      "desc": "Live group rankings based on finished matches"
     },
     "groups": {
       "title": "Group Stage",
@@ -93,7 +98,20 @@
     "saved": "✅ Saved"
   },
   "group": {
-    "group": "Group"
+    "group": "Group",
+    "badge": "Group {group}",
+    "standings": "Group Standings",
+    "standingsDesc": "Live group standings based on finished matches",
+    "rank": "Rank",
+    "team": "Team",
+    "played": "P",
+    "won": "W",
+    "drawn": "D",
+    "lost": "L",
+    "goalsFor": "GF",
+    "goalsAgainst": "GA",
+    "goalDifference": "GD",
+    "points": "Pts"
   },
   "city": {
     "capacity": "Capacity",

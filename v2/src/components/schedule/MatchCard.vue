@@ -4,6 +4,13 @@
     :class="{ 'border-gold/40 bg-gold/5': prediction && !isFinished }"
     @click="$emit('openDetail', match)"
   >
+    <!-- Group badge -->
+    <div v-if="group" class="absolute top-3 left-3">
+      <span class="px-2 py-0.5 rounded-full bg-gold/15 text-gold text-xs font-bold">
+        {{ t('group.badge', { group }) }}
+      </span>
+    </div>
+
     <!-- Finished badge -->
     <div v-if="isFinished" class="absolute top-3 right-3">
       <span class="px-2 py-0.5 rounded-full bg-white/10 text-text-muted text-xs font-bold">
@@ -100,6 +107,7 @@ const props = defineProps({
   prediction: { type: Object, default: null },
   liveMatchId: { type: String, default: null },
   liveData: { type: Object, default: null },
+  group: { type: String, default: null },
 })
 
 defineEmits(['openDetail'])

@@ -15,6 +15,16 @@
         <ScheduleSection />
       </section>
 
+      <!-- Group Standings -->
+      <section id="group-standings" class="py-24 px-6 max-w-7xl mx-auto">
+        <FadeInWrapper>
+          <SectionHeader :description="t('sections.groupStandings.desc')">
+            📊 <span class="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">{{ t('sections.groupStandings.title') }}</span>
+          </SectionHeader>
+        </FadeInWrapper>
+        <GroupStandingsSection />
+      </section>
+
       <!-- Groups -->
       <section id="groups" class="py-24 px-6 max-w-7xl mx-auto">
         <FadeInWrapper>
@@ -100,7 +110,7 @@ import HeroSection from './components/hero/HeroSection.vue'
 import SectionHeader from './components/shared/SectionHeader.vue'
 import FadeInWrapper from './components/shared/FadeInWrapper.vue'
 import ScheduleSection from './components/schedule/ScheduleSection.vue'
-import GroupsSection from './components/groups/GroupsSection.vue'
+import GroupStandingsSection from './components/groups/GroupStandingsSection.vue'
 import OddsSection from './components/odds/OddsSection.vue'
 import CitiesSection from './components/cities/CitiesSection.vue'
 import PlayersSection from './components/players/PlayersSection.vue'
