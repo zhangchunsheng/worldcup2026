@@ -114,39 +114,47 @@ const standings = computed(() => {
 
   for (const match of scheduleData.value.matches) {
     const score = match.score
-    if (!score || score.status !== 'FT') continue
+    if (!score || score.home == null || score.away == null) continue
+
     const home = match.homeTeam
     const away = match.awayTeam
     const homeGroup = groupByTeamCode.value[home]
     const awayGroup = groupByTeamCode.value[away]
-    if (!homeGroup || homeGroup !== awayGroup) continue
-
-    if (!records[home]) records[home] = initRecord(home)
-    if (!records[away]) records[away] = initRecord(away)
+    if (!homeGroup && !awayGroup) continue
 
     const homeScore = score.home ?? 0
     const awayScore = score.away ?? 0
 
-    records[home].played++
-    records[away].played++
-    records[home].goalsFor += homeScore
-    records[home].goalsAgainst += awayScore
-    records[away].goalsFor += awayScore
-    records[away].goalsAgainst += homeScore
+    if (homeGroup) {
+      if (!records[home]) records[home] = initRecord(home)
+      records[home].played++
+      records[home].goalsFor += homeScore
+      records[home].goalsAgainst += awayScore
+      if (homeScore > awayScore) {
+        records[home].won++
+        records[home].points += 3
+      } else if (homeScore < awayScore) {
+        records[home].lost++
+      } else {
+        records[home].drawn++
+        records[home].points++
+      }
+    }
 
-    if (homeScore > awayScore) {
-      records[home].won++
-      records[home].points += 3
-      records[away].lost++
-    } else if (homeScore < awayScore) {
-      records[away].won++
-      records[away].points += 3
-      records[home].lost++
-    } else {
-      records[home].drawn++
-      records[away].drawn++
-      records[home].points++
-      records[away].points++
+    if (awayGroup) {
+      if (!records[away]) records[away] = initRecord(away)
+      records[away].played++
+      records[away].goalsFor += awayScore
+      records[away].goalsAgainst += homeScore
+      if (awayScore > homeScore) {
+        records[away].won++
+        records[away].points += 3
+      } else if (awayScore < homeScore) {
+        records[away].lost++
+      } else {
+        records[away].drawn++
+        records[away].points++
+      }
     }
   }
 
