@@ -87,47 +87,6 @@
       "teams": [
         {
           "name": {
-            "zh": "美国",
-            "en": "USA"
-          },
-          "code": "USA",
-          "flag": "🇺🇸",
-          "conf": "CONCACAF"
-        },
-        {
-          "name": {
-            "zh": "巴拉圭",
-            "en": "Paraguay"
-          },
-          "code": "PAR",
-          "flag": "🇵🇾",
-          "conf": "CONMEBOL"
-        },
-        {
-          "name": {
-            "zh": "澳大利亚",
-            "en": "Australia"
-          },
-          "code": "AUS",
-          "flag": "🇦🇺",
-          "conf": "AFC"
-        },
-        {
-          "name": {
-            "zh": "土耳其",
-            "en": "Türkiye"
-          },
-          "code": "TUR",
-          "flag": "🇹🇷",
-          "conf": "UEFA"
-        }
-      ]
-    },
-    {
-      "letter": "D",
-      "teams": [
-        {
-          "name": {
             "zh": "巴西",
             "en": "Brazil"
           },
@@ -165,6 +124,47 @@
       ]
     },
     {
+      "letter": "D",
+      "teams": [
+        {
+          "name": {
+            "zh": "美国",
+            "en": "USA"
+          },
+          "code": "USA",
+          "flag": "🇺🇸",
+          "conf": "CONCACAF"
+        },
+        {
+          "name": {
+            "zh": "巴拉圭",
+            "en": "Paraguay"
+          },
+          "code": "PAR",
+          "flag": "🇵🇾",
+          "conf": "CONMEBOL"
+        },
+        {
+          "name": {
+            "zh": "澳大利亚",
+            "en": "Australia"
+          },
+          "code": "AUS",
+          "flag": "🇦🇺",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "土耳其",
+            "en": "Türkiye"
+          },
+          "code": "TUR",
+          "flag": "🇹🇷",
+          "conf": "UEFA"
+        }
+      ]
+    },
+    {
       "letter": "E",
       "teams": [
         {
@@ -187,29 +187,6 @@
         },
         {
           "name": {
-            "zh": "荷兰",
-            "en": "Netherlands"
-          },
-          "code": "NED",
-          "flag": "🇳🇱",
-          "conf": "UEFA"
-        },
-        {
-          "name": {
-            "zh": "日本",
-            "en": "Japan"
-          },
-          "code": "JPN",
-          "flag": "🇯🇵",
-          "conf": "AFC"
-        }
-      ]
-    },
-    {
-      "letter": "F",
-      "teams": [
-        {
-          "name": {
             "zh": "科特迪瓦",
             "en": "Ivory Coast"
           },
@@ -225,6 +202,29 @@
           "code": "ECU",
           "flag": "🇪🇨",
           "conf": "CONMEBOL"
+        }
+      ]
+    },
+    {
+      "letter": "F",
+      "teams": [
+        {
+          "name": {
+            "zh": "荷兰",
+            "en": "Netherlands"
+          },
+          "code": "NED",
+          "flag": "🇳🇱",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "日本",
+            "en": "Japan"
+          },
+          "code": "JPN",
+          "flag": "🇯🇵",
+          "conf": "AFC"
         },
         {
           "name": {
@@ -248,6 +248,47 @@
     },
     {
       "letter": "G",
+      "teams": [
+        {
+          "name": {
+            "zh": "比利时",
+            "en": "Belgium"
+          },
+          "code": "BEL",
+          "flag": "🇧🇪",
+          "conf": "UEFA"
+        },
+        {
+          "name": {
+            "zh": "埃及",
+            "en": "Egypt"
+          },
+          "code": "EGY",
+          "flag": "🇪🇬",
+          "conf": "CAF"
+        },
+        {
+          "name": {
+            "zh": "伊朗",
+            "en": "Iran"
+          },
+          "code": "IRN",
+          "flag": "🇮🇷",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "新西兰",
+            "en": "New Zealand"
+          },
+          "code": "NZL",
+          "flag": "🇳🇿",
+          "conf": "OFC"
+        }
+      ]
+    },
+    {
+      "letter": "H",
       "teams": [
         {
           "name": {
@@ -284,47 +325,6 @@
           "code": "URU",
           "flag": "🇺🇾",
           "conf": "CONMEBOL"
-        }
-      ]
-    },
-    {
-      "letter": "H",
-      "teams": [
-        {
-          "name": {
-            "zh": "比利时",
-            "en": "Belgium"
-          },
-          "code": "BEL",
-          "flag": "🇧🇪",
-          "conf": "UEFA"
-        },
-        {
-          "name": {
-            "zh": "埃及",
-            "en": "Egypt"
-          },
-          "code": "EGY",
-          "flag": "🇪🇬",
-          "conf": "CAF"
-        },
-        {
-          "name": {
-            "zh": "新西兰",
-            "en": "New Zealand"
-          },
-          "code": "NZL",
-          "flag": "🇳🇿",
-          "conf": "OFC"
-        },
-        {
-          "name": {
-            "zh": "伊朗",
-            "en": "Iran"
-          },
-          "code": "IRN",
-          "flag": "🇮🇷",
-          "conf": "AFC"
         }
       ]
     },
@@ -433,6 +433,29 @@
         },
         {
           "name": {
+            "zh": "乌兹别克斯坦",
+            "en": "Uzbekistan"
+          },
+          "code": "UZB",
+          "flag": "🇺🇿",
+          "conf": "AFC"
+        },
+        {
+          "name": {
+            "zh": "哥伦比亚",
+            "en": "Colombia"
+          },
+          "code": "COL",
+          "flag": "🇨🇴",
+          "conf": "CONMEBOL"
+        }
+      ]
+    },
+    {
+      "letter": "L",
+      "teams": [
+        {
+          "name": {
             "zh": "英格兰",
             "en": "England"
           },
@@ -448,12 +471,7 @@
           "code": "CRO",
           "flag": "🇭🇷",
           "conf": "UEFA"
-        }
-      ]
-    },
-    {
-      "letter": "L",
-      "teams": [
+        },
         {
           "name": {
             "zh": "加纳",
@@ -471,24 +489,6 @@
           "code": "PAN",
           "flag": "🇵🇦",
           "conf": "CONCACAF"
-        },
-        {
-          "name": {
-            "zh": "乌兹别克斯坦",
-            "en": "Uzbekistan"
-          },
-          "code": "UZB",
-          "flag": "🇺🇿",
-          "conf": "AFC"
-        },
-        {
-          "name": {
-            "zh": "哥伦比亚",
-            "en": "Colombia"
-          },
-          "code": "COL",
-          "flag": "🇨🇴",
-          "conf": "CONMEBOL"
         }
       ]
     }
