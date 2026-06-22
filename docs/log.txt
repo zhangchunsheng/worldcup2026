@@ -1,2 +1,528 @@
 {"model":"qwen3.7-plus","max_tokens":256,"system":"You are a football match predictor. Output ONLY a JSON object with homeScore and awayScore fields (integers 0-9). No explanation.","messages":[{"role":"user","content":"Predict the score for: 加拿大 vs 波黑. Odds: home=2.5, away=3. Output JSON: {\"homeScore\": X, \"awayScore\": Y}"}]}
 
+→ Hermes Agent 中文社区：https://hermesagent.org.cn
+→ 下一步的教程（胎教级别）：https://hermesagent.org.cn/docs/getting-started/setup-wizard
+
+→ 正在启动配置向导...
+
+
+[35m┌─────────────────────────────────────────────────────────┐[0m
+[35m│             ⚕ Hermes Agent Setup Wizard                │[0m
+[35m├─────────────────────────────────────────────────────────┤[0m
+[35m│  Let's configure your Hermes Agent installation.       │[0m
+[35m│  Press Ctrl+C at any time to exit.                     │[0m
+[35m└─────────────────────────────────────────────────────────┘[0m
+
+[33m
+  How would you like to set up Hermes?[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Quick Setup (Nous Portal) — free OAuth login, no API keys, model + tools (recommended)
+  (○)  2. Full setup — configure every provider, tool & option yourself (bring your own keys)
+  (○)  3. Blank Slate — everything off except the bare minimum; opt in to each capability
+
+[2m  Choice [default 1]: [0m2
+
+
+[36m[1m◆ Configuration Location[0m
+[2m  Config file:  C:\Users\peter\AppData\Local\hermes\config.yaml[0m
+[2m  Secrets file: C:\Users\peter\AppData\Local\hermes\.env[0m
+[2m  Data folder:  C:\Users\peter\AppData\Local\hermes[0m
+[2m  Install dir:  C:\Users\peter\AppData\Local\hermes\hermes-agent[0m
+
+[2m  You can edit these files directly or use 'hermes config edit'[0m
+
+[36m[1m◆ Inference Provider[0m
+[2m  Choose how to connect to your main chat model.[0m
+[2m     Guide: https://hermes-agent.nousresearch.com/docs/integrations/providers[0m
+
+Warning: No inference provider configured. Run 'hermes model' to choose a provider and model, or set an API key (OPENROUTER_API_KEY, OPENAI_API_KEY, etc.) in ~/.hermes/.env. Falling back to auto provider detection.
+
+  Current model:    anthropic/claude-opus-4.6
+  Active provider:  none
+
+[33m
+  Select provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Nous Portal (Everything your agent needs, 300+ models with bundled tool use)
+  (○)  2. OpenRouter (Pay-per-use API aggregator)
+  (○)  3. NovitaAI (Cloud: Model API, Agent Sandbox, GPU Cloud)
+  (○)  4. LM Studio (Local desktop app with built-in model server)
+  (○)  5. Anthropic (Claude models via API key or Claude Code)
+  (○)  6. OpenAI ▸ (Codex CLI or direct OpenAI API)
+  (○)  7. Qwen Cloud / DashScope (Qwen + multi-provider)
+  (○)  8. xAI Grok ▸ (Direct API or SuperGrok / Premium+ OAuth)
+  (○)  9. Xiaomi MiMo (MiMo-V2.5 and V2 models: pro, omni, flash)
+  (○) 10. Tencent TokenHub (Hy3 Preview via tokenhub.tencentmaas.com)
+  (○) 11. NVIDIA NIM (Nemotron models via build.nvidia.com or local NIM)
+  (○) 12. GitHub Copilot ▸ (GitHub token API or copilot --acp process)
+  (○) 13. Hugging Face Inference Providers
+  (○) 14. Google Gemini ▸ (AI Studio API or OAuth + Code Assist)
+  (○) 15. DeepSeek (V3, R1, coder, direct API)
+  (○) 16. Z.AI / GLM (Zhipu direct API)
+  (○) 17. Kimi / Moonshot ▸ (Coding Plan, Moonshot global & China endpoints)
+  (○) 18. StepFun Step Plan (Agent / coding models via Step Plan API)
+  (○) 19. MiniMax ▸ (Global, OAuth Coding Plan & China endpoints)
+  (○) 20. Ollama Cloud (Cloud-hosted open models, ollama.com)
+  (○) 21. Arcee AI (Trinity models, direct API)
+  (○) 22. GMI Cloud (Multi-model direct API)
+  (○) 23. Kilo Code (Kilo Gateway API)
+  (○) 24. OpenCode ▸ (Zen pay-as-you-go or Go subscription)
+  (○) 25. AWS Bedrock (Claude, Nova, Llama, DeepSeek; IAM or API key)
+  (○) 26. Azure Foundry (OpenAI-style or Anthropic-style endpoint, your Azure AI deployment)
+  (○) 27. Qwen OAuth (Reuses local Qwen CLI login)
+  (○) 28. Alibaba Cloud Coding Plan (Dedicated coding tier)
+  (○) 29. custom (direct API)
+  (○) 30. Custom endpoint (enter URL manually)
+  (○) 31. Configure auxiliary models...
+  (○) 32. Leave unchanged
+
+[2m  Choice [default 1]: [0m7
+
+No Qwen Cloud API key configured.
+DASHSCOPE_API_KEY (or Enter to cancel): ********************************************************************************************************************
+API key saved.
+
+Base URL [https://dashscope-intl.aliyuncs.com/compatible-mode/v1]: https://dashscope.aliyuncs.com/compatible-mode/v1
+  Found 51 model(s) from models.dev registry
+[33m
+  Select default model:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. qwen3-omni-flash
+  (○)  2. qwen3-coder-plus
+  (○)  3. qwen-plus
+  (○)  4. qwen3-coder-30b-a3b-instruct
+  (○)  5. qwen3-omni-flash-realtime
+  (○)  6. qwen3-32b
+  (○)  7. qwen-omni-turbo-realtime
+  (○)  8. qwen-plus-character-ja
+  (○)  9. qwen3-next-80b-a3b-instruct
+  (○) 10. qwen3.7-plus
+  (○) 11. qwen3.6-35b-a3b
+  (○) 12. qwen3.7-max
+  (○) 13. qwen3-max
+  (○) 14. qwen2-5-omni-7b
+  (○) 15. qwen3-8b
+  (○) 16. qwen2-5-14b-instruct
+  (○) 17. qwen3-next-80b-a3b-thinking
+  (○) 18. qvq-max
+  (○) 19. qwen3.6-flash
+  (○) 20. qwen2-5-vl-72b-instruct
+  (○) 21. qwen3-vl-plus
+  (○) 22. qwen3.5-plus
+  (○) 23. qwen-omni-turbo
+  (○) 24. qwen2-5-72b-instruct
+  (○) 25. qwen-flash
+  (○) 26. qwen3-vl-235b-a22b
+  (○) 27. qwen3-vl-30b-a3b
+  (○) 28. qwen-vl-max
+  (○) 29. qwen3.5-27b
+  (○) 30. qwen-max
+  (○) 31. qwen3-235b-a22b
+  (○) 32. qwen3.6-27b
+  (○) 33. qwen3.5-35b-a3b
+  (○) 34. qwen3-coder-480b-a35b-instruct
+  (○) 35. qwq-plus
+  (○) 36. qwen2-5-32b-instruct
+  (○) 37. qwen3.5-397b-a17b
+  (○) 38. qwen3-coder-flash
+  (○) 39. qwen3-14b
+  (○) 40. qwen-turbo
+  (○) 41. qwen2-5-7b-instruct
+  (○) 42. qwen2-5-vl-7b-instruct
+  (○) 43. qwen3.6-max-preview
+  (○) 44. qwen3.5-122b-a10b
+  (○) 45. qwen-vl-plus
+  (○) 46. qwen3.6-plus
+  (○) 47. kimi-k2.5
+  (○) 48. qwen3-coder-next
+  (○) 49. glm-5
+  (○) 50. glm-4.7
+  (○) 51. MiniMax-M2.5
+  (○) 52. Enter custom model name
+  (○) 53. Skip (keep current)
+
+[2m  Choice [default 1]: [0m10
+
+Default model set to: qwen3.7-plus (via Qwen Cloud)
+
+[36m[1m◆ Terminal Backend[0m
+[2m  Choose where Hermes runs shell commands and code.[0m
+[2m  This affects tool execution, file access, and isolation.[0m
+[2m     Guide: https://hermes-agent.nousresearch.com/docs/user-guide/configuration#terminal-backend-configuration[0m
+
+[33m
+  Select terminal backend:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  (○)  1. Local - run directly on this machine (default)
+  (○)  2. Docker - isolated container with configurable resources
+  (○)  3. Modal - serverless cloud sandbox
+  (○)  4. SSH - run on a remote machine
+  (○)  5. Daytona - persistent cloud development environment
+  [32m(●)[0m  6. Keep current (local)
+
+
+[2m  Choice [default 6]: [0m
+[2m    Skipped (keeping current)[0m
+
+[2m  Keeping current backend: local[0m
+[32m✓ Applied recommended defaults:[0m
+[2m    Max iterations: 150[0m
+[2m    Tool progress: all[0m
+[2m    Compression threshold: 0.50[0m
+[2m    Session reset: never (use /reset or compression)[0m
+[2m    Run `hermes setup agent` later to customize.[0m
+
+[36m[1m◆ Messaging Platforms[0m
+[2m  Connect to messaging platforms to chat with Hermes from anywhere.[0m
+[2m  Toggle with Space, confirm with Enter.[0m
+
+[33m
+  Select platforms to configure:[0m
+[2m  Toggle by number, Enter to confirm.
+[0m
+  [ ]  1. 💬 Mattermost  (not configured)
+  [ ]  2. 📡 Signal  (not configured)
+  [ ]  3. 💬 Weixin / WeChat  (not configured)
+  [ ]  4. 💬 BlueBubbles (iMessage)  (not configured)
+  [ ]  5. 🐧 QQ Bot  (not configured)
+  [ ]  6. 💎 Yuanbao  (not configured)
+  [ ]  7. 🐳 DingTalk  (not configured)
+  [ ]  8. 🎮 Discord  (not configured)
+  [ ]  9. 📧 Email  (not configured)
+  [ ] 10. 🪽 Feishu / Lark  (not configured)
+  [ ] 11. 💬 Google Chat  (not configured)
+  [ ] 12. 🏠 Home Assistant  (not configured)
+  [ ] 13. 💬 IRC  (not configured)
+  [ ] 14. 💚 LINE  (not configured)
+  [ ] 15. 🔔 ntfy  (not configured)
+  [ ] 16. 📱 iMessage via Photon  (not configured)
+  [ ] 17. 🔔 Raft  (not configured)
+  [ ] 18. 🔒 SimpleX Chat  (not configured)
+  [ ] 19. 💼 Slack  (not configured)
+  [ ] 20. 📱 SMS (Twilio)  (not configured)
+  [ ] 21. 💼 Microsoft Teams  (not configured)
+  [ ] 22. ✈️ Telegram  (not configured)
+  [ ] 23. 💼 WeCom (Enterprise WeChat)  (not configured)
+  [ ] 24. 💼 WeCom Callback (self-built apps)  (not configured)
+  [ ] 25. 💬 WhatsApp  (not configured)
+
+[36m  ─── 💬 Weixin / WeChat Setup ───[0m
+
+[2m    1. Hermes will open Tencent iLink QR login in this terminal.[0m
+[2m    2. Use WeChat to scan and confirm the QR code.[0m
+[2m    3. Hermes will store the returned account_id/token in ~/.hermes/.env.[0m
+[2m    4. This adapter supports native text, image, video, and document delivery.[0m
+[31m✗   Missing dependencies: Weixin needs aiohttp and cryptography.[0m
+[2m    Install them, then rerun `hermes gateway setup`.[0m
+
+[36m[1m⚕ Hermes Tool Configuration[0m
+[2m  Enable or disable tools per platform.[0m
+[2m  Tools that need API keys will be configured when enabled.[0m
+[2m  Guide: https://hermes-agent.nousresearch.com/docs/user-guide/features/tools[0m
+
+[33m
+  Tools for 🖥️  CLI[0m
+[2m  Toggle by number, Enter to confirm.
+[0m
+  [32m[✓][0m  1. 🔍 Web Search & Scraping  (web_search, web_extract)
+  [32m[✓][0m  2. 🌐 Browser Automation  (navigate, click, type, scroll)
+  [32m[✓][0m  3. 💻 Terminal & Processes  (terminal, process)
+  [32m[✓][0m  4. 📁 File Operations  (read, write, patch, search)
+  [32m[✓][0m  5. ⚡ Code Execution  (execute_code)
+  [32m[✓][0m  6. 👁️  Vision / Image Analysis  (vision_analyze)
+  [ ]  7. 🎬 Video Analysis  (video_analyze (requires video-capable model))
+  [32m[✓][0m  8. 🎨 Image Generation  (image_generate)
+  [ ]  9. 🎬 Video Generation  (video_generate (text-to-video + image-to-video))
+  [ ] 10. 🐦 X (Twitter) Search  (x_search (requires xAI OAuth or XAI_API_KEY))
+  [ ] 11. 🧠 Mixture of Agents  (mixture_of_agents)  [no API key]
+  [32m[✓][0m 12. 🔊 Text-to-Speech  (text_to_speech)
+  [32m[✓][0m 13. 📚 Skills  (list, view, manage)
+  [32m[✓][0m 14. 📋 Task Planning  (todo)
+  [32m[✓][0m 15. 💾 Memory  (persistent memory across sessions)
+  [ ] 16. 🧩 Context Engine  (runtime tools from the active context engine)
+  [32m[✓][0m 17. 🔎 Session Search  (search past conversations)
+  [32m[✓][0m 18. ❓ Clarifying Questions  (clarify)
+  [32m[✓][0m 19. 👥 Task Delegation  (delegate_task)
+  [32m[✓][0m 20. ⏰ Cron Jobs  (create/list/update/pause/resume/run, with optional attached skills)
+  [ ] 21. 🏠 Home Assistant  (smart home device control)  [no API key]
+  [ ] 22. 🎵 Spotify  (playback, search, playlists, library)
+  [ ] 23. 🤖 Yuanbao  (group info, member queries, DM)
+  [32m[✓][0m 24. 🖱️  Computer Use (macOS)  (background desktop control via cua-driver)
+[33m  Configuring 6 tool(s):[0m
+[2m    • 🌐 Browser Automation[0m
+[2m    • 🖱️  Computer Use (macOS)[0m
+[2m    • 🎨 Image Generation[0m
+[2m    • 🔊 Text-to-Speech[0m
+[2m    • 👁️  Vision / Image Analysis[0m
+[2m    • 🔍 Web Search & Scraping[0m
+[2m  You can skip any tool you don't need right now.[0m
+
+
+[36m  --- 🌐 Browser Automation - Choose a provider ---[0m
+
+[33m
+    Choose a provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Local Browser [★ recommended · free] — Headless Chromium, no API key needed
+  (○)  2. Nous Subscription (Browser Use cloud) [subscription] — Managed Browser Use billed to your subscription  ★ via Nous Portal (login on select)
+  (○)  3. Camofox [free · local] — Anti-detection browser (Firefox/Camoufox)
+  (○)  4. Browser Use [paid] — Cloud browser with remote execution
+  (○)  5. Browserbase [paid] — Cloud browser with stealth and proxies
+  (○)  6. Firecrawl [paid] — Cloud browser with remote execution
+  (○)  7. Skip — keep defaults / configure later
+
+[2m  Toggle # (or Enter to confirm): [0m
+
+[36m  ─── 💬 Weixin / WeChat Setup ───[0m
+
+[2m    1. Hermes will open Tencent iLink QR login in this terminal.[0m
+[2m    2. Use WeChat to scan and confirm the QR code.[0m
+[2m    3. Hermes will store the returned account_id/token in ~/.hermes/.env.[0m
+[2m    4. This adapter supports native text, image, video, and document delivery.[0m
+[31m✗   Missing dependencies: Weixin needs aiohttp and cryptography.[0m
+[2m    Install them, then rerun `hermes gateway setup`.[0m
+
+[36m[1m⚕ Hermes Tool Configuration[0m
+[2m  Enable or disable tools per platform.[0m
+[2m  Tools that need API keys will be configured when enabled.[0m
+[2m  Guide: https://hermes-agent.nousresearch.com/docs/user-guide/features/tools[0m
+
+[33m
+  Tools for 🖥️  CLI[0m
+[2m  Toggle by number, Enter to confirm.
+[0m
+  [32m[✓][0m  1. 🔍 Web Search & Scraping  (web_search, web_extract)
+  [32m[✓][0m  2. 🌐 Browser Automation  (navigate, click, type, scroll)
+  [32m[✓][0m  3. 💻 Terminal & Processes  (terminal, process)
+  [32m[✓][0m  4. 📁 File Operations  (read, write, patch, search)
+  [32m[✓][0m  5. ⚡ Code Execution  (execute_code)
+  [32m[✓][0m  6. 👁️  Vision / Image Analysis  (vision_analyze)
+  [ ]  7. 🎬 Video Analysis  (video_analyze (requires video-capable model))
+  [32m[✓][0m  8. 🎨 Image Generation  (image_generate)
+  [ ]  9. 🎬 Video Generation  (video_generate (text-to-video + image-to-video))
+  [ ] 10. 🐦 X (Twitter) Search  (x_search (requires xAI OAuth or XAI_API_KEY))
+  [ ] 11. 🧠 Mixture of Agents  (mixture_of_agents)  [no API key]
+  [32m[✓][0m 12. 🔊 Text-to-Speech  (text_to_speech)
+  [32m[✓][0m 13. 📚 Skills  (list, view, manage)
+  [32m[✓][0m 14. 📋 Task Planning  (todo)
+  [32m[✓][0m 15. 💾 Memory  (persistent memory across sessions)
+  [ ] 16. 🧩 Context Engine  (runtime tools from the active context engine)
+  [32m[✓][0m 17. 🔎 Session Search  (search past conversations)
+  [32m[✓][0m 18. ❓ Clarifying Questions  (clarify)
+  [32m[✓][0m 19. 👥 Task Delegation  (delegate_task)
+  [32m[✓][0m 20. ⏰ Cron Jobs  (create/list/update/pause/resume/run, with optional attached skills)
+  [ ] 21. 🏠 Home Assistant  (smart home device control)  [no API key]
+  [ ] 22. 🎵 Spotify  (playback, search, playlists, library)
+  [ ] 23. 🤖 Yuanbao  (group info, member queries, DM)
+  [32m[✓][0m 24. 🖱️  Computer Use (macOS)  (background desktop control via cua-driver)
+
+[2m  Toggle # (or Enter to confirm): [0m
+
+[33m  Configuring 6 tool(s):[0m
+[2m    • 🌐 Browser Automation[0m
+[2m    • 🖱️  Computer Use (macOS)[0m
+[2m    • 🎨 Image Generation[0m
+[2m    • 🔊 Text-to-Speech[0m
+[2m    • 👁️  Vision / Image Analysis[0m
+[2m    • 🔍 Web Search & Scraping[0m
+[2m  You can skip any tool you don't need right now.[0m
+
+
+[36m  --- 🌐 Browser Automation - Choose a provider ---[0m
+
+[33m
+    Choose a provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Local Browser [★ recommended · free] — Headless Chromium, no API key needed
+  (○)  2. Nous Subscription (Browser Use cloud) [subscription] — Managed Browser Use billed to your subscription  ★ via Nous Portal (login on select)
+  (○)  3. Camofox [free · local] — Anti-detection browser (Firefox/Camoufox)
+  (○)  4. Browser Use [paid] — Cloud browser with remote execution
+  (○)  5. Browserbase [paid] — Cloud browser with stealth and proxies
+  (○)  6. Firecrawl [paid] — Cloud browser with remote execution
+  (○)  7. Skip — keep defaults / configure later
+
+[2m  Choice [default 1]: [0m
+[32m✓   Browser set to local mode[0m
+[2m      Installing Node.js dependencies for browser tools...[0m
+Exception in thread Thread-3 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x85 in position 3: illegal multibyte sequence
+[32m✓     Node.js dependencies installed[0m
+[2m      Installing Chromium (~170MB one-time download)...[0m
+Exception in thread Thread-5 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\peter\AppData\Roaming\uv\python\cpython-3.11-windows-x86_64-none\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x93 in position 164: illegal multibyte sequence
+[32m✓     Chromium installed[0m
+[32m✓   Local Browser - no configuration needed![0m
+
+[36m  --- 🖱️ Computer Use (macOS) (cua-driver (background)) ---[0m
+[2m    macOS background computer-use via SkyLight SPIs — does NOT steal your cursor or focus. Works with any model.[0m
+[33m⚠     Computer Use (cua-driver) is macOS-only; skipping.[0m
+[32m✓   cua-driver (background) - no configuration needed![0m
+
+[36m  --- 🎨 Image Generation - Choose a provider ---[0m
+
+[33m
+    Choose a provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Nous Subscription [subscription] — Managed FAL image generation billed to your subscription  ★ via Nous Portal (login on select)
+  (○)  2. FAL.ai [paid] — Pick from flux-2-klein, flux-2-pro, gpt-image, nano-banana, etc. — text-to-image & image editing
+  (○)  3. Krea [paid] — Krea 2 foundation model — Medium ($0.03) + Large ($0.06). Style transfer, moodboards, reference-guided generation.
+  (○)  4. OpenAI [paid] — gpt-image-2 at low/medium/high quality tiers — text-to-image & image editing
+  (○)  5. OpenAI (Codex auth) [free] — gpt-image-2 via ChatGPT/Codex OAuth — no API key required (text-to-image only)
+  (○)  6. xAI Grok Imagine (image) [paid] — grok-imagine-image — text-to-image & image editing; uses xAI Grok OAuth or XAI_API_KEY
+  (○)  7. Skip — keep defaults / configure later
+
+[2m  Choice [default 1]: [0m7
+[2m    Skipped Image Generation[0m
+
+[36m  --- 🔊 Text-to-Speech - Choose a provider ---[0m
+
+[33m
+    Choose a provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Microsoft Edge TTS [★ recommended · free] — Good quality, no API key needed [active]
+  (○)  2. Nous Subscription [subscription] — Managed OpenAI TTS billed to your subscription  ★ via Nous Portal (login on select)
+  (○)  3. OpenAI TTS [paid] — High quality voices
+  (○)  4. xAI TTS — Grok voices — uses xAI Grok OAuth or XAI_API_KEY
+  (○)  5. ElevenLabs [paid] — Most natural voices
+  (○)  6. Mistral (Voxtral TTS) [paid] — Multilingual, native Opus
+  (○)  7. Google Gemini TTS [preview] — 30 prebuilt voices, controllable via prompts
+  (○)  8. KittenTTS [local · free] — Lightweight local ONNX TTS (~25MB), no API key
+  (○)  9. Piper [local · free] — Local neural TTS, 44 languages (voices ~20-90MB)
+  (○) 10. Skip — keep defaults / configure later
+
+[2m  Choice [default 1]: [0m10
+[2m    Skipped Text-to-Speech[0m
+
+[36m  --- 🔍 Web Search & Extract - Select Search Provider ---[0m
+[2m    A free DuckDuckGo search skill is also included — skip this if you don't need a premium provider.[0m
+
+[33m
+    Select Search Provider:[0m
+[2m  Select by number, Enter to confirm.
+[0m
+  [32m(●)[0m  1. Nous Subscription [subscription] — Managed Firecrawl billed to your subscription  ★ via Nous Portal (login on select)
+  (○)  2. Firecrawl Self-Hosted [free · self-hosted] — Run your own Firecrawl instance (Docker)
+  (○)  3. Brave Search (Free) [free] — Free-tier API key — 2k queries/mo, search only.
+  (○)  4. DuckDuckGo (ddgs) [free · no key · search only] — Search via the ddgs Python package — no API key (pair with any extract provider)
+  (○)  5. Exa [paid] — Semantic + neural web search with content extraction.
+  (○)  6. Firecrawl [paid · optional gateway] — Full search + extract; supports direct API and Nous tool-gateway routing.
+  (○)  7. Parallel [paid] — Objective-tuned search + parallel page extraction.
+  (○)  8. SearXNG [free · self-hosted] — Free, privacy-respecting metasearch. Point SEARXNG_URL at your instance.
+  (○)  9. Tavily [paid] — Search + extract in one provider.
+  (○) 10. xAI Web Search (Grok) [paid] — Agentic web search via Grok's web_search tool — uses xAI Grok OAuth or XAI_API_KEY.
+  (○) 11. Skip — keep defaults / configure later
+
+[2m  Choice [default 1]: [0m11
+[2m    Skipped Web Search & Extract[0m
+[32m  ✓ Saved 🖥️  CLI tool configuration[0m
+
+[2m  Previous config backed up to: C:\Users\peter\AppData\Local\hermes\config.yaml.bak.20260622_112954[0m
+[2m  If setup changed a value you customized, restore it with:[0m
+[2m    cp C:\Users\peter\AppData\Local\hermes\config.yaml.bak.20260622_112954 C:\Users\peter\AppData\Local\hermes\config.yaml[0m
+
+
+[36m[1m◆ Tool Availability Summary[0m
+[2m  5/10 tool categories available:[0m
+
+   [32m✓[0m Vision (image analysis)
+   [31m✗[0m Mixture of Agents [2m(missing OPENROUTER_API_KEY)[0m
+   [31m✗[0m Web Search & Extract [2m(missing EXA_API_KEY, PARALLEL_API_KEY, FIRECRAWL_API_KEY/FIRECRAWL_API_URL, TAVILY_API_KEY, or SEARXNG_URL)[0m
+   [31m✗[0m Browser Automation [2m(missing npm install -g agent-browser && agent-browser install --with-deps)[0m
+   [31m✗[0m Image Generation [2m(missing FAL_KEY or OPENAI_API_KEY)[0m
+   [32m✓[0m Text-to-Speech (Edge TTS)
+   [31m✗[0m Skills Hub (GitHub) [2m(missing GITHUB_TOKEN)[0m
+   [32m✓[0m Terminal/Commands
+   [32m✓[0m Task Planning (todo)
+   [32m✓[0m Skills (view, create, edit)
+
+[33m⚠ Some tools are disabled. Run 'hermes setup tools' to configure them,[0m
+[33m⚠ or edit ~/AppData\Local\hermes/.env directly to add the missing API keys.[0m
+
+
+[32m┌─────────────────────────────────────────────────────────┐[0m
+[32m│              ✓ Setup Complete!                          │[0m
+[32m└─────────────────────────────────────────────────────────┘[0m
+
+[36m[1m📁 All your files are in ~/AppData\Local\hermes/:[0m
+
+   [33mSettings:[0m  C:\Users\peter\AppData\Local\hermes\config.yaml
+   [33mAPI Keys:[0m  C:\Users\peter\AppData\Local\hermes\.env
+   [33mData:[0m      C:\Users\peter\AppData\Local\hermes/cron/, sessions/, logs/
+
+[2m────────────────────────────────────────────────────────────[0m
+
+[36m[1m📝 To edit your configuration:[0m
+
+   [32mhermes setup[0m          Re-run the full wizard
+   [32mhermes setup model[0m    Change model/provider
+   [32mhermes setup terminal[0m Change terminal backend
+   [32mhermes setup gateway[0m  Configure messaging
+   [32mhermes setup tools[0m    Configure tool providers
+
+   [32mhermes config[0m         View current settings
+   [32mhermes config edit[0m    Open config in your editor
+   [32mhermes config set <key> <value>[0m
+                          Set a specific value
+
+   Or edit the files directly:
+   [2mnano C:\Users\peter\AppData\Local\hermes\config.yaml[0m
+   [2mnano C:\Users\peter\AppData\Local\hermes\.env[0m
+
+[2m────────────────────────────────────────────────────────────[0m
+
+[36m[1m🚀 Ready to go![0m
+
+   [32mhermes[0m              Start chatting
+   [32mhermes gateway[0m      Start messaging gateway
+   [32mhermes doctor[0m       Check for issues
+
+
+┌─────────────────────────────────────────────────────────┐
+│                    ✓ 安装完成！                         │
+└─────────────────────────────────────────────────────────┘
+
+📁 你的文件：
+
+   配置：      C:\Users\peter\AppData\Local\hermes\config.yaml
+   密钥：      C:\Users\peter\AppData\Local\hermes\.env
+   数据：      C:\Users\peter\AppData\Local\hermes\cron\, sessions\, logs\
+   代码：      C:\Users\peter\AppData\Local\hermes\hermes-agent\
+
+─────────────────────────────────────────────────────────
+
+🚀 常用命令：
+
+   hermes              开始聊天
+   hermes setup        配置 API Key 和设置
+   hermes config       查看 / 编辑配置
+   hermes config edit  在编辑器中打开配置
+   hermes gateway      启动消息网关（Telegram、Discord 等）
+   hermes update       更新到最新版本
+
+─────────────────────────────────────────────────────────
+
+⚡ 请重启终端，让 PATH 变更生效
