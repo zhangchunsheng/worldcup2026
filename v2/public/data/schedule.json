@@ -937,7 +937,11 @@
         "zh": "AT&T体育场 · 达拉斯",
         "en": "AT&T Stadium · Dallas"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m042",
@@ -956,7 +960,11 @@
         "zh": "林肯金融球场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m043",
@@ -975,7 +983,11 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · New York"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m044",
@@ -994,7 +1006,11 @@
         "zh": "李维斯体育场 · 旧金山",
         "en": "Levi's Stadium · San Francisco"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m045",
