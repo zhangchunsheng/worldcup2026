@@ -1029,7 +1029,11 @@
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
       },
-      "score": null
+      "score": {
+        "home": 5,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m046",
@@ -1048,7 +1052,11 @@
         "zh": "吉列体育场 · 波士顿",
         "en": "Gillette Stadium · Boston"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m047",
@@ -1067,7 +1075,11 @@
         "zh": "BMO Field · 多伦多",
         "en": "BMO Field · Toronto"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m048",
@@ -1086,7 +1098,11 @@
         "zh": "阿克伦体育场 · 瓜达拉哈拉",
         "en": "Akron Stadium · Guadalajara"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m049",
@@ -1105,7 +1121,11 @@
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m050",
@@ -1124,7 +1144,11 @@
         "zh": "Lumen Field · 西雅图",
         "en": "Lumen Field · Seattle"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m051",
@@ -1143,7 +1167,11 @@
         "zh": "Hard Rock体育场 · 迈阿密",
         "en": "Hard Rock Stadium · Miami"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 3,
+        "status": "FT"
+      }
     },
     {
       "id": "m052",
@@ -1162,7 +1190,11 @@
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
       },
-      "score": null
+      "score": {
+        "home": 4,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m053",
@@ -1181,7 +1213,11 @@
         "zh": "阿兹特克体育场 · 墨西哥城",
         "en": "Estadio Azteca · Mexico City"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 3,
+        "status": "FT"
+      }
     },
     {
       "id": "m054",
@@ -1200,7 +1236,11 @@
         "zh": "BBVA体育场 · 蒙特雷",
         "en": "BBVA Stadium · Monterrey"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m055",
