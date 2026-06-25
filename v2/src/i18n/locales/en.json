@@ -26,7 +26,11 @@
     "days": "Days",
     "hours": "Hours",
     "mins": "Mins",
-    "secs": "Secs"
+    "secs": "Secs",
+    "daysSinceKickoff": "Days Since Kickoff",
+    "finalToday": "Final Day",
+    "finalKickoff": "Final Kickoff",
+    "beijingTime": "Beijing Time"
   },
   "sections": {
     "schedule": {

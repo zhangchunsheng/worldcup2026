@@ -26,7 +26,11 @@
     "days": "天",
     "hours": "时",
     "mins": "分",
-    "secs": "秒"
+    "secs": "秒",
+    "daysSinceKickoff": "已开赛天数",
+    "finalToday": "决赛日",
+    "finalKickoff": "决赛开球",
+    "beijingTime": "北京时间"
   },
   "sections": {
     "schedule": {
