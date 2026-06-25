@@ -9,6 +9,7 @@
     "schedule": "赛程",
     "groupStandings": "积分",
     "groups": "分组",
+    "roundOf32": "32强",
     "odds": "热门",
     "cities": "城市",
     "players": "球星",
@@ -39,6 +40,10 @@
     "groups": {
       "title": "小组分组",
       "desc": "12个小组，48支球队，小组前二及8个最佳第三名晋级"
+    },
+    "roundOf32": {
+      "title": "32强晋级形势",
+      "desc": "各小组前两名及8个最佳第三名，共32支晋级球队"
     },
     "odds": {
       "title": "夺冠热门",
@@ -112,6 +117,11 @@
     "goalsAgainst": "失",
     "goalDifference": "净",
     "points": "分"
+  },
+  "knockout": {
+    "bestThird": "最佳第三名",
+    "bestThirdDesc": "成绩最好的8个小组第三名晋级",
+    "pending": "待确定"
   },
   "city": {
     "capacity": "容量",

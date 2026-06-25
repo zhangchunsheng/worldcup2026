@@ -9,6 +9,7 @@
     "schedule": "Schedule",
     "groupStandings": "Standings",
     "groups": "Groups",
+    "roundOf32": "Round of 32",
     "odds": "Favorites",
     "cities": "Cities",
     "players": "Players",
@@ -39,6 +40,10 @@
     "groups": {
       "title": "Group Stage",
       "desc": "12 groups, 48 teams, top 2 + 8 best 3rd places advance"
+    },
+    "roundOf32": {
+      "title": "Round of 32",
+      "desc": "Top 2 from each group plus 8 best third-placed teams"
     },
     "odds": {
       "title": "Title Favorites",
@@ -112,6 +117,11 @@
     "goalsAgainst": "GA",
     "goalDifference": "GD",
     "points": "Pts"
+  },
+  "knockout": {
+    "bestThird": "Best 3rd Place",
+    "bestThirdDesc": "Top 8 third-placed teams advance",
+    "pending": "Pending"
   },
   "city": {
     "capacity": "Capacity",

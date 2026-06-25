@@ -35,6 +35,16 @@
         <GroupsSection />
       </section>
 
+      <!-- Round of 32 -->
+      <section id="round-of-32" class="py-24 px-6 max-w-7xl mx-auto">
+        <FadeInWrapper>
+          <SectionHeader :description="t('sections.roundOf32.desc')">
+            ⚔️ <span class="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">{{ t('sections.roundOf32.title') }}</span>
+          </SectionHeader>
+        </FadeInWrapper>
+        <RoundOf32Section />
+      </section>
+
       <!-- Odds -->
       <section id="odds" class="py-24 px-6 max-w-7xl mx-auto">
         <FadeInWrapper>
@@ -112,6 +122,7 @@ import FadeInWrapper from './components/shared/FadeInWrapper.vue'
 import ScheduleSection from './components/schedule/ScheduleSection.vue'
 import GroupStandingsSection from './components/groups/GroupStandingsSection.vue'
 import GroupsSection from './components/groups/GroupsSection.vue'
+import RoundOf32Section from './components/knockout/RoundOf32Section.vue'
 import OddsSection from './components/odds/OddsSection.vue'
 import CitiesSection from './components/cities/CitiesSection.vue'
 import PlayersSection from './components/players/PlayersSection.vue'

@@ -62,6 +62,7 @@ const navLinks = [
   { id: 'schedule', label: 'nav.schedule' },
   { id: 'group-standings', label: 'nav.groupStandings' },
   { id: 'groups', label: 'nav.groups' },
+  { id: 'round-of-32', label: 'nav.roundOf32' },
   { id: 'odds', label: 'nav.odds' },
   { id: 'cities', label: 'nav.cities' },
   { id: 'players', label: 'nav.players' },
