@@ -14,10 +14,15 @@
             <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.groupWinners') }}</h4>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
               <div v-for="team in groupWinners" :key="team.code"
-                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
-                <span class="text-base">{{ team.flag }}</span>
-                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
-                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+                   class="flex flex-col gap-1 p-2 rounded-lg bg-white/5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">{{ team.flag }}</span>
+                  <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-text-muted">
+                  <span>{{ team.group }}</span>
+                  <span class="text-gold">{{ team.points }}pts · GD {{ team.goalDifference > 0 ? '+' : '' }}{{ team.goalDifference }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -27,10 +32,15 @@
             <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.groupRunnersUp') }}</h4>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
               <div v-for="team in groupRunnersUp" :key="team.code"
-                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
-                <span class="text-base">{{ team.flag }}</span>
-                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
-                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+                   class="flex flex-col gap-1 p-2 rounded-lg bg-white/5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">{{ team.flag }}</span>
+                  <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-text-muted">
+                  <span>{{ team.group }}</span>
+                  <span class="text-gold">{{ team.points }}pts · GD {{ team.goalDifference > 0 ? '+' : '' }}{{ team.goalDifference }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -40,10 +50,15 @@
             <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.bestThird') }}</h4>
             <div v-if="qualifiedTeams.bestThirds.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
               <div v-for="team in qualifiedTeams.bestThirds" :key="team.code"
-                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
-                <span class="text-base">{{ team.flag }}</span>
-                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
-                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+                   class="flex flex-col gap-1 p-2 rounded-lg bg-white/5">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">{{ team.flag }}</span>
+                  <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-text-muted">
+                  <span>{{ team.group }}</span>
+                  <span class="text-gold">{{ team.points }}pts · GD {{ team.goalDifference > 0 ? '+' : '' }}{{ team.goalDifference }}</span>
+                </div>
               </div>
             </div>
             <div v-else class="text-xs text-text-muted py-2">{{ t('common.tbd') }}</div>
@@ -64,12 +79,15 @@
           </h3>
           <div class="space-y-2">
             <div v-for="(team, i) in g.teams.slice(0, 2)" :key="team.code"
-                 class="flex items-center gap-3 p-2 rounded-lg bg-white/5">
-              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gold/20 text-gold text-xs font-bold">
-                {{ i + 1 }}
-              </span>
-              <span class="text-xl">{{ team.flag }}</span>
-              <span class="text-sm font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                 class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gold/20 text-gold text-xs font-bold">
+                  {{ i + 1 }}
+                </span>
+                <span class="text-xl">{{ team.flag }}</span>
+                <span class="text-sm font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+              </div>
+              <span class="text-xs text-gold">{{ team.points }}pts · GD {{ team.goalDifference > 0 ? '+' : '' }}{{ team.goalDifference }}</span>
             </div>
             <!-- Show placeholder if group has not enough finished matches -->
             <div v-if="g.teams.length < 2" class="text-xs text-text-muted p-2">
