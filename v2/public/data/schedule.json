@@ -1489,7 +1489,11 @@
         "zh": "Lumen Field · 西雅图",
         "en": "Lumen Field · Seattle"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m066",
@@ -1508,7 +1512,11 @@
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 5,
+        "status": "FT"
+      }
     },
     {
       "id": "m067",
