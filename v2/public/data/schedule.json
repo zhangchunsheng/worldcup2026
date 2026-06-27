@@ -1259,7 +1259,11 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · New York"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m056",
@@ -1278,7 +1282,11 @@
         "zh": "林肯金融球场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m057",
@@ -1297,7 +1305,11 @@
         "zh": "AT&T体育场 · 达拉斯",
         "en": "AT&T Stadium · Dallas"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m058",
@@ -1316,7 +1328,11 @@
         "zh": "GEHA Arrowhead体育场 · 堪萨斯城",
         "en": "GEHA Arrowhead Stadium · Kansas City"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 3,
+        "status": "FT"
+      }
     },
     {
       "id": "m059",
@@ -1335,7 +1351,11 @@
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m060",
@@ -1354,7 +1374,11 @@
         "zh": "李维斯体育场 · 旧金山",
         "en": "Levi's Stadium · San Francisco"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m061",
@@ -1373,7 +1397,11 @@
         "zh": "吉列体育场 · 波士顿",
         "en": "Gillette Stadium · Boston"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 4,
+        "status": "FT"
+      }
     },
     {
       "id": "m062",
@@ -1392,7 +1420,11 @@
         "zh": "BMO Field · 多伦多",
         "en": "BMO Field · Toronto"
       },
-      "score": null
+      "score": {
+        "home": 5,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m063",
@@ -1411,7 +1443,11 @@
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m064",
@@ -1430,7 +1466,11 @@
         "zh": "阿克伦体育场 · 瓜达拉哈拉",
         "en": "Akron Stadium · Guadalajara"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m065",
