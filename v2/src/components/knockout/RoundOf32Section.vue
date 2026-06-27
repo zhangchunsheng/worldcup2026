@@ -1,6 +1,57 @@
 <template>
   <div v-if="loading" class="text-center text-text-muted py-8">{{ t('common.loading') }}</div>
   <div v-else class="space-y-8">
+    <!-- All 32 qualified teams overview -->
+    <FadeInWrapper>
+      <div class="bg-bg-card border border-border rounded-card p-5">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+          🏆 {{ t('knockout.qualifiedTeams') }}
+          <span class="text-xs font-normal text-text-muted ml-2">{{ qualifiedTeams.all.length }} / 32</span>
+        </h3>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Group winners -->
+          <div>
+            <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.groupWinners') }}</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
+              <div v-for="team in groupWinners" :key="team.code"
+                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+                <span class="text-base">{{ team.flag }}</span>
+                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group runners-up -->
+          <div>
+            <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.groupRunnersUp') }}</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
+              <div v-for="team in groupRunnersUp" :key="team.code"
+                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+                <span class="text-base">{{ team.flag }}</span>
+                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best third-placed teams -->
+          <div>
+            <h4 class="text-sm font-semibold text-gold mb-3">{{ t('knockout.bestThird') }}</h4>
+            <div v-if="qualifiedTeams.bestThirds.length" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
+              <div v-for="team in qualifiedTeams.bestThirds" :key="team.code"
+                   class="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+                <span class="text-base">{{ team.flag }}</span>
+                <span class="text-xs font-medium truncate">{{ getLocaleLabel(team.name) }}</span>
+                <span class="ml-auto text-xs text-text-muted">{{ team.group }}</span>
+              </div>
+            </div>
+            <div v-else class="text-xs text-text-muted py-2">{{ t('common.tbd') }}</div>
+          </div>
+        </div>
+      </div>
+    </FadeInWrapper>
+
     <!-- Auto-qualified: top 2 from each group -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       <FadeInWrapper v-for="g in groupStandings" :key="g.letter">
@@ -28,34 +79,11 @@
         </div>
       </FadeInWrapper>
     </div>
-
-    <!-- Best third-placed teams -->
-    <FadeInWrapper>
-      <div class="bg-bg-card border border-border rounded-card p-4">
-        <h3 class="text-base font-bold mb-3 flex items-center gap-2">
-          🥉 {{ t('knockout.bestThird') }}
-          <span class="text-xs font-normal text-text-muted ml-2">{{ t('knockout.bestThirdDesc') }}</span>
-        </h3>
-        <div v-if="qualifiedTeams.bestThirds.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div v-for="team in qualifiedTeams.bestThirds" :key="team.code"
-               class="flex items-center gap-3 p-2 rounded-lg bg-white/5">
-            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gold/20 text-gold text-xs font-bold">
-              {{ team.thirdRank }}
-            </span>
-            <span class="text-xl">{{ team.flag }}</span>
-            <div class="min-w-0">
-              <div class="text-sm font-medium truncate">{{ getLocaleLabel(team.name) }}</div>
-              <div class="text-xs text-text-muted">{{ t('group.badge', { group: team.group }) }} · {{ t('group.points') }} {{ team.points }}</div>
-            </div>
-          </div>
-        </div>
-        <div v-else class="text-xs text-text-muted py-2">{{ t('common.tbd') }}</div>
-      </div>
-    </FadeInWrapper>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useStandings } from '../../composables/useStandings'
 import { getLocaleLabel } from '../../composables/useLiveScores'
 import FadeInWrapper from '../shared/FadeInWrapper.vue'
@@ -63,4 +91,12 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const { loading, groupStandings, qualifiedTeams } = useStandings()
+
+const groupWinners = computed(() =>
+  qualifiedTeams.value.auto.filter(t => t.position === 1).sort((a, b) => a.group.localeCompare(b.group))
+)
+
+const groupRunnersUp = computed(() =>
+  qualifiedTeams.value.auto.filter(t => t.position === 2).sort((a, b) => a.group.localeCompare(b.group))
+)
 </script>

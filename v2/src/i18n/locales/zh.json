@@ -125,7 +125,10 @@
   "knockout": {
     "bestThird": "最佳第三名",
     "bestThirdDesc": "成绩最好的8个小组第三名晋级",
-    "pending": "待确定"
+    "pending": "待确定",
+    "qualifiedTeams": "32强总览",
+    "groupWinners": "小组第一",
+    "groupRunnersUp": "小组第二"
   },
   "city": {
     "capacity": "容量",

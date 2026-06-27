@@ -125,7 +125,10 @@
   "knockout": {
     "bestThird": "Best 3rd Place",
     "bestThirdDesc": "Top 8 third-placed teams advance",
-    "pending": "Pending"
+    "pending": "Pending",
+    "qualifiedTeams": "Qualified Teams",
+    "groupWinners": "Group Winners",
+    "groupRunnersUp": "Runners-up"
   },
   "city": {
     "capacity": "Capacity",
