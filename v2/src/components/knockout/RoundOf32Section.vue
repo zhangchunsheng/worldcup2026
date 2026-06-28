@@ -97,18 +97,51 @@
         </div>
       </FadeInWrapper>
     </div>
+    <!-- Round of 32 schedule -->
+    <div v-if="Object.keys(matchesByDate).length" class="space-y-6">
+      <FadeInWrapper v-for="(dateMatches, date) in matchesByDate" :key="date">
+        <h3 class="text-lg font-bold text-gold">
+          {{ formatDate(date) }}
+          <span class="text-sm text-text-muted font-normal ml-2">{{ dateMatches.length }} 场</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <MatchCard v-for="match in dateMatches" :key="match.id"
+            :match="match"
+            @open-detail="() => {}"
+          />
+        </div>
+      </FadeInWrapper>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 import { useStandings } from '../../composables/useStandings'
+import { useData } from '../../composables/useData'
 import { getLocaleLabel } from '../../composables/useLiveScores'
 import FadeInWrapper from '../shared/FadeInWrapper.vue'
+import MatchCard from '../schedule/MatchCard.vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
-const { loading, groupStandings, qualifiedTeams } = useStandings()
+const { t, locale } = useI18n()
+const { loading: standingsLoading, groupStandings, qualifiedTeams } = useStandings()
+const { data: knockoutData, loading: knockoutLoading } = useData('knockout')
+
+const loading = computed(() => standingsLoading.value || knockoutLoading.value)
+
+const matchesByDate = computed(() => {
+  if (!knockoutData.value?.matches) return {}
+  const grouped = {}
+  for (const m of knockoutData.value.matches) {
+    const date = m.time ? m.time.substring(0, 10) : 'unknown'
+    if (!grouped[date]) grouped[date] = []
+    grouped[date].push(m)
+  }
+  const sorted = {}
+  Object.keys(grouped).sort().forEach(k => { sorted[k] = grouped[k] })
+  return sorted
+})
 
 const groupWinners = computed(() =>
   qualifiedTeams.value.auto.filter(t => t.position === 1).sort((a, b) => a.group.localeCompare(b.group))
@@ -117,4 +150,14 @@ const groupWinners = computed(() =>
 const groupRunnersUp = computed(() =>
   qualifiedTeams.value.auto.filter(t => t.position === 2).sort((a, b) => a.group.localeCompare(b.group))
 )
+
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr + 'T00:00:00+08:00')
+  if (isNaN(d.getTime())) return dateStr
+  if (locale.value === 'zh') {
+    return `${d.getMonth() + 1}月${d.getDate()}日`
+  }
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
 </script>

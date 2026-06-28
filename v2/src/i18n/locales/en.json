@@ -95,7 +95,8 @@
     "upcoming": "Upcoming",
     "details": "Match Details",
     "liveScore": "Live Score",
-    "time": "Match Time"
+    "time": "Match Time",
+    "round-of-32": "Round of 32"
   },
   "settings": {
     "title": "API Settings",

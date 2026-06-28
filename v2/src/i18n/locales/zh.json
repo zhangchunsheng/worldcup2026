@@ -95,7 +95,8 @@
     "upcoming": "未开始",
     "details": "比赛详情",
     "liveScore": "实时比分",
-    "time": "比赛时间"
+    "time": "比赛时间",
+    "round-of-32": "1/16决赛"
   },
   "settings": {
     "title": "API 设置",

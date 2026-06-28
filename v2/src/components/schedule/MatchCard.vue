@@ -4,10 +4,10 @@
     :class="{ 'border-gold/40 bg-gold/5': prediction && !isFinished }"
     @click="$emit('openDetail', match)"
   >
-    <!-- Group badge -->
-    <div v-if="group" class="absolute top-3 left-3">
+    <!-- Group or phase badge -->
+    <div v-if="group || match.phase" class="absolute top-3 left-3">
       <span class="px-2 py-0.5 rounded-full bg-gold/15 text-gold text-xs font-bold">
-        {{ t('group.badge', { group }) }}
+        {{ group ? t('group.badge', { group }) : t('match.' + match.phase) }}
       </span>
     </div>
 
