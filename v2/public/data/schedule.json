@@ -1535,7 +1535,11 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · New York"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 2,
+        "status": "FT"
+      }
     },
     {
       "id": "m068",
@@ -1554,7 +1558,11 @@
         "zh": "林肯金融球场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
       },
-      "score": null
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m069",
@@ -1573,7 +1581,11 @@
         "zh": "Hard Rock体育场 · 迈阿密",
         "en": "Hard Rock Stadium · Miami"
       },
-      "score": null
+      "score": {
+        "home": 0,
+        "away": 0,
+        "status": "FT"
+      }
     },
     {
       "id": "m070",
@@ -1592,7 +1604,11 @@
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 1,
+        "status": "FT"
+      }
     },
     {
       "id": "m071",
@@ -1611,7 +1627,11 @@
         "zh": "GEHA Arrowhead体育场 · 堪萨斯城",
         "en": "GEHA Arrowhead Stadium · Kansas City"
       },
-      "score": null
+      "score": {
+        "home": 3,
+        "away": 3,
+        "status": "FT"
+      }
     },
     {
       "id": "m072",
@@ -1630,7 +1650,11 @@
         "zh": "AT&T体育场 · 达拉斯",
         "en": "AT&T Stadium · Dallas"
       },
-      "score": null
+      "score": {
+        "home": 1,
+        "away": 3,
+        "status": "FT"
+      }
     }
   ],
   "byDate": {
