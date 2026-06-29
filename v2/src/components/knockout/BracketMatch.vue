@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-bg-card border border-border rounded-card p-3 cursor-pointer hover:border-gold/30 transition-all"
+  <div class="bg-bg-card border rounded-card p-3 cursor-pointer hover:border-gold/30 transition-all w-[180px]"
+       :class="highlight ? 'border-gold' : 'border-border'"
        @click="$emit('openDetail', match)">
     <div class="flex items-center justify-between mb-2">
       <span class="text-xs font-bold text-gold uppercase">{{ t('match.' + match.phase) }}</span>
@@ -44,6 +45,7 @@ const { t, locale } = useI18n()
 const props = defineProps({
   match: { type: Object, required: true },
   resolveTeam: { type: Function, required: true },
+  highlight: { type: Boolean, default: false },
 })
 
 defineEmits(['openDetail'])

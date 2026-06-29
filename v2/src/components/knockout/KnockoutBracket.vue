@@ -1,63 +1,33 @@
 <template>
   <div class="overflow-x-auto pb-4">
-    <div class="flex gap-6 min-w-[1100px] p-2">
-      <!-- Round of 32 -->
-      <div class="flex flex-col justify-around gap-3 w-[220px]">
-        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.roundOf32') }}</div>
-        <BracketMatch v-for="match in rounds.roundOf32" :key="match.id"
-          :match="match"
-          :resolve-team="resolveTeam"
-          @open-detail="$emit('openDetail', match)"
-        />
-      </div>
+    <div class="flex items-center justify-center gap-4 min-w-[1100px] p-4">
+      <!-- Left half: leaves on the left, root (SF1) on the right -->
+      <BracketTree :node="leftHalf" :resolve-team="resolveTeam" reverse @open-detail="$emit('openDetail', $event)" />
 
-      <!-- Round of 16 -->
-      <div class="flex flex-col justify-around gap-3 w-[220px]">
-        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.roundOf16') }}</div>
-        <BracketMatch v-for="match in rounds.roundOf16" :key="match.id"
-          :match="match"
-          :resolve-team="resolveTeam"
-          @open-detail="$emit('openDetail', match)"
-        />
-      </div>
-
-      <!-- Quarter-finals -->
-      <div class="flex flex-col justify-around gap-3 w-[220px]">
-        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.quarterFinals') }}</div>
-        <BracketMatch v-for="match in rounds.quarterFinals" :key="match.id"
-          :match="match"
-          :resolve-team="resolveTeam"
-          @open-detail="$emit('openDetail', match)"
-        />
-      </div>
-
-      <!-- Semi-finals -->
-      <div class="flex flex-col justify-around gap-3 w-[220px]">
-        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.semiFinals') }}</div>
-        <BracketMatch v-for="match in rounds.semiFinals" :key="match.id"
-          :match="match"
-          :resolve-team="resolveTeam"
-          @open-detail="$emit('openDetail', match)"
-        />
-      </div>
-
-      <!-- Final + Third Place -->
-      <div class="flex flex-col justify-center gap-6 w-[220px]">
-        <div class="space-y-3">
-          <div class="text-center text-sm font-bold text-gold">🏆 {{ t('knockout.final') }}</div>
+      <!-- Center: Final + Third Place -->
+      <div class="flex flex-col justify-center gap-8 mx-2">
+        <div class="relative">
+          <div class="absolute top-1/2 right-full w-4 h-px bg-gold/30"></div>
+          <div class="absolute top-1/2 left-full w-4 h-px bg-gold/30"></div>
           <BracketMatch :match="rounds.final"
             :resolve-team="resolveTeam"
+            highlight
             @open-detail="$emit('openDetail', rounds.final)"
           />
         </div>
-        <div class="space-y-3">
-          <div class="text-center text-sm font-bold text-text-muted">{{ t('knockout.thirdPlace') }}</div>
+
+        <div class="relative">
+          <div class="absolute top-1/2 right-full w-4 h-px bg-gold/30"></div>
+          <div class="absolute top-1/2 left-full w-4 h-px bg-gold/30"></div>
           <BracketMatch :match="rounds.thirdPlace"
             :resolve-team="resolveTeam"
             @open-detail="$emit('openDetail', rounds.thirdPlace)"
           />
         </div>
       </div>
+
+      <!-- Right half: root (SF2) on the left, leaves on the right -->
+      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
     </div>
   </div>
 </template>
@@ -66,10 +36,9 @@
 import { computed } from 'vue'
 import { useData } from '../../composables/useData'
 import { getLocaleLabel } from '../../composables/useLiveScores'
+import BracketTree from './BracketTree.vue'
 import BracketMatch from './BracketMatch.vue'
-import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 const { data: knockoutData } = useData('knockout')
 
 const emit = defineEmits(['openDetail'])
@@ -95,6 +64,54 @@ const rounds = computed(() => ({
   semiFinals: knockoutData.value?.semiFinals || [],
   thirdPlace: knockoutData.value?.thirdPlace || null,
   final: knockoutData.value?.final || null,
+}))
+
+function byId(id) {
+  return allMatches.value[id]
+}
+
+function toNode(match) {
+  return { match, children: [] }
+}
+
+const leftHalf = computed(() => ({
+  match: byId('sf-01'),
+  children: [
+    {
+      match: byId('qf-01'),
+      children: [
+        { match: byId('r16-01'), children: [toNode(byId('r32-01')), toNode(byId('r32-04'))] },
+        { match: byId('r16-02'), children: [toNode(byId('r32-03')), toNode(byId('r32-06'))] },
+      ],
+    },
+    {
+      match: byId('qf-03'),
+      children: [
+        { match: byId('r16-03'), children: [toNode(byId('r32-02')), toNode(byId('r32-05'))] },
+        { match: byId('r16-04'), children: [toNode(byId('r32-07')), toNode(byId('r32-08'))] },
+      ],
+    },
+  ],
+}))
+
+const rightHalf = computed(() => ({
+  match: byId('sf-02'),
+  children: [
+    {
+      match: byId('qf-02'),
+      children: [
+        { match: byId('r16-05'), children: [toNode(byId('r32-11')), toNode(byId('r32-12'))] },
+        { match: byId('r16-06'), children: [toNode(byId('r32-09')), toNode(byId('r32-10'))] },
+      ],
+    },
+    {
+      match: byId('qf-04'),
+      children: [
+        { match: byId('r16-07'), children: [toNode(byId('r32-14')), toNode(byId('r32-15'))] },
+        { match: byId('r16-08'), children: [toNode(byId('r32-13')), toNode(byId('r32-16'))] },
+      ],
+    },
+  ],
 }))
 
 function getTeamInfo(code) {
