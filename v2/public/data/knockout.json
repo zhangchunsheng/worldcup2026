@@ -17,6 +17,11 @@
       "venue": {
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
+      },
+      "score": {
+        "home": 0,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
