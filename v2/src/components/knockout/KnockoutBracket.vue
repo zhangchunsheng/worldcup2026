@@ -1,10 +1,7 @@
 <template>
-  <div class="flex flex-col items-center gap-6 w-full max-w-5xl mx-auto">
-    <!-- Top: Round of 32 → ... → Semi-finals as two vertical trees -->
-    <div class="flex justify-around w-full gap-4">
-      <BracketTree :node="leftHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
-      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
-    </div>
+  <div class="flex flex-col items-center gap-6 w-full max-w-6xl mx-auto">
+    <!-- Upper half: grows upward from R32 to SF -->
+    <BracketTree :node="topHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
 
     <!-- Connector from semi-finals to final -->
     <div class="relative w-full h-8">
@@ -14,21 +11,23 @@
       <div class="absolute top-1/2 bottom-0 left-1/2 w-px bg-gold/30"></div>
     </div>
 
-    <!-- Final + Third Place -->
-    <div class="flex flex-col items-center gap-4">
-      <BracketMatch :match="rounds.final"
-        :resolve-team="resolveTeam"
-        highlight
-        @open-detail="$emit('openDetail', rounds.final)"
-      />
+    <!-- Final -->
+    <BracketMatch :match="rounds.final"
+      :resolve-team="resolveTeam"
+      highlight
+      @open-detail="$emit('openDetail', rounds.final)"
+    />
 
-      <div class="text-xs text-text-muted">{{ t('knockout.thirdPlace') }}</div>
-
-      <BracketMatch :match="rounds.thirdPlace"
-        :resolve-team="resolveTeam"
-        @open-detail="$emit('openDetail', rounds.thirdPlace)"
-      />
+    <!-- Connector from final to lower semi-finals -->
+    <div class="relative w-full h-8">
+      <div class="absolute top-1/2 bottom-0 left-1/4 w-px bg-gold/30"></div>
+      <div class="absolute top-1/2 bottom-0 right-1/4 w-px bg-gold/30"></div>
+      <div class="absolute bottom-1/2 left-1/4 right-1/4 h-px bg-gold/30"></div>
+      <div class="absolute top-0 bottom-1/2 left-1/2 w-px bg-gold/30"></div>
     </div>
+
+    <!-- Lower half: grows downward from R32 to SF -->
+    <BracketTree :node="bottomHalf" :resolve-team="resolveTeam" downward @open-detail="$emit('openDetail', $event)" />
   </div>
 </template>
 
@@ -38,9 +37,7 @@ import { useData } from '../../composables/useData'
 import { getLocaleLabel } from '../../composables/useLiveScores'
 import BracketTree from './BracketTree.vue'
 import BracketMatch from './BracketMatch.vue'
-import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 const { data: knockoutData } = useData('knockout')
 
 const emit = defineEmits(['openDetail'])
@@ -76,7 +73,7 @@ function toNode(match) {
   return { match, children: [] }
 }
 
-const leftHalf = computed(() => ({
+const topHalf = computed(() => ({
   match: byId('sf-01'),
   children: [
     {
@@ -96,7 +93,7 @@ const leftHalf = computed(() => ({
   ],
 }))
 
-const rightHalf = computed(() => ({
+const bottomHalf = computed(() => ({
   match: byId('sf-02'),
   children: [
     {
