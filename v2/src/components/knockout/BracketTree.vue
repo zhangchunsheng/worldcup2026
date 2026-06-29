@@ -12,57 +12,49 @@
 
     <!-- Connector lines -->
     <div v-if="node.children?.length" class="connector relative flex-shrink-0 mx-2"
-       :style="{ height: connectorHeight }"
     >
-      <div class="absolute left-0 w-1/2 h-px bg-gold/30"
+      <!-- Horizontal lines from children side -->
+      <div class="absolute h-px bg-gold/30 w-1/2"
+           :class="reverse ? 'right-0' : 'left-0'"
            :style="{ top: node.children.length > 1 ? '25%' : '50%' }"></div>
       <div v-if="node.children.length > 1"
-           class="absolute left-0 w-1/2 h-px bg-gold/30"
+           class="absolute h-px bg-gold/30 w-1/2"
+           :class="reverse ? 'right-0' : 'left-0'"
            style="top: 75%"></div>
 
+      <!-- Vertical line on parent side -->
       <div v-if="node.children.length > 1"
-           class="absolute left-1/2 top-1/4 bottom-1/4 w-px bg-gold/30"></div>
+           class="absolute top-1/4 bottom-1/4 w-px bg-gold/30"
+           :class="reverse ? 'left-1/2' : 'right-1/2'"></div>
 
-      <div class="absolute right-0 top-1/2 w-1/2 h-px bg-gold/30"
-           :style="{ top: node.children.length > 1 ? '50%' : '50%' }"></div>
+      <!-- Horizontal line to parent -->
+      <div class="absolute top-1/2 w-1/2 h-px bg-gold/30"
+           :class="reverse ? 'left-0' : 'right-0'"></div>
     </div>
 
     <!-- Match card -->
-    <div class="relative">
-      <!-- Entry line from parent (only if this node has a parent connector expectation) -->
-      <div v-if="showEntryLine"
-           class="absolute top-1/2 h-px bg-gold/30"
-           :class="reverse ? 'left-full w-3' : 'right-full w-3'"></div>
-
-      <BracketMatch :match="node.match"
-        :resolve-team="resolveTeam"
-        @open-detail="$emit('openDetail', node.match)"
-      />
-    </div>
+    <BracketMatch :match="node.match"
+      :resolve-team="resolveTeam"
+      @open-detail="$emit('openDetail', node.match)"
+    />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import BracketMatch from './BracketMatch.vue'
 
-const props = defineProps({
+defineProps({
   node: { type: Object, required: true },
   resolveTeam: { type: Function, required: true },
   reverse: { type: Boolean, default: false },
-  showEntryLine: { type: Boolean, default: false },
 })
 
 defineEmits(['openDetail'])
-
-const connectorHeight = computed(() => {
-  const count = props.node.children?.length || 0
-  return count > 1 ? '100%' : '0px'
-})
 </script>
 
 <style scoped>
 .connector {
   width: 1rem;
+  height: 100%;
 }
 </style>

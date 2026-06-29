@@ -1,8 +1,8 @@
 <template>
   <div class="overflow-x-auto pb-2">
     <div class="flex items-center justify-center gap-2 min-w-[900px] p-2">
-      <!-- Left half: leaves on the left, root (SF1) on the right -->
-      <BracketTree :node="leftHalf" :resolve-team="resolveTeam" reverse @open-detail="$emit('openDetail', $event)" />
+      <!-- Left half: leaves (R32) on the left, root (SF1) on the right -->
+      <BracketTree :node="leftHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
 
       <!-- Center: Final + Third Place -->
       <div class="flex flex-col justify-center gap-6 mx-1">
@@ -26,8 +26,8 @@
         </div>
       </div>
 
-      <!-- Right half: root (SF2) on the left, leaves on the right -->
-      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
+      <!-- Right half: root (SF2) on the left, leaves (R32) on the right -->
+      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" reverse @open-detail="$emit('openDetail', $event)" />
     </div>
   </div>
 </template>
