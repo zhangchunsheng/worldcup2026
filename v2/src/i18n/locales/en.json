@@ -140,7 +140,8 @@
     "quarterFinals": "Quarter-Finals",
     "semiFinals": "Semi-Finals",
     "final": "Final",
-    "thirdPlace": "Third Place"
+    "thirdPlace": "Third Place",
+    "schedule": "Knockout Schedule"
   },
   "city": {
     "capacity": "Capacity",

@@ -140,7 +140,8 @@
     "quarterFinals": "1/4决赛",
     "semiFinals": "半决赛",
     "final": "决赛",
-    "thirdPlace": "季军赛"
+    "thirdPlace": "季军赛",
+    "schedule": "淘汰赛赛程"
   },
   "city": {
     "capacity": "容量",

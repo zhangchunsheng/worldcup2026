@@ -97,6 +97,27 @@
         </div>
       </FadeInWrapper>
     </div>
+    <!-- Knockout schedule list -->
+    <div v-if="knockoutMatchesByDate.length" class="space-y-6">
+      <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.schedule') }}</h3>
+      <FadeInWrapper v-for="(group, i) in knockoutMatchesByDate" :key="group.date"
+                      :class="i > 0 ? 'mt-6' : ''">
+        <h4 class="text-base font-bold text-text-secondary mb-3">
+          {{ formatDate(group.date) }}
+          <span class="text-sm text-text-muted font-normal ml-2">{{ group.matches.length }} 场</span>
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <MatchCard v-for="match in group.matches" :key="match.id"
+            :match="match"
+            :prediction="getPrediction(match.id)"
+            :live-match-id="getLiveData(match.id)?.id"
+            :live-data="getLiveData(match.id)"
+            @open-detail="openMatchDetail"
+          />
+        </div>
+      </FadeInWrapper>
+    </div>
+
     <!-- Knockout bracket -->
     <FadeInWrapper>
       <KnockoutBracket @open-detail="openMatchDetail" />
@@ -131,7 +152,7 @@ import MatchDetail from '../schedule/MatchDetail.vue'
 import KnockoutBracket from './KnockoutBracket.vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { loading: standingsLoading, groupStandings, qualifiedTeams } = useStandings()
 const { loading: knockoutLoading, data: knockoutData } = useData('knockout')
 const { mode: predMode, isPredicting, predictionError, toggleMode, predictMatch, getPrediction } = usePrediction()
@@ -235,6 +256,29 @@ function enrichMatch(match) {
     awayTeam: away?.code || match.awayTeam,
     awayLabel: away?.name || match.awayLabel,
   }
+}
+
+const knockoutMatchesByDate = computed(() => {
+  if (!knockoutData.value?.roundOf32) return []
+  const grouped = {}
+  for (const m of knockoutData.value.roundOf32) {
+    const date = m.time ? m.time.substring(0, 10) : 'unknown'
+    if (!grouped[date]) grouped[date] = []
+    grouped[date].push(m)
+  }
+  return Object.keys(grouped)
+    .sort()
+    .map(date => ({ date, matches: grouped[date] }))
+})
+
+function formatDate(dateStr) {
+  if (!dateStr) return ''
+  const d = new Date(dateStr + 'T00:00:00+08:00')
+  if (isNaN(d.getTime())) return dateStr
+  if (locale.value === 'zh') {
+    return `${d.getMonth() + 1}月${d.getDate()}日`
+  }
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
 const groupWinners = computed(() =>
