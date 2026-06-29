@@ -1,33 +1,33 @@
 <template>
-  <div class="overflow-x-auto pb-2 -mx-2 px-2">
-    <div class="flex items-center justify-start gap-2 min-w-[900px] p-2">
-      <!-- Left half: leaves (R32) on the left, root (SF1) on the right -->
+  <div class="flex flex-col items-center gap-6 w-full max-w-5xl mx-auto">
+    <!-- Top: Round of 32 → ... → Semi-finals as two vertical trees -->
+    <div class="flex justify-around w-full gap-4">
       <BracketTree :node="leftHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
+      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
+    </div>
 
-      <!-- Center: Final + Third Place -->
-      <div class="flex flex-col justify-center gap-6 mx-1">
-        <div class="relative">
-          <div class="absolute top-1/2 right-full w-4 h-px bg-gold/30"></div>
-          <div class="absolute top-1/2 left-full w-4 h-px bg-gold/30"></div>
-          <BracketMatch :match="rounds.final"
-            :resolve-team="resolveTeam"
-            highlight
-            @open-detail="$emit('openDetail', rounds.final)"
-          />
-        </div>
+    <!-- Connector from semi-finals to final -->
+    <div class="relative w-full h-8">
+      <div class="absolute top-0 bottom-1/2 left-1/4 w-px bg-gold/30"></div>
+      <div class="absolute top-0 bottom-1/2 right-1/4 w-px bg-gold/30"></div>
+      <div class="absolute top-1/2 left-1/4 right-1/4 h-px bg-gold/30"></div>
+      <div class="absolute top-1/2 bottom-0 left-1/2 w-px bg-gold/30"></div>
+    </div>
 
-        <div class="relative">
-          <div class="absolute top-1/2 right-full w-4 h-px bg-gold/30"></div>
-          <div class="absolute top-1/2 left-full w-4 h-px bg-gold/30"></div>
-          <BracketMatch :match="rounds.thirdPlace"
-            :resolve-team="resolveTeam"
-            @open-detail="$emit('openDetail', rounds.thirdPlace)"
-          />
-        </div>
-      </div>
+    <!-- Final + Third Place -->
+    <div class="flex flex-col items-center gap-4">
+      <BracketMatch :match="rounds.final"
+        :resolve-team="resolveTeam"
+        highlight
+        @open-detail="$emit('openDetail', rounds.final)"
+      />
 
-      <!-- Right half: root (SF2) on the left, leaves (R32) on the right -->
-      <BracketTree :node="rightHalf" :resolve-team="resolveTeam" reverse @open-detail="$emit('openDetail', $event)" />
+      <div class="text-xs text-text-muted">{{ t('knockout.thirdPlace') }}</div>
+
+      <BracketMatch :match="rounds.thirdPlace"
+        :resolve-team="resolveTeam"
+        @open-detail="$emit('openDetail', rounds.thirdPlace)"
+      />
     </div>
   </div>
 </template>
@@ -38,7 +38,9 @@ import { useData } from '../../composables/useData'
 import { getLocaleLabel } from '../../composables/useLiveScores'
 import BracketTree from './BracketTree.vue'
 import BracketMatch from './BracketMatch.vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const { data: knockoutData } = useData('knockout')
 
 const emit = defineEmits(['openDetail'])

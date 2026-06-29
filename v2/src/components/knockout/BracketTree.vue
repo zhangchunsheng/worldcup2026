@@ -1,35 +1,23 @@
 <template>
-  <div class="flex items-center" :class="{ 'flex-row-reverse': reverse }">
-    <!-- Children -->
-    <div v-if="node.children?.length" class="flex flex-col justify-around">
+  <div class="flex flex-col items-center">
+    <!-- Children row -->
+    <div v-if="node.children?.length" class="flex justify-around w-full">
       <BracketTree v-for="(child, i) in node.children" :key="child.match.id"
         :node="child"
         :resolve-team="resolveTeam"
-        :reverse="reverse"
         @open-detail="$emit('openDetail', $event)"
       />
     </div>
 
-    <!-- Connector lines -->
-    <div v-if="node.children?.length" class="connector relative flex-shrink-0 mx-2"
+    <!-- Connector lines from children to this match -->
+    <div v-if="node.children?.length" class="connector relative w-full h-8"
     >
-      <!-- Horizontal lines from children side -->
-      <div class="absolute h-px bg-gold/30 w-1/2"
-           :class="reverse ? 'right-0' : 'left-0'"
-           :style="{ top: node.children.length > 1 ? '25%' : '50%' }"></div>
-      <div v-if="node.children.length > 1"
-           class="absolute h-px bg-gold/30 w-1/2"
-           :class="reverse ? 'right-0' : 'left-0'"
-           style="top: 75%"></div>
-
-      <!-- Vertical line on parent side -->
-      <div v-if="node.children.length > 1"
-           class="absolute top-1/4 bottom-1/4 w-px bg-gold/30"
-           :class="reverse ? 'left-1/2' : 'right-1/2'"></div>
-
-      <!-- Horizontal line to parent -->
-      <div class="absolute top-1/2 w-1/2 h-px bg-gold/30"
-           :class="reverse ? 'left-0' : 'right-0'"></div>
+      <div class="absolute top-0 bottom-1/2 w-px bg-gold/30"
+           :style="{ left: '25%' }"></div>
+      <div class="absolute top-0 bottom-1/2 w-px bg-gold/30"
+           :style="{ left: '75%' }"></div>
+      <div class="absolute top-1/2 left-1/4 right-1/4 h-px bg-gold/30"></div>
+      <div class="absolute top-1/2 bottom-0 left-1/2 w-px bg-gold/30"></div>
     </div>
 
     <!-- Match card -->
@@ -46,7 +34,6 @@ import BracketMatch from './BracketMatch.vue'
 defineProps({
   node: { type: Object, required: true },
   resolveTeam: { type: Function, required: true },
-  reverse: { type: Boolean, default: false },
 })
 
 defineEmits(['openDetail'])
@@ -54,7 +41,6 @@ defineEmits(['openDetail'])
 
 <style scoped>
 .connector {
-  width: 1rem;
-  height: 100%;
+  max-width: 100%;
 }
 </style>
