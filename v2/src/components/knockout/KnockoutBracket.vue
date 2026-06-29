@@ -1,6 +1,6 @@
 <template>
-  <div class="overflow-x-auto pb-2">
-    <div class="flex items-center justify-center gap-2 min-w-[900px] p-2">
+  <div class="overflow-x-auto pb-2 -mx-2 px-2">
+    <div class="flex items-center justify-start gap-2 min-w-[900px] p-2">
       <!-- Left half: leaves (R32) on the left, root (SF1) on the right -->
       <BracketTree :node="leftHalf" :resolve-team="resolveTeam" @open-detail="$emit('openDetail', $event)" />
 
