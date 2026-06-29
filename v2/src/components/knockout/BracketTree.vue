@@ -63,6 +63,6 @@ const connectorHeight = computed(() => {
 
 <style scoped>
 .connector {
-  width: 1.5rem;
+  width: 1rem;
 }
 </style>

@@ -42,4 +42,5 @@ schedule.json中小组赛有些存在日期错误，请修改
 更新claude.md
 /clear
 KnockoutBracket.vue中对阵图缺少连线，采取左右对称的方式展示
+两侧是1/16决赛，依次向内是1/8决赛，1/4决赛，尽量在一个页面显示
 ```
