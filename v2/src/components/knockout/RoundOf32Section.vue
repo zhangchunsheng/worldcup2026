@@ -107,28 +107,64 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <MatchCard v-for="match in dateMatches" :key="match.id"
             :match="match"
-            @open-detail="() => {}"
+            :prediction="getPrediction(match.id)"
+            :live-match-id="getLiveData(match.id)?.id"
+            :live-data="getLiveData(match.id)"
+            @open-detail="openMatchDetail"
           />
         </div>
       </FadeInWrapper>
     </div>
+    <!-- Match Detail Modal -->
+    <MatchDetail
+      :match="selectedMatch"
+      :visible="showDetail"
+      :prediction="selectedMatch ? getPrediction(selectedMatch.id) : null"
+      :live-data="selectedMatch ? getLiveData(selectedMatch.id) : null"
+      :pred-mode="predMode"
+      :is-predicting="isPredicting"
+      :prediction-error="predictionError"
+      @close="showDetail = false"
+      @predict-ai="handleAIPrediction"
+      @toggle-mode="toggleMode"
+    />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useStandings } from '../../composables/useStandings'
 import { useData } from '../../composables/useData'
+import { usePrediction } from '../../composables/usePrediction'
+import { useLiveScores } from '../../composables/useLiveScores'
 import { getLocaleLabel } from '../../composables/useLiveScores'
 import FadeInWrapper from '../shared/FadeInWrapper.vue'
 import MatchCard from '../schedule/MatchCard.vue'
+import MatchDetail from '../schedule/MatchDetail.vue'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 const { loading: standingsLoading, groupStandings, qualifiedTeams } = useStandings()
 const { data: knockoutData, loading: knockoutLoading } = useData('knockout')
+const { mode: predMode, isPredicting, predictionError, toggleMode, predictMatch, getPrediction } = usePrediction()
+const { getMatchStatus: getLiveData } = useLiveScores()
 
 const loading = computed(() => standingsLoading.value || knockoutLoading.value)
+
+const selectedMatch = ref(null)
+const showDetail = ref(false)
+
+function openMatchDetail(match) {
+  selectedMatch.value = match
+  showDetail.value = true
+}
+
+function handleAIPrediction(match) {
+  predictMatch(match.id, {
+    homeLabel: match.homeLabel?.zh || match.homeTeam,
+    awayLabel: match.awayLabel?.zh || match.awayTeam,
+  }, { homeOdds: 2.5, awayOdds: 3.0 })
+}
 
 const matchesByDate = computed(() => {
   if (!knockoutData.value?.matches) return {}
