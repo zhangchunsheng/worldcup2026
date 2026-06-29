@@ -1,5 +1,5 @@
 {
-  "matches": [
+  "roundOf32": [
     {
       "id": "r32-01",
       "phase": "round-of-32",
@@ -309,5 +309,199 @@
         "en": "Arrowhead Stadium · Kansas City"
       }
     }
-  ]
+  ],
+  "roundOf16": [
+    {
+      "id": "r16-01",
+      "phase": "round-of-16",
+      "homeFrom": "r32-01",
+      "awayFrom": "r32-04",
+      "time": "2026-07-05 01:00",
+      "venue": {
+        "zh": "NRG体育场 · 休斯顿",
+        "en": "NRG Stadium · Houston"
+      }
+    },
+    {
+      "id": "r16-02",
+      "phase": "round-of-16",
+      "homeFrom": "r32-03",
+      "awayFrom": "r32-06",
+      "time": "2026-07-05 05:00",
+      "venue": {
+        "zh": "林肯金融体育场 · 费城",
+        "en": "Lincoln Financial Field · Philadelphia"
+      }
+    },
+    {
+      "id": "r16-03",
+      "phase": "round-of-16",
+      "homeFrom": "r32-02",
+      "awayFrom": "r32-05",
+      "time": "2026-07-06 04:00",
+      "venue": {
+        "zh": "MetLife体育场 · 纽约",
+        "en": "MetLife Stadium · East Rutherford"
+      }
+    },
+    {
+      "id": "r16-04",
+      "phase": "round-of-16",
+      "homeFrom": "r32-07",
+      "awayFrom": "r32-08",
+      "time": "2026-07-06 08:00",
+      "venue": {
+        "zh": "阿兹特克体育场 · 墨西哥城",
+        "en": "Estadio Azteca · Mexico City"
+      }
+    },
+    {
+      "id": "r16-05",
+      "phase": "round-of-16",
+      "homeFrom": "r32-11",
+      "awayFrom": "r32-12",
+      "time": "2026-07-07 03:00",
+      "venue": {
+        "zh": "AT&T体育场 · 阿灵顿",
+        "en": "AT&T Stadium · Arlington"
+      }
+    },
+    {
+      "id": "r16-06",
+      "phase": "round-of-16",
+      "homeFrom": "r32-09",
+      "awayFrom": "r32-10",
+      "time": "2026-07-07 08:00",
+      "venue": {
+        "zh": "Lumen体育场 · 西雅图",
+        "en": "Lumen Field · Seattle"
+      }
+    },
+    {
+      "id": "r16-07",
+      "phase": "round-of-16",
+      "homeFrom": "r32-14",
+      "awayFrom": "r32-15",
+      "time": "2026-07-08 00:00",
+      "venue": {
+        "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
+        "en": "Mercedes-Benz Stadium · Atlanta"
+      }
+    },
+    {
+      "id": "r16-08",
+      "phase": "round-of-16",
+      "homeFrom": "r32-13",
+      "awayFrom": "r32-16",
+      "time": "2026-07-08 04:00",
+      "venue": {
+        "zh": "BC Place · 温哥华",
+        "en": "BC Place · Vancouver"
+      }
+    }
+  ],
+  "quarterFinals": [
+    {
+      "id": "qf-01",
+      "phase": "quarter-final",
+      "homeFrom": "r16-01",
+      "awayFrom": "r16-02",
+      "time": "2026-07-10 04:00",
+      "venue": {
+        "zh": "吉列体育场 · 波士顿",
+        "en": "Gillette Stadium · Foxborough"
+      }
+    },
+    {
+      "id": "qf-02",
+      "phase": "quarter-final",
+      "homeFrom": "r16-05",
+      "awayFrom": "r16-06",
+      "time": "2026-07-11 03:00",
+      "venue": {
+        "zh": "SoFi体育场 · 洛杉矶",
+        "en": "SoFi Stadium · Los Angeles"
+      }
+    },
+    {
+      "id": "qf-03",
+      "phase": "quarter-final",
+      "homeFrom": "r16-03",
+      "awayFrom": "r16-04",
+      "time": "2026-07-12 05:00",
+      "venue": {
+        "zh": "Hard Rock体育场 · 迈阿密",
+        "en": "Hard Rock Stadium · Miami"
+      }
+    },
+    {
+      "id": "qf-04",
+      "phase": "quarter-final",
+      "homeFrom": "r16-07",
+      "awayFrom": "r16-08",
+      "time": "2026-07-12 08:00",
+      "venue": {
+        "zh": "Arrowhead体育场 · 堪萨斯城",
+        "en": "Arrowhead Stadium · Kansas City"
+      }
+    }
+  ],
+  "semiFinals": [
+    {
+      "id": "sf-01",
+      "phase": "semi-final",
+      "homeFrom": "qf-01",
+      "awayFrom": "qf-02",
+      "time": "2026-07-15 03:00",
+      "venue": {
+        "zh": "AT&T体育场 · 阿灵顿",
+        "en": "AT&T Stadium · Arlington"
+      }
+    },
+    {
+      "id": "sf-02",
+      "phase": "semi-final",
+      "homeFrom": "qf-03",
+      "awayFrom": "qf-04",
+      "time": "2026-07-16 03:00",
+      "venue": {
+        "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
+        "en": "Mercedes-Benz Stadium · Atlanta"
+      }
+    }
+  ],
+  "thirdPlace": {
+    "id": "tp-01",
+    "phase": "third-place",
+    "homeFrom": {
+      "id": "sf-01",
+      "result": "loser"
+    },
+    "awayFrom": {
+      "id": "sf-02",
+      "result": "loser"
+    },
+    "time": "2026-07-19 05:00",
+    "venue": {
+      "zh": "Hard Rock体育场 · 迈阿密",
+      "en": "Hard Rock Stadium · Miami"
+    }
+  },
+  "final": {
+    "id": "final-01",
+    "phase": "final",
+    "homeFrom": {
+      "id": "sf-01",
+      "result": "winner"
+    },
+    "awayFrom": {
+      "id": "sf-02",
+      "result": "winner"
+    },
+    "time": "2026-07-20 03:00",
+    "venue": {
+      "zh": "MetLife体育场 · 纽约",
+      "en": "MetLife Stadium · East Rutherford"
+    }
+  }
 }

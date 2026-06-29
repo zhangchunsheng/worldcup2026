@@ -96,7 +96,12 @@
     "details": "Match Details",
     "liveScore": "Live Score",
     "time": "Match Time",
-    "round-of-32": "Round of 32"
+    "round-of-32": "Round of 32",
+    "round-of-16": "Round of 16",
+    "quarter-final": "Quarter-Final",
+    "semi-final": "Semi-Final",
+    "final": "Final",
+    "third-place": "Third Place"
   },
   "settings": {
     "title": "API Settings",
@@ -129,7 +134,13 @@
     "pending": "Pending",
     "qualifiedTeams": "Qualified Teams",
     "groupWinners": "Group Winners",
-    "groupRunnersUp": "Runners-up"
+    "groupRunnersUp": "Runners-up",
+    "roundOf32": "Round of 32",
+    "roundOf16": "Round of 16",
+    "quarterFinals": "Quarter-Finals",
+    "semiFinals": "Semi-Finals",
+    "final": "Final",
+    "thirdPlace": "Third Place"
   },
   "city": {
     "capacity": "Capacity",

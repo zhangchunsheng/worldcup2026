@@ -1,0 +1,161 @@
+<template>
+  <div class="overflow-x-auto pb-4">
+    <div class="flex gap-6 min-w-[1100px] p-2">
+      <!-- Round of 32 -->
+      <div class="flex flex-col justify-around gap-3 w-[220px]">
+        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.roundOf32') }}</div>
+        <BracketMatch v-for="match in rounds.roundOf32" :key="match.id"
+          :match="match"
+          :resolve-team="resolveTeam"
+          @open-detail="$emit('openDetail', match)"
+        />
+      </div>
+
+      <!-- Round of 16 -->
+      <div class="flex flex-col justify-around gap-3 w-[220px]">
+        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.roundOf16') }}</div>
+        <BracketMatch v-for="match in rounds.roundOf16" :key="match.id"
+          :match="match"
+          :resolve-team="resolveTeam"
+          @open-detail="$emit('openDetail', match)"
+        />
+      </div>
+
+      <!-- Quarter-finals -->
+      <div class="flex flex-col justify-around gap-3 w-[220px]">
+        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.quarterFinals') }}</div>
+        <BracketMatch v-for="match in rounds.quarterFinals" :key="match.id"
+          :match="match"
+          :resolve-team="resolveTeam"
+          @open-detail="$emit('openDetail', match)"
+        />
+      </div>
+
+      <!-- Semi-finals -->
+      <div class="flex flex-col justify-around gap-3 w-[220px]">
+        <div class="text-center text-sm font-bold text-gold mb-2">{{ t('knockout.semiFinals') }}</div>
+        <BracketMatch v-for="match in rounds.semiFinals" :key="match.id"
+          :match="match"
+          :resolve-team="resolveTeam"
+          @open-detail="$emit('openDetail', match)"
+        />
+      </div>
+
+      <!-- Final + Third Place -->
+      <div class="flex flex-col justify-center gap-6 w-[220px]">
+        <div class="space-y-3">
+          <div class="text-center text-sm font-bold text-gold">🏆 {{ t('knockout.final') }}</div>
+          <BracketMatch :match="rounds.final"
+            :resolve-team="resolveTeam"
+            @open-detail="$emit('openDetail', rounds.final)"
+          />
+        </div>
+        <div class="space-y-3">
+          <div class="text-center text-sm font-bold text-text-muted">{{ t('knockout.thirdPlace') }}</div>
+          <BracketMatch :match="rounds.thirdPlace"
+            :resolve-team="resolveTeam"
+            @open-detail="$emit('openDetail', rounds.thirdPlace)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { computed } from 'vue'
+import { useData } from '../../composables/useData'
+import { getLocaleLabel } from '../../composables/useLiveScores'
+import BracketMatch from './BracketMatch.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const { data: knockoutData } = useData('knockout')
+
+const emit = defineEmits(['openDetail'])
+
+const allMatches = computed(() => {
+  if (!knockoutData.value) return {}
+  const map = {}
+  const rounds = ['roundOf32', 'roundOf16', 'quarterFinals', 'semiFinals']
+  for (const key of rounds) {
+    for (const m of knockoutData.value[key] || []) {
+      map[m.id] = m
+    }
+  }
+  if (knockoutData.value.thirdPlace) map[knockoutData.value.thirdPlace.id] = knockoutData.value.thirdPlace
+  if (knockoutData.value.final) map[knockoutData.value.final.id] = knockoutData.value.final
+  return map
+})
+
+const rounds = computed(() => ({
+  roundOf32: knockoutData.value?.roundOf32 || [],
+  roundOf16: knockoutData.value?.roundOf16 || [],
+  quarterFinals: knockoutData.value?.quarterFinals || [],
+  semiFinals: knockoutData.value?.semiFinals || [],
+  thirdPlace: knockoutData.value?.thirdPlace || null,
+  final: knockoutData.value?.final || null,
+}))
+
+function getTeamInfo(code) {
+  const flagMap = {
+    MEX: '🇲🇽', RSA: '🇿🇦', KOR: '🇰🇷', CZE: '🇨🇿',
+    CAN: '🇨🇦', BIH: '🇧🇦', USA: '🇺🇸', PAR: '🇵🇾',
+    QAT: '🇶🇦', SUI: '🇨🇭', BRA: '🇧🇷', MAR: '🇲🇦',
+    HAI: '🇭🇹', SCO: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', AUS: '🇦🇺', TUR: '🇹🇷',
+    GER: '🇩🇪', CUW: '🇨🇼', NED: '🇳🇱', JPN: '🇯🇵',
+    CIV: '🇨🇮', ECU: '🇪🇨', SWE: '🇸🇪', TUN: '🇹🇳',
+    ESP: '🇪🇸', CPV: '🇨🇻', KSA: '🇸🇦', URU: '🇺🇾',
+    BEL: '🇧🇪', EGY: '🇪🇬', NZL: '🇳🇿', IRN: '🇮🇷',
+    FRA: '🇫🇷', SEN: '🇸🇳', IRQ: '🇮🇶', NOR: '🇳🇴',
+    ARG: '🇦🇷', ALG: '🇩🇿', AUT: '🇦🇹', JOR: '🇯🇴',
+    POR: '🇵🇹', COD: '🇨🇩', ENG: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', CRO: '🇭🇷',
+    GHA: '🇬🇭', PAN: '🇵🇦', UZB: '🇺🇿', COL: '🇨🇴',
+  }
+  return { code, flag: flagMap[code] || '🏳️' }
+}
+
+function getWinner(match) {
+  if (!match || !match.score || match.score.status !== 'FT') return null
+  const home = match.score.home ?? 0
+  const away = match.score.away ?? 0
+  if (home > away) return getSlotTeam(match, 'home')
+  if (away > home) return getSlotTeam(match, 'away')
+  return null
+}
+
+function getLoser(match) {
+  if (!match || !match.score || match.score.status !== 'FT') return null
+  const home = match.score.home ?? 0
+  const away = match.score.away ?? 0
+  if (home > away) return getSlotTeam(match, 'away')
+  if (away > home) return getSlotTeam(match, 'home')
+  return null
+}
+
+function getSlotTeam(match, slot) {
+  const teamCode = slot === 'home' ? match.homeTeam : match.awayTeam
+  const label = slot === 'home' ? match.homeLabel : match.awayLabel
+  if (teamCode) {
+    return { ...getTeamInfo(teamCode), name: label || { zh: teamCode, en: teamCode } }
+  }
+  return null
+}
+
+function resolveSource(match, slot) {
+  const source = slot === 'home' ? match.homeFrom : match.awayFrom
+  if (!source) return null
+  if (typeof source === 'string') return { id: source, result: 'winner' }
+  return source
+}
+
+function resolveTeam(match, slot) {
+  const fixed = getSlotTeam(match, slot)
+  if (fixed) return fixed
+  const source = resolveSource(match, slot)
+  if (!source) return null
+  const prev = allMatches.value[source.id]
+  if (!prev) return null
+  return source.result === 'loser' ? getLoser(prev) : getWinner(prev)
+}
+</script>
