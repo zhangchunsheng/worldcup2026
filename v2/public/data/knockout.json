@@ -41,6 +41,11 @@
       "venue": {
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
+      },
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
@@ -60,6 +65,11 @@
       "venue": {
         "zh": "吉列体育场 · 波士顿",
         "en": "Gillette Stadium · Foxborough"
+      },
+      "score": {
+        "home": 4,
+        "away": 5,
+        "status": "FT"
       }
     },
     {
@@ -79,6 +89,11 @@
       "venue": {
         "zh": "BBVA体育场 · 蒙特雷",
         "en": "Estadio BBVA · Monterrey"
+      },
+      "score": {
+        "home": 3,
+        "away": 4,
+        "status": "FT"
       }
     },
     {
@@ -98,6 +113,11 @@
       "venue": {
         "zh": "AT&T体育场 · 阿灵顿",
         "en": "AT&T Stadium · Arlington"
+      },
+      "score": {
+        "home": 1,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -117,6 +137,11 @@
       "venue": {
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · East Rutherford"
+      },
+      "score": {
+        "home": 3,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
@@ -136,6 +161,11 @@
       "venue": {
         "zh": "阿兹特克体育场 · 墨西哥城",
         "en": "Estadio Azteca · Mexico City"
+      },
+      "score": {
+        "home": 2,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
@@ -155,6 +185,11 @@
       "venue": {
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
+      },
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
@@ -174,6 +209,11 @@
       "venue": {
         "zh": "Lumen体育场 · 西雅图",
         "en": "Lumen Field · Seattle"
+      },
+      "score": {
+        "home": 3,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -193,6 +233,11 @@
       "venue": {
         "zh": "李维斯体育场 · 旧金山",
         "en": "Levi's Stadium · Santa Clara"
+      },
+      "score": {
+        "home": 2,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
