@@ -257,6 +257,11 @@
       "venue": {
         "zh": "SoFi体育场 · 洛杉矶",
         "en": "SoFi Stadium · Los Angeles"
+      },
+      "score": {
+        "home": 3,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
@@ -276,6 +281,11 @@
       "venue": {
         "zh": "BMO Field · 多伦多",
         "en": "BMO Field · Toronto"
+      },
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
@@ -295,6 +305,11 @@
       "venue": {
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
+      },
+      "score": {
+        "home": 2,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
