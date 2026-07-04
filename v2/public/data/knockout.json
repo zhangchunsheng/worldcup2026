@@ -329,6 +329,11 @@
       "venue": {
         "zh": "AT&T体育场 · 阿灵顿",
         "en": "AT&T Stadium · Arlington"
+      },
+      "score": {
+        "home": "1(2)",
+        "away": "1(4)",
+        "status": "FT"
       }
     },
     {
@@ -348,6 +353,11 @@
       "venue": {
         "zh": "Hard Rock体育场 · 迈阿密",
         "en": "Hard Rock Stadium · Miami"
+      },
+      "score": {
+        "home": 3,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -367,6 +377,11 @@
       "venue": {
         "zh": "Arrowhead体育场 · 堪萨斯城",
         "en": "Arrowhead Stadium · Kansas City"
+      },
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
       }
     }
   ],
