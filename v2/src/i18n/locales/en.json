@@ -141,7 +141,9 @@
     "semiFinals": "Semi-Finals",
     "final": "Final",
     "thirdPlace": "Third Place",
-    "schedule": "Knockout Schedule"
+    "schedule": "Schedule",
+    "roundOf32Schedule": "Round of 32 Schedule",
+    "roundOf16Schedule": "Round of 16 Schedule"
   },
   "city": {
     "capacity": "Capacity",

@@ -98,24 +98,48 @@
       </FadeInWrapper>
     </div>
     <!-- Knockout schedule list -->
-    <div v-if="knockoutMatchesByDate.length" class="space-y-6">
-      <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.schedule') }}</h3>
-      <FadeInWrapper v-for="(group, i) in knockoutMatchesByDate" :key="group.date"
-                      :class="i > 0 ? 'mt-6' : ''">
-        <h4 class="text-base font-bold text-text-secondary mb-3">
-          {{ formatDate(group.date) }}
-          <span class="text-sm text-text-muted font-normal ml-2">{{ group.matches.length }} 场</span>
-        </h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <MatchCard v-for="match in group.matches" :key="match.id"
-            :match="match"
-            :prediction="getPrediction(match.id)"
-            :live-match-id="getLiveData(match.id)?.id"
-            :live-data="getLiveData(match.id)"
-            @open-detail="openMatchDetail"
-          />
-        </div>
-      </FadeInWrapper>
+    <div v-if="roundOf32ByDate.length || roundOf16ByDate.length" class="space-y-8">
+      <!-- Round of 32 -->
+      <div v-if="roundOf32ByDate.length" class="space-y-6">
+        <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.roundOf32Schedule') }}</h3>
+        <FadeInWrapper v-for="(group, i) in roundOf32ByDate" :key="'r32-' + group.date"
+                        :class="i > 0 ? 'mt-6' : ''">
+          <h4 class="text-base font-bold text-text-secondary mb-3">
+            {{ formatDate(group.date) }}
+            <span class="text-sm text-text-muted font-normal ml-2">{{ group.matches.length }} 场</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <MatchCard v-for="match in group.matches" :key="match.id"
+              :match="match"
+              :prediction="getPrediction(match.id)"
+              :live-match-id="getLiveData(match.id)?.id"
+              :live-data="getLiveData(match.id)"
+              @open-detail="openMatchDetail"
+            />
+          </div>
+        </FadeInWrapper>
+      </div>
+
+      <!-- Round of 16 -->
+      <div v-if="roundOf16ByDate.length" class="space-y-6">
+        <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.roundOf16Schedule') }}</h3>
+        <FadeInWrapper v-for="(group, i) in roundOf16ByDate" :key="'r16-' + group.date"
+                        :class="i > 0 ? 'mt-6' : ''">
+          <h4 class="text-base font-bold text-text-secondary mb-3">
+            {{ formatDate(group.date) }}
+            <span class="text-sm text-text-muted font-normal ml-2">{{ group.matches.length }} 场</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <MatchCard v-for="match in group.matches" :key="match.id"
+              :match="enrichMatch(match)"
+              :prediction="getPrediction(match.id)"
+              :live-match-id="getLiveData(match.id)?.id"
+              :live-data="getLiveData(match.id)"
+              @open-detail="openMatchDetail"
+            />
+          </div>
+        </FadeInWrapper>
+      </div>
     </div>
 
     <!-- Knockout bracket -->
@@ -258,10 +282,10 @@ function enrichMatch(match) {
   }
 }
 
-const knockoutMatchesByDate = computed(() => {
-  if (!knockoutData.value?.roundOf32) return []
+function groupByDate(matches) {
+  if (!matches?.length) return []
   const grouped = {}
-  for (const m of knockoutData.value.roundOf32) {
+  for (const m of matches) {
     const date = m.time ? m.time.substring(0, 10) : 'unknown'
     if (!grouped[date]) grouped[date] = []
     grouped[date].push(m)
@@ -269,7 +293,10 @@ const knockoutMatchesByDate = computed(() => {
   return Object.keys(grouped)
     .sort()
     .map(date => ({ date, matches: grouped[date] }))
-})
+}
+
+const roundOf32ByDate = computed(() => groupByDate(knockoutData.value?.roundOf32))
+const roundOf16ByDate = computed(() => groupByDate(knockoutData.value?.roundOf16))
 
 function formatDate(dateStr) {
   if (!dateStr) return ''

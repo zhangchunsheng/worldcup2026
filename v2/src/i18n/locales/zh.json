@@ -141,7 +141,9 @@
     "semiFinals": "半决赛",
     "final": "决赛",
     "thirdPlace": "季军赛",
-    "schedule": "淘汰赛赛程"
+    "schedule": "赛程",
+    "roundOf32Schedule": "1/16决赛赛程",
+    "roundOf16Schedule": "1/8决赛赛程"
   },
   "city": {
     "capacity": "容量",
