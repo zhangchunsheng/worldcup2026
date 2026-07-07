@@ -396,6 +396,16 @@
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
       },
+      "homeTeam": "CAN",
+      "awayTeam": "MAR",
+      "homeLabel": {
+        "zh": "加拿大",
+        "en": "Canada"
+      },
+      "awayLabel": {
+        "zh": "摩洛哥",
+        "en": "Morocco"
+      },
       "score": {
         "home": 0,
         "away": 3,
@@ -411,6 +421,16 @@
       "venue": {
         "zh": "林肯金融体育场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
+      },
+      "homeTeam": "FRA",
+      "awayTeam": "PAR",
+      "homeLabel": {
+        "zh": "法国",
+        "en": "France"
+      },
+      "awayLabel": {
+        "zh": "巴拉圭",
+        "en": "Paraguay"
       },
       "score": {
         "home": 1,
@@ -428,6 +448,16 @@
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · East Rutherford"
       },
+      "homeTeam": "BRA",
+      "awayTeam": "NOR",
+      "homeLabel": {
+        "zh": "巴西",
+        "en": "Brazil"
+      },
+      "awayLabel": {
+        "zh": "挪威",
+        "en": "Norway"
+      },
       "score": {
         "home": 1,
         "away": 2,
@@ -444,6 +474,16 @@
         "zh": "阿兹特克体育场 · 墨西哥城",
         "en": "Estadio Azteca · Mexico City"
       },
+      "homeTeam": "MEX",
+      "awayTeam": "ENG",
+      "homeLabel": {
+        "zh": "墨西哥",
+        "en": "Mexico"
+      },
+      "awayLabel": {
+        "zh": "英格兰",
+        "en": "England"
+      },
       "score": {
         "home": 2,
         "away": 3,
@@ -459,6 +499,21 @@
       "venue": {
         "zh": "AT&T体育场 · 阿灵顿",
         "en": "AT&T Stadium · Arlington"
+      },
+      "homeTeam": "ESP",
+      "awayTeam": "POR",
+      "homeLabel": {
+        "zh": "西班牙",
+        "en": "Spain"
+      },
+      "awayLabel": {
+        "zh": "葡萄牙",
+        "en": "Portugal"
+      },  
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
@@ -470,6 +525,21 @@
       "venue": {
         "zh": "Lumen体育场 · 西雅图",
         "en": "Lumen Field · Seattle"
+      },
+      "homeTeam": "BEL",
+      "awayTeam": "USA",
+      "homeLabel": {
+        "zh": "比利时",
+        "en": "Belgium"
+      },
+      "awayLabel": {
+        "zh": "美国",
+        "en": "USA"
+      },  
+      "score": {
+        "home": 4,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
@@ -481,6 +551,16 @@
       "venue": {
         "zh": "梅赛德斯-奔驰体育场 · 亚特兰大",
         "en": "Mercedes-Benz Stadium · Atlanta"
+      },
+      "homeTeam": "EGY",
+      "awayTeam": "ARG",
+      "homeLabel": {
+        "zh": "埃及",
+        "en": "Egypt"
+      },
+      "awayLabel": {
+        "zh": "阿根廷",
+        "en": "Argentina"
       }
     },
     {
@@ -492,6 +572,16 @@
       "venue": {
         "zh": "BC Place · 温哥华",
         "en": "BC Place · Vancouver"
+      },
+      "homeTeam": "SUI",
+      "awayTeam": "COL",
+      "homeLabel": {
+        "zh": "瑞士",
+        "en": "Switzerland"
+      },
+      "awayLabel": {
+        "zh": "哥伦比亚",
+        "en": "Colombia"
       }
     }
   ],
