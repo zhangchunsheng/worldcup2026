@@ -395,6 +395,11 @@
       "venue": {
         "zh": "NRG体育场 · 休斯顿",
         "en": "NRG Stadium · Houston"
+      },
+      "score": {
+        "home": 0,
+        "away": 3,
+        "status": "FT"
       }
     },
     {
@@ -406,6 +411,11 @@
       "venue": {
         "zh": "林肯金融体育场 · 费城",
         "en": "Lincoln Financial Field · Philadelphia"
+      },
+      "score": {
+        "home": 1,
+        "away": 0,
+        "status": "FT"
       }
     },
     {
@@ -417,6 +427,11 @@
       "venue": {
         "zh": "MetLife体育场 · 纽约",
         "en": "MetLife Stadium · East Rutherford"
+      },
+      "score": {
+        "home": 1,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -428,6 +443,11 @@
       "venue": {
         "zh": "阿兹特克体育场 · 墨西哥城",
         "en": "Estadio Azteca · Mexico City"
+      },
+      "score": {
+        "home": 2,
+        "away": 3,
+        "status": "FT"
       }
     },
     {
