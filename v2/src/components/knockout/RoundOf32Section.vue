@@ -98,7 +98,7 @@
       </FadeInWrapper>
     </div>
     <!-- Knockout schedule list -->
-    <div v-if="roundOf32ByDate.length || roundOf16ByDate.length" class="space-y-8">
+    <div v-if="roundOf32ByDate.length || roundOf16ByDate.length || quarterFinalsByDate.length" class="space-y-8">
       <!-- Round of 32 -->
       <div v-if="roundOf32ByDate.length" class="space-y-6">
         <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.roundOf32Schedule') }}</h3>
@@ -124,6 +124,27 @@
       <div v-if="roundOf16ByDate.length" class="space-y-6">
         <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.roundOf16Schedule') }}</h3>
         <FadeInWrapper v-for="(group, i) in roundOf16ByDate" :key="'r16-' + group.date"
+                        :class="i > 0 ? 'mt-6' : ''">
+          <h4 class="text-base font-bold text-text-secondary mb-3">
+            {{ formatDate(group.date) }}
+            <span class="text-sm text-text-muted font-normal ml-2">{{ group.matches.length }} 场</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <MatchCard v-for="match in group.matches" :key="match.id"
+              :match="enrichMatch(match)"
+              :prediction="getPrediction(match.id)"
+              :live-match-id="getLiveData(match.id)?.id"
+              :live-data="getLiveData(match.id)"
+              @open-detail="openMatchDetail"
+            />
+          </div>
+        </FadeInWrapper>
+      </div>
+
+      <!-- Quarter-finals -->
+      <div v-if="quarterFinalsByDate.length" class="space-y-6">
+        <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.quarterFinalsSchedule') }}</h3>
+        <FadeInWrapper v-for="(group, i) in quarterFinalsByDate" :key="'qf-' + group.date"
                         :class="i > 0 ? 'mt-6' : ''">
           <h4 class="text-base font-bold text-text-secondary mb-3">
             {{ formatDate(group.date) }}
@@ -297,6 +318,7 @@ function groupByDate(matches) {
 
 const roundOf32ByDate = computed(() => groupByDate(knockoutData.value?.roundOf32))
 const roundOf16ByDate = computed(() => groupByDate(knockoutData.value?.roundOf16))
+const quarterFinalsByDate = computed(() => groupByDate(knockoutData.value?.quarterFinals))
 
 function formatDate(dateStr) {
   if (!dateStr) return ''
