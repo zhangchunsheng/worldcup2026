@@ -561,6 +561,11 @@
       "awayLabel": {
         "zh": "阿根廷",
         "en": "Argentina"
+      },
+      "score": {
+        "home": 2,
+        "away": 3,
+        "status": "FT"
       }
     },
     {
@@ -582,6 +587,11 @@
       "awayLabel": {
         "zh": "哥伦比亚",
         "en": "Colombia"
+      },
+      "score": {
+        "home": "0(4)",
+        "away": "0(3)",
+        "status": "FT"
       }
     }
   ],
