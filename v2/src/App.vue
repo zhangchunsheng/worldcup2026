@@ -5,6 +5,16 @@
       <!-- Hero -->
       <HeroSection />
 
+      <!-- Final Results -->
+      <section id="results" class="py-24 px-6 max-w-7xl mx-auto">
+        <FadeInWrapper>
+          <SectionHeader :description="t('sections.results.desc')">
+            🏆 <span class="bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">{{ t('sections.results.title') }}</span>
+          </SectionHeader>
+        </FadeInWrapper>
+        <ResultsSection />
+      </section>
+
       <!-- Schedule -->
       <section id="schedule" class="py-24 px-6 max-w-7xl mx-auto">
         <FadeInWrapper>
@@ -120,6 +130,7 @@ import HeroSection from './components/hero/HeroSection.vue'
 import SectionHeader from './components/shared/SectionHeader.vue'
 import FadeInWrapper from './components/shared/FadeInWrapper.vue'
 import ScheduleSection from './components/schedule/ScheduleSection.vue'
+import ResultsSection from './components/results/ResultsSection.vue'
 import GroupStandingsSection from './components/groups/GroupStandingsSection.vue'
 import GroupsSection from './components/groups/GroupsSection.vue'
 import RoundOf32Section from './components/knockout/RoundOf32Section.vue'

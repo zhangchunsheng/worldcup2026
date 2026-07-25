@@ -59,6 +59,7 @@ const currentLocale = ref(locale.value)
 
 const navLinks = [
   { id: 'hero', label: 'nav.home' },
+  { id: 'results', label: 'nav.results' },
   { id: 'schedule', label: 'nav.schedule' },
   { id: 'group-standings', label: 'nav.groupStandings' },
   { id: 'groups', label: 'nav.groups' },

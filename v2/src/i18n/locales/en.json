@@ -6,6 +6,7 @@
   },
   "nav": {
     "home": "Home",
+    "results": "Results",
     "schedule": "Schedule",
     "groupStandings": "Standings",
     "groups": "Groups",
@@ -33,6 +34,10 @@
     "beijingTime": "Beijing Time"
   },
   "sections": {
+    "results": {
+      "title": "Final Results",
+      "desc": "Spain crowned 2026 World Cup champions — full rankings of all 48 teams"
+    },
     "schedule": {
       "title": "Schedule",
       "desc": "39 days of non-stop action from opening match to final"
@@ -127,6 +132,20 @@
     "goalsAgainst": "GA",
     "goalDifference": "GD",
     "points": "Pts"
+  },
+  "results": {
+    "champion": "Champion",
+    "runnerUp": "Runner-up",
+    "thirdPlace": "Third Place",
+    "fourth": "4th Place",
+    "quarterFinal": "Quarter-Finalists",
+    "roundOf16": "Round of 16",
+    "roundOf32": "Round of 32",
+    "groupStage": "Group Stage",
+    "goldenBoot": "Golden Boot",
+    "goals": "goals",
+    "finalScore": "Final 1-0 vs Argentina (AET)",
+    "articleTitle": "Spain Crowned in Extra Time — 2026 World Cup Review"
   },
   "knockout": {
     "bestThird": "Best 3rd Place",

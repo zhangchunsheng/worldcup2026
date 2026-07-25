@@ -6,6 +6,7 @@
   },
   "nav": {
     "home": "首页",
+    "results": "赛果",
     "schedule": "赛程",
     "groupStandings": "积分",
     "groups": "分组",
@@ -33,6 +34,10 @@
     "beijingTime": "北京时间"
   },
   "sections": {
+    "results": {
+      "title": "最终结果",
+      "desc": "西班牙加冕2026世界杯冠军，48支球队最终排名"
+    },
     "schedule": {
       "title": "赛程安排",
       "desc": "从开幕战到决赛，39天精彩不间断"
@@ -127,6 +132,20 @@
     "goalsAgainst": "失",
     "goalDifference": "净",
     "points": "分"
+  },
+  "results": {
+    "champion": "冠军",
+    "runnerUp": "亚军",
+    "thirdPlace": "季军",
+    "fourth": "第四名",
+    "quarterFinal": "八强",
+    "roundOf16": "十六强",
+    "roundOf32": "三十二强",
+    "groupStage": "小组赛",
+    "goldenBoot": "金靴奖",
+    "goals": "球",
+    "finalScore": "决赛 1-0 阿根廷（加时）",
+    "articleTitle": "西班牙加时封王 — 2026世界杯总结"
   },
   "knockout": {
     "bestThird": "最佳第三名",
