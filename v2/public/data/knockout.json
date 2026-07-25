@@ -770,6 +770,21 @@
     "venue": {
       "zh": "Hard Rock体育场 · 迈阿密",
       "en": "Hard Rock Stadium · Miami"
+    },
+    "homeTeam": "FRA",
+    "awayTeam": "ENG",
+    "homeLabel": {
+      "zh": "法国",
+      "en": "France"
+    },
+    "awayLabel": {
+      "zh": "英格兰",
+      "en": "England"
+    },
+    "score": {
+      "home": 4,
+      "away": 6,
+      "status": "FT"
     }
   },
   "final": {
@@ -787,6 +802,21 @@
     "venue": {
       "zh": "MetLife体育场 · 纽约",
       "en": "MetLife Stadium · East Rutherford"
+    },
+    "homeTeam": "ESP",
+    "awayTeam": "ARG",
+    "homeLabel": {
+      "zh": "西班牙",
+      "en": "Spain"
+    },
+    "awayLabel": {
+      "zh": "阿根廷",
+      "en": "Argentina"
+    },
+    "score": {
+      "home": 1,
+      "away": 0,
+      "status": "FT"
     }
   }
 }
