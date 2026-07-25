@@ -144,7 +144,8 @@
     "schedule": "Schedule",
     "roundOf32Schedule": "Round of 32 Schedule",
     "roundOf16Schedule": "Round of 16 Schedule",
-    "quarterFinalsSchedule": "Quarter-Finals Schedule"
+    "quarterFinalsSchedule": "Quarter-Finals Schedule",
+    "semiFinalsSchedule": "Semi-Finals Schedule"
   },
   "city": {
     "capacity": "Capacity",

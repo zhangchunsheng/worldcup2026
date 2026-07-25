@@ -144,7 +144,8 @@
     "schedule": "赛程",
     "roundOf32Schedule": "1/16决赛赛程",
     "roundOf16Schedule": "1/8决赛赛程",
-    "quarterFinalsSchedule": "1/4决赛赛程"
+    "quarterFinalsSchedule": "1/4决赛赛程",
+    "semiFinalsSchedule": "半决赛赛程"
   },
   "city": {
     "capacity": "容量",
