@@ -98,7 +98,7 @@
       </FadeInWrapper>
     </div>
     <!-- Knockout schedule list -->
-    <div v-if="roundOf32ByDate.length || roundOf16ByDate.length || quarterFinalsByDate.length || semiFinalsByDate.length" class="space-y-8">
+    <div v-if="roundOf32ByDate.length || roundOf16ByDate.length || quarterFinalsByDate.length || semiFinalsByDate.length || finalMatches.length" class="space-y-8">
       <!-- Round of 32 -->
       <div v-if="roundOf32ByDate.length" class="space-y-6">
         <h3 class="text-lg font-bold text-gold">⚔️ {{ t('knockout.roundOf32Schedule') }}</h3>
@@ -181,6 +181,20 @@
             />
           </div>
         </FadeInWrapper>
+      </div>
+
+      <!-- Third place & Final -->
+      <div v-if="finalMatches.length" class="space-y-6">
+        <h3 class="text-lg font-bold text-gold">🏆 {{ t('knockout.finalSchedule') }}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <MatchCard v-for="match in finalMatches" :key="match.id"
+            :match="enrichMatch(match)"
+            :prediction="getPrediction(match.id)"
+            :live-match-id="getLiveData(match.id)?.id"
+            :live-data="getLiveData(match.id)"
+            @open-detail="openMatchDetail"
+          />
+        </div>
       </div>
     </div>
 
@@ -341,6 +355,9 @@ const roundOf32ByDate = computed(() => groupByDate(knockoutData.value?.roundOf32
 const roundOf16ByDate = computed(() => groupByDate(knockoutData.value?.roundOf16))
 const quarterFinalsByDate = computed(() => groupByDate(knockoutData.value?.quarterFinals))
 const semiFinalsByDate = computed(() => groupByDate(knockoutData.value?.semiFinals))
+const finalMatches = computed(() =>
+  [knockoutData.value?.thirdPlace, knockoutData.value?.final].filter(Boolean)
+)
 
 function formatDate(dateStr) {
   if (!dateStr) return ''
