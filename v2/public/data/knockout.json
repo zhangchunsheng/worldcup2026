@@ -615,6 +615,11 @@
       "awayLabel": {
         "zh": "法国",
         "en": "France"
+      },
+      "score": {
+        "home": 0,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -636,6 +641,11 @@
       "awayLabel": {
         "zh": "比利时",
         "en": "Belgium"
+      },
+      "score": {
+        "home": 2,
+        "away": 1,
+        "status": "FT"
       }
     },
     {
@@ -657,6 +667,11 @@
       "awayLabel": {
         "zh": "英格兰",
         "en": "England"
+      },
+      "score": {
+        "home": 1,
+        "away": 2,
+        "status": "FT"
       }
     },
     {
@@ -678,6 +693,11 @@
       "awayLabel": {
         "zh": "瑞士",
         "en": "Switzerland"
+      },
+      "score": {
+        "home": 3,
+        "away": 1,
+        "status": "FT"
       }
     }
   ],
